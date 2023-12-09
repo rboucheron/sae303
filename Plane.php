@@ -16,7 +16,7 @@ class Plane  extends Model{
         $this->table = __CLASS__;
     }
     public function requete(string $sql) {
-        $this->db = DatabaseHandler::getInstance();
+        $this->db = Database::getInstance();
         return $this->db->query($sql);
     }
     public function findAll()
