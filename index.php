@@ -61,8 +61,9 @@ include 'Plane.php';
         </div>
     </section>
     <?php
-    $plane = new Plane(" ", " ", " ", " ");
+    $plane = new Plane();
     $searchPlane = $plane->findAll();
+
     foreach ($searchPlane as $model) {
     ?>
         <section class="w-11/12 m-auto overflow-x-scroll mt-36 flex flex-nowrap relative">
