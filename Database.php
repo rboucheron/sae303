@@ -15,7 +15,7 @@ class Database extends PDO
 
     public function __construct()
     {
-        $_dsn = 'mysql:dbname='. self::DBNAME . ';host=' . self::DBHOST;
+        $_dsn = 'mysql:dbname=' . self::DBNAME . ';host=' . self::DBHOST;
         try {
             parent::__construct($_dsn, self::DBUSER, self::DBPASS);
             $this->setAttribute(self::MYSQL_ATTR_INIT_COMMAND, 'SET NAMES utf8');
