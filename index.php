@@ -1,6 +1,7 @@
 <?php
 session_start();
 include './class/Plane.php';
+$today = date("m-d");
 
 ?>
 <!DOCTYPE html>
@@ -31,12 +32,17 @@ include './class/Plane.php';
         </div>
 
 
-        <?php if (isset($_SESSION['nom']) && isset($_SESSION['prenom'])) { ?>
+        <?php if (isset($_SESSION['nom']) && isset($_SESSION['prenom'])) {
+            $dateObj = new DateTime($_SESSION['naissance']);
+            $anniversaire = $dateObj->format('m-d');
+        ?>
 
             <div class="hidden lg:flex  place-items-center  self-center justify-end pr-10">
                 <img src="./assets/images/compte.svg" alt="compte identifier">
                 <a href="">
-                    <p class="font-semibold text-sm text-white"> <?= $_SESSION['prenom'] ?> <?= $_SESSION['nom'] ?></p>
+                    <p class="font-semibold text-sm text-white"> <?= $_SESSION['prenom'] ?> <?= $_SESSION['nom'] ?><?php if ($anniversaire == $today) {
+                                                                                                                        echo "🎉";
+                                                                                                                    } ?></p>
                 </a>
             </div>
 
