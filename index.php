@@ -1,7 +1,7 @@
 <?php
 session_start();
 include './class/Plane.php';
-$today = date("m-d");
+$_SESSION['today']= date("m-d");
 
 ?>
 <!DOCTYPE html>
@@ -11,56 +11,13 @@ $today = date("m-d");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AC2FL</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./dist/style.css">
     <link rel="icon" type="image/svg+xml" href="./assets/images/logo.svg" />
 
 </head>
 
 <body class="bg-gradient-to-r to-blue-500 bg-cyan-500 from-cyan-500">
-    <header class="grid grid-cols-2 gap-4 lg:grid-cols-4">
-        <div class="cursor-pointer grid place-items-start pt-2 lg:col-span-1  "><img src="./assets/images/logo.svg" class="w-16 mt-4 ml-4" alt=""></div>
-        <div class="cursor-pointer grid place-items-end pb-2 pr-6 lg:hidden "><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-align-justify">
-                <line x1="3" x2="21" y1="6" y2="6" />
-                <line x1="3" x2="21" y1="12" y2="12" />
-                <line x1="3" x2="21" y1="18" y2="18" />
-            </svg></div>
-
-        <div class="hidden lg:grid place-items-center col-span-2 grid-cols-4 p-3">
-            <a class="grid font-semibold text-xl cursor-pointer text-white hover:underline">Accueil</a>
-            <a class="grid font-semibold text-xl cursor-pointer text-white hover:underline" href="#activites">Activites</a>
-            <a class="grid font-semibold text-xl cursor-pointer text-white hover:underline">Nos Moyens</a>
-            <a class="grid font-semibold text-xl cursor-pointer text-white hover:underline">Contact</a>
-        </div>
-
-
-        <?php if (isset($_SESSION['nom']) && isset($_SESSION['prenom'])) {
-            $dateObj = new DateTime($_SESSION['naissance']);
-            $anniversaire = $dateObj->format('m-d');
-        ?>
-
-            <div class="hidden lg:flex  place-items-center  self-center justify-end pr-10">
-                <img src="./assets/images/compte.svg" alt="compte identifier">
-                <a href="">
-                    <p class="font-semibold text-sm text-white"> <?= $_SESSION['prenom'] ?> <?= $_SESSION['nom'] ?><?php if ($anniversaire == $today) {
-                                                                                                                        echo "🎉";
-                                                                                                                    } ?></p>
-                </a>
-            </div>
-
-        <?php
-        } else {
-        ?>
-            <div class="hidden lg:grid place-items-center grid-cols-2 pl-9 ">
-                <div class=" grid"> <a class=" bg-gray-50 w-full text-center rounded-xl textfont-semibold text-xl cursor-pointer  p-3 " href="connexion.php">Connexion</a></div>
-                <div class=" grid"> <a class="bg-gray-50  w-full text-center rounded-xl textfont-semibold text-xl cursor-pointer  p-3" href="inscription.php">Inscription</a></div>
-            </div>
-
-        <?php
-        }
-        ?>
-
-
-    </header>
+<?php include('./component/header.php')?>
     <section class="w-full mt-36 ">
         <h1 class="text-sm lg:text-9xl w-3/4 m-auto text-center text-gray-50 font-bold ">VENEZ PILOTER UN ULM</h1>
         <p class="mt-2 text-2xl w-1/3 m-auto text-center text-slate-700 font-semibold ">Bienvenue chez AC2FL</p>
