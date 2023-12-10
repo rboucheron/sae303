@@ -25,6 +25,7 @@ $_SESSION['today']= date("m-d");
             <div class="w-1/3 m-auto p-2 text-xl bg-gray-50 rounded-xl text-center text-slate-700 ">Découvrir </div>
         </div>
     </section>
+    <!-- 
     <section class="w-full mt-36 " id="activites">
         <h1 class="text-sm lg:text-4xl w-3/4 m-auto text-center text-slate-700 font-bold ">Activites</h1>
         <div class="grid grid-cols-3 gap-4 mt-16">
@@ -45,6 +46,7 @@ $_SESSION['today']= date("m-d");
             </div>
         </div>
     </section>
+-->
     <?php
     $plane = new Plane();
     $searchPlane = $plane->findAll();
