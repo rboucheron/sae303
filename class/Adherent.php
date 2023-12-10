@@ -47,8 +47,10 @@ class Adherent extends Model
         $query = "INSERT INTO {$this->table} (`Nom`, `prenom`, `civilité`, `naissance`, `email`, `telephone`, `password`) VALUES ('{$this->nom}', '{$this->prenom}', '{$this->civilite}', '{$this->naissance}', '{$this->email}', '{$this->telephone}', '{$hashedPassword}')";
         $this->requete($query);
     }
-    public function connexion()
+    public function connexion($email, $password)
     {
+        $this->email = $email;
+        $this->password = $password;
         $result = $this->findSomeone();
         $verify =  $this->verifyPassword($result[0]['password']);
         if ($verify == true) {
