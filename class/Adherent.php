@@ -11,16 +11,10 @@ class Adherent extends Model
     private $telephone;
     private $password;
 
-    public function __construct($nom, $prenom, $civilite, $naissance, $email, $telephone, $password)
+    public function __construct()
     {
         parent::__construct();
-        $this->nom = $nom;
-        $this->prenom = $prenom;
-        $this->civilite = $civilite;
-        $this->naissance = $naissance;
-        $this->email = $email;
-        $this->telephone = $telephone;
-        $this->password = $password;
+
         $this->table = __CLASS__;
     }
     public function requete(string $sql)
@@ -40,9 +34,15 @@ class Adherent extends Model
         var_dump($query);
         return $query->fetchAll();
     }
-    public function Add()
+    public function Add($nom, $prenom, $civilite, $naissance, $email, $telephone, $password)
     {
-
+        $this->nom = $nom;
+        $this->prenom = $prenom;
+        $this->civilite = $civilite;
+        $this->naissance = $naissance;
+        $this->email = $email;
+        $this->telephone = $telephone;
+        $this->password = $password;
         $hashedPassword = $this->ashpassword();
         $query = "INSERT INTO {$this->table} (`Nom`, `prenom`, `civilité`, `naissance`, `email`, `telephone`, `password`) VALUES ('{$this->nom}', '{$this->prenom}', '{$this->civilite}', '{$this->naissance}', '{$this->email}', '{$this->telephone}', '{$hashedPassword}')";
         $this->requete($query);
