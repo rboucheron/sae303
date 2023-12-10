@@ -10,8 +10,9 @@ $today = date("m-d");
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>AC2FL</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" type="image/svg+xml" href="./assets/images/logo.svg" />
 
 </head>
 
