@@ -14,7 +14,6 @@ class Adherent extends Model
     public function __construct()
     {
         parent::__construct();
-
         $this->table = __CLASS__;
     }
     public function requete(string $sql)
@@ -59,6 +58,7 @@ class Adherent extends Model
                 $this->password = $result[0]['password'];
                 $this->nom = $result[0]['Nom'];
                 $this->prenom = $result[0]['prenom'];
+                $this->naissance = $result[0]['naissance'];
                 $this->civilite = $result[0]['civilité'];
                 $this->telephone = $result[0]['telephone'];
                 return "connexion effectuer";
@@ -72,6 +72,10 @@ class Adherent extends Model
         session_start();
         $_SESSION['nom'] = $this->nom;
         $_SESSION['prenom'] = $this->prenom;
+        $_SESSION['naissance'] = $this->naissance;
+        $_SESSION['civilite'] = $this->civilite;
+        $_SESSION['email'] = $this->email;
+        $_SESSION['telephone'] = $this->telephone;
     }
     private function ashpassword()
     {

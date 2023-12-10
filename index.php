@@ -36,7 +36,7 @@ include './class/Plane.php';
             <div class="hidden lg:flex  place-items-center  self-center justify-end pr-10">
                 <img src="./assets/images/compte.svg" alt="compte identifier">
                 <a href="">
-                    <p class="font-semibold text-sm text-white"> <?= $_SESSION['nom'] ?> <?= $_SESSION['prenom'] ?></p>
+                    <p class="font-semibold text-sm text-white"> <?= $_SESSION['prenom'] ?> <?= $_SESSION['nom'] ?></p>
                 </a>
             </div>
 
