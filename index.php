@@ -1,6 +1,6 @@
 <?php
 
-include 'Plane.php';
+include './class/Plane.php';
 
 ?>
 <!DOCTYPE html>
@@ -30,7 +30,7 @@ include 'Plane.php';
         </div>
         <div class="hidden lg:grid place-items-center grid-cols-2 pl-9 ">
             <div class=" grid"> <a class=" bg-gray-50 w-full text-center rounded-xl textfont-semibold text-xl cursor-pointer  p-3 ">Connexion</a></div>
-            <div class=" grid"> <a class="bg-gray-50  w-full text-center rounded-xl textfont-semibold text-xl cursor-pointer  p-3">Inscription</a></div>
+            <div class=" grid"> <a class="bg-gray-50  w-full text-center rounded-xl textfont-semibold text-xl cursor-pointer  p-3" href="inscription.php">Inscription</a></div>
         </div>
     </header>
     <section class="w-full mt-36 ">
