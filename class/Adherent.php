@@ -31,8 +31,7 @@ class Adherent extends Model
     public function findSomeone()
     {
         $query = $this->requete('SELECT * FROM ' . $this->table . ' WHERE email = \'' . $this->email . '\'');
-        var_dump($query);
-        return $query->fetchAll();
+        return $query->fetchAll(PDO::FETCH_ASSOC);
     }
     public function Add($nom, $prenom, $civilite, $naissance, $email, $telephone, $password)
     {
@@ -52,16 +51,27 @@ class Adherent extends Model
         $this->email = $email;
         $this->password = $password;
         $result = $this->findSomeone();
-        $verify =  $this->verifyPassword($result[0]['password']);
-        if ($verify == true) {
-            $this->password = $result[0]['password'];
-            $this->nom = $result[0]['Nom'];
-            $this->prenom = $result[0]['prenom'];
-            $this->civilite = $result[0]['civilité'];
-            $this->telephone = $result[0]['telephone'];
+        if ($result == null) {
+            return "adresse email ou mot de passe incorrect";
         } else {
-            return "mot de passe incorrect";
+            $verify =  $this->verifyPassword($result[0]['password']);
+            if ($verify == true) {
+                $this->password = $result[0]['password'];
+                $this->nom = $result[0]['Nom'];
+                $this->prenom = $result[0]['prenom'];
+                $this->civilite = $result[0]['civilité'];
+                $this->telephone = $result[0]['telephone'];
+                return "connexion effectuer";
+            } else {
+                return "mot de passe incorrect";
+            }
         }
+    }
+    public function NewSession()
+    {
+        session_start();
+        $_SESSION['nom'] = $this->nom;
+        $_SESSION['prenom'] = $this->prenom;
     }
     private function ashpassword()
     {

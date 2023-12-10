@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include './class/Plane.php';
 
 ?>
@@ -22,16 +22,37 @@ include './class/Plane.php';
                 <line x1="3" x2="21" y1="12" y2="12" />
                 <line x1="3" x2="21" y1="18" y2="18" />
             </svg></div>
+
         <div class="hidden lg:grid place-items-center col-span-2 grid-cols-4 p-3">
             <a class="grid font-semibold text-xl cursor-pointer text-white hover:underline">Accueil</a>
             <a class="grid font-semibold text-xl cursor-pointer text-white hover:underline" href="#activites">Activites</a>
             <a class="grid font-semibold text-xl cursor-pointer text-white hover:underline">Nos Moyens</a>
             <a class="grid font-semibold text-xl cursor-pointer text-white hover:underline">Contact</a>
         </div>
-        <div class="hidden lg:grid place-items-center grid-cols-2 pl-9 ">
-            <div class=" grid"> <a class=" bg-gray-50 w-full text-center rounded-xl textfont-semibold text-xl cursor-pointer  p-3 " href="connexion.php">Connexion</a></div>
-            <div class=" grid"> <a class="bg-gray-50  w-full text-center rounded-xl textfont-semibold text-xl cursor-pointer  p-3" href="inscription.php">Inscription</a></div>
-        </div>
+
+
+        <?php if (isset($_SESSION['nom']) && isset($_SESSION['prenom'])) { ?>
+
+            <div class="hidden lg:flex  place-items-center  self-center justify-end pr-10">
+                <img src="./assets/images/compte.svg" alt="compte identifier">
+                <a href="">
+                    <p class="font-semibold text-sm text-white"> <?= $_SESSION['nom'] ?> <?= $_SESSION['prenom'] ?></p>
+                </a>
+            </div>
+
+        <?php
+        } else {
+        ?>
+            <div class="hidden lg:grid place-items-center grid-cols-2 pl-9 ">
+                <div class=" grid"> <a class=" bg-gray-50 w-full text-center rounded-xl textfont-semibold text-xl cursor-pointer  p-3 " href="connexion.php">Connexion</a></div>
+                <div class=" grid"> <a class="bg-gray-50  w-full text-center rounded-xl textfont-semibold text-xl cursor-pointer  p-3" href="inscription.php">Inscription</a></div>
+            </div>
+
+        <?php
+        }
+        ?>
+
+
     </header>
     <section class="w-full mt-36 ">
         <h1 class="text-sm lg:text-9xl w-3/4 m-auto text-center text-gray-50 font-bold ">VENEZ PILOTER UN ULM</h1>
