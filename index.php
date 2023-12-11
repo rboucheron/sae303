@@ -2,8 +2,8 @@
 session_start();
 include './class/Plane.php';
 $_SESSION['today']= date("m-d");
-
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
