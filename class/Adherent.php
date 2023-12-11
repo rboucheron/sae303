@@ -70,6 +70,7 @@ class Adherent extends Model
         }
     }
     function findId(){
+        
         $query = $this->requete('SELECT id FROM ' . $this->table . ' WHERE email = \'' . $this->email . '\'');
          $resultat = $query->fetchAll(PDO::FETCH_ASSOC);
          $this->id = $resultat[0]['id']; 
@@ -90,6 +91,19 @@ class Adherent extends Model
             $_SESSION['id'] = $this->id; 
         }
     }
+    public function update($nom, $prenom, $civilite, $naissance, $email, $telephone, $password){
+        $this->nom = $nom;
+        $this->prenom = $prenom;
+        $this->civilite = $civilite;
+        $this->naissance = $naissance;
+        $this->email = $email;
+        $this->telephone = $telephone;
+        $this->password = $password;
+        $query = "UPDATE `adherent` SET `Nom`={$this->nom},`prenom`={$this->prenom},`civilité`={$this->civilite},`naissance`={$this->naissance} ,`email`={$this->email},`telephone`={$this->telephone},`password`= {$this->password} WHERE id = {$this->id}";
+        $this->requete($query);
+    }
+
+
     private function ashpassword()
     {
         return password_hash($this->password, PASSWORD_DEFAULT);
