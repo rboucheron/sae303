@@ -3,13 +3,14 @@ include 'Model.php';
 
 class Adherent extends Model
 {
-    public $nom;
+    private $nom;
     private $prenom;
     private $civilite;
     private $naissance;
     private $email;
     private $telephone;
     private $password;
+    private $id; 
 
     public function __construct()
     {
@@ -51,7 +52,7 @@ class Adherent extends Model
         $this->password = $password;
         $result = $this->findSomeone();
         if ($result == null) {
-            return "adresse email ou mot de passe incorrect";
+            return false;
         } else {
             $verify =  $this->verifyPassword($result[0]['password']);
             if ($verify == true) {
@@ -61,11 +62,17 @@ class Adherent extends Model
                 $this->naissance = $result[0]['naissance'];
                 $this->civilite = $result[0]['civilité'];
                 $this->telephone = $result[0]['telephone'];
-                return "connexion effectuer";
+                $this->id = $result[0]['id']; 
+                return true;
             } else {
-                return "mot de passe incorrect";
+                return false;
             }
         }
+    }
+    function findId(){
+        $query = $this->requete('SELECT id FROM ' . $this->table . ' WHERE email = \'' . $this->email . '\'');
+         $resultat = $query->fetchAll(PDO::FETCH_ASSOC);
+         $this->id = $resultat[0]['id']; 
     }
     public function NewSession()
     {
@@ -76,6 +83,12 @@ class Adherent extends Model
         $_SESSION['civilite'] = $this->civilite;
         $_SESSION['email'] = $this->email;
         $_SESSION['telephone'] = $this->telephone;
+        if ($this->id == null){
+            $this->findId();
+            $_SESSION['id'] = $this->id; 
+        }else{
+            $_SESSION['id'] = $this->id; 
+        }
     }
     private function ashpassword()
     {

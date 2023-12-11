@@ -5,10 +5,21 @@ include './class/Adherent.php';
 if (isset($_POST['email']) && isset($_POST['password'])) {
     $connexion = new Adherent();
     $message = $connexion->connexion($_POST['email'], $_POST['password']);
-    echo  $message; 
-    $connexion->NewSession(); 
-    header('Location: index.php');
-    exit();
+    if ($message == false){
+        echo "mot de passe incorrect"; 
+    }else{
+        $connexion->NewSession(); 
+        header('Location: index.php');
+        exit();
+
+    }
+  
+
+
+
+
+
+  
 
 }
 
