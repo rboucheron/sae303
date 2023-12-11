@@ -10,7 +10,7 @@ class Adherent extends Model
     private $email;
     private $telephone;
     private $password;
-    private $id; 
+    private $id;
 
     public function __construct()
     {
@@ -62,18 +62,19 @@ class Adherent extends Model
                 $this->naissance = $result[0]['naissance'];
                 $this->civilite = $result[0]['civilité'];
                 $this->telephone = $result[0]['telephone'];
-                $this->id = $result[0]['id']; 
+                $this->id = $result[0]['id'];
                 return true;
             } else {
                 return false;
             }
         }
     }
-    function findId(){
-        
+    function findId()
+    {
+
         $query = $this->requete('SELECT id FROM ' . $this->table . ' WHERE email = \'' . $this->email . '\'');
-         $resultat = $query->fetchAll(PDO::FETCH_ASSOC);
-         $this->id = $resultat[0]['id']; 
+        $resultat = $query->fetchAll(PDO::FETCH_ASSOC);
+        $this->id = $resultat[0]['id'];
     }
     public function NewSession()
     {
@@ -84,24 +85,27 @@ class Adherent extends Model
         $_SESSION['civilite'] = $this->civilite;
         $_SESSION['email'] = $this->email;
         $_SESSION['telephone'] = $this->telephone;
-        if ($this->id == null){
+        if ($this->id == null) {
             $this->findId();
-            $_SESSION['id'] = $this->id; 
-        }else{
-            $_SESSION['id'] = $this->id; 
+            $_SESSION['id'] = $this->id;
+        } else {
+            $_SESSION['id'] = $this->id;
         }
     }
-    public function update($nom, $prenom, $civilite, $naissance, $email, $telephone, $password){
+    public function update($nom, $prenom, $civilite, $naissance, $email, $telephone, $id)
+    {
         $this->nom = $nom;
         $this->prenom = $prenom;
         $this->civilite = $civilite;
         $this->naissance = $naissance;
         $this->email = $email;
         $this->telephone = $telephone;
-        $this->password = $password;
-        $query = "UPDATE `adherent` SET `Nom`={$this->nom},`prenom`={$this->prenom},`civilité`={$this->civilite},`naissance`={$this->naissance} ,`email`={$this->email},`telephone`={$this->telephone},`password`= {$this->password} WHERE id = {$this->id}";
+        $this->id = $id;
+        $query = "UPDATE `adherent` SET `Nom`='{$this->nom}', `prenom`='{$this->prenom}', `civilité`='{$this->civilite}', `naissance`='{$this->naissance}', `email`='{$this->email}', `telephone`='{$this->telephone}' WHERE id = {$this->id}";
         $this->requete($query);
+        
     }
+
 
 
     private function ashpassword()
