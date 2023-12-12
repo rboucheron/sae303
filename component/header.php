@@ -6,10 +6,10 @@
             <line x1="3" x2="21" y1="18" y2="18" />
         </svg></div>
 
-    <div class="hidden lg:grid place-items-center col-span-2 grid-cols-4 p-3">
-        <a class="grid font-semibold text-xl cursor-pointer text-white hover:underline" href="index.php">Accueil</a>
-        <a class="grid font-semibold text-xl cursor-pointer text-white hover:underline" href="index.php#activites">Activites</a>
-        <a class="grid font-semibold text-xl cursor-pointer text-white hover:underline">Nos Moyens</a>
+    <div class="hidden lg:grid place-items-center col-span-2 grid-cols-3 p-3 ">
+        <a class="grid font-semibold text-xl cursor-pointer text-white hover:underline " href="index.php">Accueil</a>
+        <a class="grid font-semibold text-xl cursor-pointer text-white hover:underline" href="index.php#activites">Decouvrir</a>
+
         <a class="grid font-semibold text-xl cursor-pointer text-white hover:underline">Contact</a>
     </div>
 
@@ -33,7 +33,7 @@
     ?>
         <div class="hidden lg:grid place-items-center grid-cols-2 pl-9 ">
             <div class=" grid"> <a class=" bg-gray-50 w-full text-center rounded-xl textfont-semibold text-xl cursor-pointer  p-3 " href="connexion.php">Connexion</a></div>
-            <div class=" grid"> <a class="bg-gray-50  w-full text-center rounded-xl textfont-semibold text-xl cursor-pointer  p-3" href="inscription.php">Inscription</a></div>
+
         </div>
 
     <?php
