@@ -1,4 +1,4 @@
-<header class="grid grid-cols-2 gap-4 lg:grid-cols-4 bg-white" >
+<header class="grid grid-cols-2 gap-4 lg:grid-cols-4 bg-white shadow-xl" >
     <div class="cursor-pointer grid place-items-start pt-1 pb-2 lg:col-span-1  "><img src="./assets/images/logo.svg" class="w-14 mt-2 ml-4  " alt=""></div>
     <div class="cursor-pointer grid place-items-end pb-2 pr-6 lg:hidden  "><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-align-justify">
             <line x1="3" x2="21" y1="6" y2="6" />
