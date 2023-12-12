@@ -33,7 +33,7 @@
     ?>
         <div class="hidden lg:grid place-items-center grid-cols-2 pl-9 ">
             <div class=" grid"> <a class=" bg-gray-50 w-full text-center rounded-xl textfont-semibold text-xl cursor-pointer  p-3 " href="connexion.php">Connexion</a></div>
-
+            <div class=" grid"> <a class=" bg-gray-50 w-full text-center rounded-xl textfont-semibold text-xl cursor-pointer  p-3 " href="inscription.php">Inscription</a></div>
         </div>
 
     <?php
