@@ -80,7 +80,7 @@ if (isset($_GET['disconnect'])) {
     ?>
 
 
-    <div class="hidden bg-gradient-to-r to-blue-500 bg-cyan-500 from-cyan-500 absolute z-100 bg-rose-50 w-full h-full" id="updateForm">
+    <div class="hidden bg-gradient-to-r to-blue-500 bg-cyan-500 from-cyan-500 absolute z-100 w-full h-full" id="updateForm">
         <form action="profil.php" method="post">
             <h1 class="w-full text-center text-2xl mt-20">Modifier les informations</h1>
             <div class="w-3/4 m-auto flex flex-col ">

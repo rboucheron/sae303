@@ -5,7 +5,7 @@ $_SESSION['today']= date("m-d");
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -19,10 +19,10 @@ $_SESSION['today']= date("m-d");
 <body class="bg-gradient-to-r to-blue-500 bg-cyan-500 from-cyan-500">
 <?php include('./component/header.php')?>
     <section class="w-full mt-36 ">
-        <h1 class="text-sm lg:text-9xl w-3/4 m-auto text-center text-gray-50 font-bold ">VENEZ PILOTER UN ULM</h1>
+        <h1 class="text-6xl lg:text-9xl w-3/4 m-auto text-center text-gray-50 font-bold ">VENEZ PILOTER UN ULM</h1>
         <p class="mt-2 text-2xl w-1/3 m-auto text-center text-slate-700 font-semibold ">Bienvenue chez AC2FL</p>
-        <div class="w-1/3 m-auto mt-16 cursor-pointer">
-            <div class="w-1/3 m-auto p-2 text-xl bg-gray-50 rounded-xl text-center text-slate-700 ">Découvrir </div>
+        <div class="w-1/2 lg:w-1/3 m-auto mt-16 cursor-pointer">
+            <div class="w-full lg:w-1/3 m-auto p-2 text-xl bg-gray-50 rounded-xl text-center text-slate-700 ">Découvrir </div>
         </div>
     </section>
     <!-- 
@@ -47,6 +47,17 @@ $_SESSION['today']= date("m-d");
         </div>
     </section>
 -->
+<section class="hidden absolute z-20 w-full h-full bg-cyan-500 bg-opacity-75" id="Menu">
+    <a href="index.php">Accueil</a>
+
+    <a href="index.php#activites">Decouvrir</a>
+
+    <a>Contact</a>
+
+    <div class="absolute top-0 right-0" onclick="closeMenu()">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+    </div>
+</section>
     <?php
     $plane = new Plane();
     $searchPlane = $plane->findAll();
@@ -67,10 +78,8 @@ $_SESSION['today']= date("m-d");
 
 
 
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script>
-        lucide.createIcons();
-    </script>
+ 
+        <script src="./js/allModal.js"></script>
 
 </body>
 
