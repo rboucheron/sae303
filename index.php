@@ -1,11 +1,12 @@
 <?php
-session_start();
+include './class/Model.php';
+include './class/Adherent.php';
 include './class/Plane.php';
-$_SESSION['today'] = date("m-d");
 ?>
 
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,17 +14,19 @@ $_SESSION['today'] = date("m-d");
     <link rel="stylesheet" href="./dist/style.css">
     <link rel="icon" type="image/svg+xml" href="./assets/images/logo.svg" />
 </head>
+
 <body class="bg-gradient-to-r to-blue-500 bg-cyan-500 from-cyan-500 overflow-hidden overflow-y-scroll">
+
     <?php include('./component/Header.php') ?>
     <?php include('./component/PhoneMenu.php') ?>
     <?php include('./component/Accueil.php') ?>
     <?php include('./component/Event.php') ?>
     <?php include('./component/Activites.php') ?>
     <?php include('./component/AllPlane.php') ?>
-    
-
+    <?php include('./component/Connexion.php') ?>
 
     <script src="./js/allModal.js"></script>
+    <script src="./js/apiMeteo.js"></script>
 </body>
 
 </html>
