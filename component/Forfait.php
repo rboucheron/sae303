@@ -1,15 +1,15 @@
 <section class="w-full mt-36 ">
     <div class="px-6 py-4">
-        <h1 class="text-sm lg:text-4xl w-3/4 m-auto text-center text-slate-700 font-bold ">Forfait</h1>
+        <h1 class="text-2xl lg:text-4xl w-3/4 m-auto text-center text-slate-700 font-bold ">Forfait</h1>
     </div>
 
 
 
 
-    <div class=" w-3/4 m-auto grid grid-cols-3 gap-4">
+    <div class="w-full block lg:w-3/4 m-auto lg:grid grid-cols-3 gap-4">
 
 
-        <div class="bg-gradient-to-r to-blue-300  from-cyan-200 rounded-xl p-2">
+        <div class="mt-2 bg-gradient-to-r to-blue-300  from-cyan-200 rounded-xl p-2">
             <h2 class="font-bold text-2xl mb-2 text-white w-full text-center">Stage d'initiation</h2>
             <h3 class=" mt-10 mb-10  text-sky-950 text-5xl w-full text-center">180€</h3>
             <p class="mt-3 text-gray-600 text-center text-xl border-b-2 border-indigo-600 w-3/4 m-auto">
@@ -28,7 +28,7 @@
         </div>
 
 
-        <div class="bg-gradient-to-r to-blue-300  from-cyan-200 rounded-xl   p-2">
+        <div class="mt-2 bg-gradient-to-r to-blue-300  from-cyan-200 rounded-xl   p-2">
             <h2 class="font-bold text-2xl mb-2 text-white w-full text-center">Brevet de pilote</h2>
             <h3 class=" mt-10 mb-10  text-sky-950 text-5xl w-full text-center">1200€</h3>
             <p class="mt-3 text-gray-600 text-center text-xl border-b-2 border-indigo-600 w-3/4 m-auto">
@@ -53,7 +53,7 @@
         </div>
 
 
-        <div class="bg-gradient-to-r to-blue-300  from-cyan-200 rounded-xl   p-2">
+        <div class=" mt-2 bg-gradient-to-r to-blue-300  from-cyan-200 rounded-xl   p-2">
             <h2 class="font-bold text-2xl mb-2 text-white w-full text-center">Emport de passager</h2>
             <h3 class=" mt-10 mb-10  text-sky-950 text-5xl w-full text-center">450€</h3>
             <p class="mt-3 text-gray-600 text-center text-xl border-b-2 border-indigo-600 w-3/4 m-auto">
