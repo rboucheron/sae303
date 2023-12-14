@@ -15,7 +15,7 @@ include './class/Plane.php';
     <link rel="icon" type="image/svg+xml" href="./assets/images/logo.svg" />
 </head>
 
-<body class="bg-gradient-to-r to-blue-500 bg-cyan-500 from-cyan-500 overflow-hidden overflow-y-scroll">
+<body class="bg-cyan-500 overflow-hidden overflow-y-scroll">
 
     <?php include('./component/Header.php') ?>
     <?php include('./component/PhoneMenu.php') ?>
@@ -23,7 +23,8 @@ include './class/Plane.php';
     <?php include('./component/Event.php') ?>
     <?php include('./component/Activites.php') ?>
     <?php include('./component/AllPlane.php') ?>
-    <?php include('./component/Connexion.php') ?>
+
+    <?php include('./component/Forfait.php') ?>
 
     <script src="./js/allModal.js"></script>
     <script src="./js/apiMeteo.js"></script>
