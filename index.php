@@ -20,13 +20,16 @@ include './class/Plane.php';
     <?php include('./component/Header.php') ?>
     <?php include('./component/PhoneMenu.php') ?>
     <?php include('./component/Accueil.php') ?>
-    <?php include('./component/Event.php') ?>
+  
     <?php include('./component/Activites.php') ?>
     <?php include('./component/AllPlane.php') ?>
     <?php include('./component/Forfait.php') ?>
+    <?php include('./component/Galerie.php') ?>
+   
 
     <script src="./js/allModal.js"></script>
     <script src="./js/apiMeteo.js"></script>
+    <script src="./js/Carrousel.js"></script>
 </body>
 
 </html>
