@@ -1,5 +1,5 @@
 <?php
-include 'Model.php';
+
 
 class Adherent extends Model
 {

@@ -1,5 +1,5 @@
 <?php
-include 'Model.php';
+
 class Plane  extends Model
 {
 

@@ -1,5 +1,5 @@
 <?php
-
+include './class/Model.php';
 include './class/Adherent.php';
 
 if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['civilite']) && isset($_POST['naissance']) && isset($_POST['email']) && isset($_POST['telephone']) && isset($_POST['password'])) {

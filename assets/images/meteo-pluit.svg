@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Calque_1" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 252.66">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke: #f08345;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 25px;
+      }
+
+      .cls-2 {
+        stroke: #9c9c9c;
+      }
+
+      .cls-3 {
+        stroke: #70c7db;
+      }
+    </style>
+  </defs>
+  <path class="cls-1" d="M130.01,23.81v20.5"/>
+  <path class="cls-1" d="M57.53,53.85l14.46,14.46"/>
+  <path class="cls-1" d="M212.02,126.33h20.5"/>
+  <path class="cls-1" d="M202.49,53.85l-14.46,14.46"/>
+  <path class="cls-1" d="M170.47,132.99c3.69-22.35-11.44-43.45-33.78-47.14-9.27-1.53-18.79.17-26.96,4.82"/>
+  <path class="cls-2" d="M37.74,208.34c-16.98-22.66-12.37-54.78,10.29-71.76,22.66-16.98,54.78-12.37,71.76,10.29,4.54,6.06,7.68,13.05,9.2,20.47h11.28c16.99-.02,30.78,13.72,30.8,30.71.01,8.79-3.73,17.16-10.3,23.01"/>
+  <path class="cls-3" d="M119.76,208.34v20.5"/>
+  <path class="cls-3" d="M78.75,198.09v20.5"/>
+</svg>
