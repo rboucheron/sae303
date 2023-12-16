@@ -1,7 +1,11 @@
 module.exports = {
   content: ["./component/**/*.php"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+
+      },
+    },
   },
   plugins: [],
 }

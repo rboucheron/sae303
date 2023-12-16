@@ -1,5 +1,5 @@
-<header class="grid grid-cols-2 gap-4 lg:grid-cols-4">
-    <div class="cursor-pointer grid place-items-start pt-2 lg:col-span-1  "><img src="./assets/images/logo.svg" class="w-16 mt-4 ml-4" alt=""></div>
+<header class="grid grid-cols-2 gap-4 lg:grid-cols-4 bg-white shadow-xl">
+    <div class="cursor-pointer grid place-items-start pt-2 lg:col-span-1  "><img src="./assets/images/logof.png" class="w-14 mt-0 ml-12 mb-1 " alt=""></div>
     <div class="cursor-pointer grid place-items-end pb-2 pr-6 lg:hidden "><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-align-justify">
             <line x1="3" x2="21" y1="6" y2="6" />
             <line x1="3" x2="21" y1="12" y2="12" />
@@ -7,10 +7,10 @@
         </svg></div>
 
     <div class="hidden lg:grid place-items-center col-span-2 grid-cols-3 p-3 ">
-        <a class="grid font-semibold text-lg cursor-pointer text-white hover:underline text-black  pb-1" href="index.php">Accueil</a>
-        <a class="grid font-semibold text-lg cursor-pointer text-white hover:underline text-black  pb-1" href="index.php#activites">Decouvrir</a>
+        <a class="grid font-semibold text-md cursor-pointer text-black hover:underline text-black  pb-1 " href="index.php">ACCUEIL</a>
+        <a class="grid font-semibold text-md cursor-pointer text-black hover:underline text-black  pb-1 " href="index.php#activites">DECOUVRIR</a>
 
-        <a class="grid font-semibold text-lg cursor-pointer text-white hover:underline text-black  pb-1">Contact</a>
+        <a class="grid font-semibold text-md cursor-pointer text-black hover:underline text-black  pb-1 ">CONTACT</a>
     </div>
 
 
@@ -31,8 +31,8 @@
     <?php
     } else {
     ?>
-        <div class="hidden lg:grid place-items-center grid-cols-2 pl-9 ">
-            <div class=" grid"> <a class=" bg-gray-50 w-full text-center rounded-xl textfont-semibold text-xl cursor-pointer  p-3 " href="connexion.php">Connexion</a></div>
+        <div class="hidden lg:grid place-items-center grid-cols-2 pl-14 ">
+            <div class=" grid"> <a class="  w-full text-center rounded-sm text-white  text-md cursor-pointer  py-2 px-5  font-Arial bg-blue-800 hover:bg-blue-600 duration-300  hover:scale-105 " href="connexion.php">Se connecter</a></div>
 
         </div>
 
