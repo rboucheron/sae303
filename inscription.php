@@ -23,7 +23,7 @@ if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['civilite'])
 </head>
 
 <body>
-    <img src="./assets/images/logo.svg" class="w-40 m-auto mt-2 mb-2" alt="">
+    <img src="./assets/images/logof.png" class="w-32 m-auto mt-2 mb-2" alt="">
     <form action="inscription.php" method="post">
         <h1 class="w-full text-center text-2xl">Inscription</h1>
         <div class="w-3/4 m-auto flex flex-col ">
@@ -48,6 +48,7 @@ if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['civilite'])
         </div>
 
     </form>
+    <p class="mt-4 text-sm text-gray-600 text-center">Déjà un compte? <a href="connexion.php" class="text-blue-500 hover:underline">Connectez-vous</a></p>
 
 </body>
 
