@@ -23,8 +23,10 @@ include './class/Plane.php';
   
     <?php include('./component/Activites.php') ?>
     <?php include('./component/AllPlane.php') ?>
-    <?php include('./component/Forfait.php') ?>
+
     <?php include('./component/Galerie.php') ?>
+    <?php include('./component/Forfait.php') ?>
+
    
 
     <script src="./js/allModal.js"></script>
