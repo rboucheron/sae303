@@ -5,4 +5,4 @@
             <div class="rounded-full w-20 m-auto bg-blue-700 hover:bg-blue-600 duration-300  hover:scale-105  hover:-translate-y-1 hover:shadow-lg"><img src="./assets/images/arrow.svg" class="w-24 m-auto  " alt=""></div>
 
         </div>
-    </section>
+</section>

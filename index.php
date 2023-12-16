@@ -20,6 +20,7 @@ include './class/Plane.php';
     <?php include('./component/Header.php') ?>
     <?php include('./component/PhoneMenu.php') ?>
     <?php include('./component/Accueil.php') ?>
+    <?php include('./component/WhiteBlock.php') ?>
   
     <?php include('./component/Activites.php') ?>
     <?php include('./component/AllPlane.php') ?>
