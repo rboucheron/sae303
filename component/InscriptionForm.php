@@ -9,9 +9,9 @@ if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['civilite'])
 }
 ?>
 
-<section>
+<section class="mt-20 w-full">
 <form action="" method="post">
-        <h1 class="w-full text-center text-2xl">Inscription</h1>
+        <h1 class="text-sm lg:text-4xl w-3/4 m-auto text-center text-slate-700 font-bold">Inscription</h1>
         <div class="w-3/4 m-auto flex flex-col ">
             <h3 class="w-full mt-4 text-slate-600 text-center"> Information Personel</h3>
             <div class="w-3/4 m-auto flex  place-content-start ">
