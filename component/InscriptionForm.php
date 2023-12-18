@@ -1,7 +1,5 @@
-<?php
-include './class/Model.php';
-include './class/Adherent.php';
 
+<?php
 if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['civilite']) && isset($_POST['naissance']) && isset($_POST['email']) && isset($_POST['telephone']) && isset($_POST['password'])) {
     $newuser = new Adherent();
     $newuser->add($_POST['nom'], $_POST['prenom'], $_POST['civilite'], $_POST['naissance'], $_POST['email'], $_POST['telephone'], $_POST['password']);
@@ -9,22 +7,10 @@ if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['civilite'])
     header('Location: index.php');
     exit();
 }
-
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscription</title>
-    <link rel="stylesheet" href="./dist/style.css">
-</head>
-
-<body>
-    <img src="./assets/images/logof.png" class="w-32 m-auto mt-2 mb-2" alt="">
-    <form action="inscription.php" method="post">
+<section>
+<form action="" method="post">
         <h1 class="w-full text-center text-2xl">Inscription</h1>
         <div class="w-3/4 m-auto flex flex-col ">
             <h3 class="w-full mt-4 text-slate-600 text-center"> Information Personel</h3>
@@ -48,8 +34,8 @@ if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['civilite'])
         </div>
 
     </form>
-    <p class="mt-4 text-sm text-gray-600 text-center">Déjà un compte? <a href="connexion.php" class="text-blue-500 hover:underline">Connectez-vous</a></p>
+    <p class="mt-4 text-sm text-gray-600 text-center">Déjà un compte? <a href="index.php?connexion" class="text-blue-500 hover:underline">Connectez-vous</a></p>
 
-</body>
 
-</html>
+</section>
+
