@@ -35,7 +35,7 @@
 
             <div class="hidden lg:flex  place-items-center  self-center justify-end pr-10">
                 <img class="w-6" src="./assets/images/compte.svg" alt="compte identifier">
-                <a href="profil.php">
+                <a href="index.php?profil">
                     <p class="font-semibold text-sm text-blue-800"> <?= $_SESSION['prenom'] ?> <?= $_SESSION['nom'] ?><?php if ($anniversaire == $today) {
                                                                                                                         echo "🎉";
                                                                                                                     } ?></p>
