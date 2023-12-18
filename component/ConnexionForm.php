@@ -9,6 +9,8 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
         echo "mot de passe incorrect"; 
     }else{
         $connexion->NewSession(); 
+        header('Location: index.php');
+        exit();
       
     }
 }

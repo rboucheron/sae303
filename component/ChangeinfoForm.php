@@ -1,10 +1,9 @@
 <?php
 if (isset($_POST['nom'], $_POST['prenom'], $_POST['civilite'], $_POST['naissance'], $_POST['email'], $_POST['telephone'])) {
-    // Vérifiez la présence de toutes les données nécessaires
     $update = new Adherent();
     $update->update($_POST['nom'], $_POST['prenom'], $_POST['civilite'], $_POST['naissance'], $_POST['email'], $_POST['telephone'], $_SESSION['id']);
     session_unset();
-    session_destroy();
+
     $update->NewSession();
 }
 ?>

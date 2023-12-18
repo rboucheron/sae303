@@ -1,9 +1,10 @@
 <?php
-if (isset($_GET['disconnect'])) {
+if (isset($_GET['profil']) && $_GET['profil'] === 'disconnect') {
     session_unset();
     session_destroy();
     header('Location: index.php');
     exit();
+
 }
 ?>
 
@@ -40,6 +41,6 @@ if (isset($_GET['disconnect'])) {
       <div class="w-3/4 m-auto flex flex-col place-content-center">
         <div class="p-2 w-1/4 text-center border-2 border-cyan-100 cursor-pointer " onclick="openForm()">Modifier ses informations</div>
         <form action="" method="get">
-            <button type="submit" name="disconnect" class="p-2 w-1/4 text-center bg-cyan-100 w-1/4 mt-2">Se déconnecter</button>
+            <button type="submit" name="profil" value="disconnect" class="p-2 w-1/4 text-center bg-cyan-100 w-1/4 mt-2">Se déconnecter</button>
         </form>
     </div>
