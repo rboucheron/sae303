@@ -78,7 +78,7 @@ class Adherent extends Model
     }
     public function NewSession()
     {
-        session_start();
+     
         $_SESSION['nom'] = $this->nom;
         $_SESSION['prenom'] = $this->prenom;
         $_SESSION['naissance'] = $this->naissance;

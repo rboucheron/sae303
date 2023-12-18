@@ -3,8 +3,6 @@
 function home()
 {
     // models 
-
-
     require('./class/Plane.php');
     // vues 
     require('./component/Header.php');

@@ -27,14 +27,16 @@
 
 
         <?php if (isset($_SESSION['nom']) && isset($_SESSION['prenom'])) {
+
             $dateObj = new DateTime($_SESSION['naissance']);
             $anniversaire = $dateObj->format('m-d');
+            $today = date('m-d'); 
         ?>
 
             <div class="hidden lg:flex  place-items-center  self-center justify-end pr-10">
-                <img src="./assets/images/compte.svg" alt="compte identifier">
+                <img class="w-6" src="./assets/images/compte.svg" alt="compte identifier">
                 <a href="profil.php">
-                    <p class="font-semibold text-sm text-white"> <?= $_SESSION['prenom'] ?> <?= $_SESSION['nom'] ?><?php if ($anniversaire == $_SESSION['today']) {
+                    <p class="font-semibold text-sm text-blue-800"> <?= $_SESSION['prenom'] ?> <?= $_SESSION['nom'] ?><?php if ($anniversaire == $today) {
                                                                                                                         echo "🎉";
                                                                                                                     } ?></p>
                 </a>

@@ -1,1 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-round-check"><path d="M2 21a8 8 0 0 1 13.292-6"/><circle cx="10" cy="8" r="5"/><path d="m16 19 2 2 4-4"/></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 28.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 28 28" style="enable-background:new 0 0 28 28;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#1E40AF;stroke-width:2.625;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4.6667;}
+</style>
+<path class="st0" d="M2.3,24.5c0-5.2,4.2-9.3,9.3-9.3c2.3,0,4.5,0.8,6.2,2.3"/>
+<circle class="st0" cx="11.7" cy="9.3" r="5.8"/>
+<path class="st0" d="M18.7,22.2l2.3,2.3l4.7-4.7"/>
+</svg>
