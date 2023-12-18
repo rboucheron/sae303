@@ -5,6 +5,7 @@ include('./controllers/home.php');
 include('./controllers/connexion.php');
 include('./controllers/inscription.php'); 
 include('./controllers/profil.php');
+include('./controllers/meteo.php');
 
 
 
@@ -15,6 +16,8 @@ if (isset($_GET['connexion'])) {
     inscription();
 } elseif (isset($_GET['profil'])){
     profil(); 
-} else {
+} elseif (isset($_GET['meteo'])){ 
+    LaMeteo(); 
+}else {
     home();
 }

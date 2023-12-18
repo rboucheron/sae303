@@ -6,6 +6,11 @@
         
 
     </div>
+    <?php 
+      foreach ($json['list'] as $result) {
+        echo "Date: " . $result['dt_txt'] . ", Température: " . $result['main']['temp'] . " °C<br>";
+    }
+    ?>
     
 
 </section>
