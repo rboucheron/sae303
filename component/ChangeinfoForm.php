@@ -9,7 +9,7 @@ if (isset($_POST['nom'], $_POST['prenom'], $_POST['civilite'], $_POST['naissance
 }
 ?>
 <div class="hidden bg-gradient-to-r to-blue-500 bg-cyan-500 from-cyan-500 absolute z-100 w-full h-full" id="updateForm">
-    <form action="profil.php" method="post">
+    <form action="" method="post">
         <h1 class="w-full text-center text-2xl mt-20">Modifier les informations</h1>
         <div class="w-3/4 m-auto flex flex-col ">
             <h3 class="w-full mt-4 text-slate-600 text-center"> Information Personel</h3>
