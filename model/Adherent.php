@@ -1,6 +1,4 @@
 <?php
-
-
 class Adherent extends Model
 {
     private $nom;
@@ -24,8 +22,7 @@ class Adherent extends Model
     public function findAll()
     {
         $query = $this->requete('SELECT * FROM ' . $this->table);
-        var_dump($query);
-        return $query->fetchAll();
+        return $query->fetchAll(PDO::FETCH_ASSOC);
     }
     public function findSomeone()
     {
