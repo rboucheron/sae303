@@ -6,7 +6,7 @@ include('./controllers/connexion.php');
 include('./controllers/inscription.php');
 include('./controllers/profil.php');
 include('./controllers/meteo.php');
-include('./controllers/Adminconnexion.php'); 
+include('./controllers/Admin.php'); 
 
 
 

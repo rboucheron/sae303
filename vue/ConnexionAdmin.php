@@ -11,7 +11,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
         echo "mot de passe incorrect"; 
         return false; 
     }else{
-        return true; 
+        $connexion->NewSession(); 
     }
 }
 

@@ -54,6 +54,26 @@ class administrateur extends Model
             }
         }
     }
+    public function NewSession()
+    {
+        $_SESSION['AdminNom'] = $this->nom;
+        $_SESSION['AdminPrenom'] = $this->prenom;
+        $_SESSION['AdminEmail'] = $this->email;
+        $_SESSION['AdminTelephone'] = $this->telephone;
+
+        if ($this->id == null) {
+            $this->findId();
+            $_SESSION['AdminId'] = $this->id;
+        } else {
+            $_SESSION['AdminId'] = $this->id;
+        }
+    }
+    function findId()
+    {
+        $query = $this->requete('SELECT id FROM ' . $this->table . ' WHERE email = \'' . $this->email . '\'');
+        $resultat = $query->fetchAll(PDO::FETCH_ASSOC);
+        $this->id = $resultat[0]['id'];
+    }
     private function ashpassword()
     {
         return password_hash($this->password, PASSWORD_DEFAULT);
