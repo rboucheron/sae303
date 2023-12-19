@@ -6,8 +6,12 @@
         
 
     </div>
-    <?php 
-      foreach ($json['list'] as $result) {
+    <?php
+        $Meteos = new Meteo; 
+        $data = $Meteos->decode(); 
+
+
+      foreach ($data['list'] as $result) {
         echo "Date: " . $result['dt_txt'] . ", Température: " . $result['main']['temp'] . " °C<br>";
     }
     ?>
