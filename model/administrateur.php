@@ -44,7 +44,7 @@ class administrateur extends Model
             $verify =  $this->verifyPassword($result[0]['password']);
             if ($verify == true) {
                 $this->password = $result[0]['password'];
-                $this->nom = $result[0]['Nom'];
+                $this->nom = $result[0]['nom'];
                 $this->prenom = $result[0]['prenom'];
                 $this->telephone = $result[0]['telephone'];
                 $this->id = $result[0]['id'];

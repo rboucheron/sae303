@@ -6,6 +6,7 @@ include('./controllers/connexion.php');
 include('./controllers/inscription.php');
 include('./controllers/profil.php');
 include('./controllers/meteo.php');
+include('./controllers/Adminconnexion.php'); 
 
 
 
@@ -18,6 +19,8 @@ if (isset($_GET['connexion'])) {
     profil();
 } elseif (isset($_GET['meteo'])) {
     LaMeteo();
+}elseif (isset($_GET['admin'])){
+    Admin(); 
 } else {
     home();
 }

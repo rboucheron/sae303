@@ -19,10 +19,8 @@ class Plane  extends Model
     }
     public function findAll()
     {
-
-            $query = $this->requete('SELECT * FROM ' . $this->table);
-            return $query->fetchAll(PDO::FETCH_ASSOC);
-    
+        $query = $this->requete('SELECT * FROM ' . $this->table);
+        return $query->fetchAll(PDO::FETCH_ASSOC);
     }
     public function Add($modele, $marque, $immatriculation, $type)
     {
