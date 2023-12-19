@@ -1,13 +1,25 @@
 <?php
 
+//adherent
 $nbAdherent = new Adherent;
 $CountAdherent = $nbAdherent->Count();
+$tablAdherent = $nbAdherent->findAll();
+
+//plane 
 $nbPlane = new Plane;
 $CountPlane = $nbPlane->Count();
+
+//reservation 
 $nbReservation = new Reservation();
 $CountReservation = $nbReservation->Count();
-$AllAdherent = new Adherent;
-$tablAdherent = $AllAdherent->findAll();
+
+$today = date('Y-m-d');
+for ($i = 0; $i <= 6; $i++) {
+    $daytoday = date('Y-m-d', strtotime($today . ' +' . $i . ' day'));
+    $TodayCount = $nbReservation->CountDay($daytoday);
+    $date[$i] = $daytoday; 
+    $dateCount[$i] = $TodayCount[0]['count']; 
+}
 ?>
 <section class="w-full">
     <div class="w-3/4 m-auto mt-20 gap-4 grid grid-cols-3">
@@ -33,7 +45,7 @@ $tablAdherent = $AllAdherent->findAll();
 </section>
 
 <section>
-    <table class="w-3/4 m-auto mt-20">
+    <table class="w-full mt-20">
         <thead class="p-11 bg-gray-300 ">
             <tr>
                 <th class="border-r-2 border-b-2 border-blue-300 p-2">Id</th>
@@ -58,3 +70,30 @@ $tablAdherent = $AllAdherent->findAll();
         </tbody>
     </table>
 </section>
+<section class="mt-20 w-full bg-white pt-2 pb-2">
+    <canvas id="myChart" class="w-3/4 m-auto mt-20"></canvas>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    const ctx = document.getElementById('myChart');
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['<?= $date[0] ?>', '<?= $date[1] ?>', '<?= $date[2] ?>', '<?= $date[3] ?>', '<?= $date[4] ?>', '<?= $date[5] ?>', '<?= $date[6] ?>'],
+            datasets: [{
+                label: 'Nombre de Reservation',
+                data: [<?= $dateCount[0] ?>, <?= $dateCount[1] ?>, <?= $dateCount[3] ?>, <?= $dateCount[4] ?>, <?= $dateCount[5] ?>, <?= $dateCount[6] ?>],
+                borderWidth: 3
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>

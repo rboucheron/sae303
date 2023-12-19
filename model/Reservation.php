@@ -20,4 +20,11 @@ class Reservation extends Model
         $query = $this->requete('SELECT COUNT(*) as count FROM ' . $this->table);
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
+    public function CountDay($date)
+    {
+        $this->date = $date; 
+        $query = $this->requete('SELECT COUNT(*) as count FROM ' . $this->table . ' WHERE date = \'' . $this->date . '\'');
+        return $query->fetchAll(PDO::FETCH_ASSOC);
+    }
+    
 }
