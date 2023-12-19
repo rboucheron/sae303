@@ -9,7 +9,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
     $message = $connexion->connexion($_POST['email'], $_POST['password']);
     if ($message == false){
         echo "mot de passe incorrect"; 
-        return false; 
+
     }else{
         $connexion->NewSession(); 
     }

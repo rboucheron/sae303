@@ -30,24 +30,32 @@
 
             $dateObj = new DateTime($_SESSION['naissance']);
             $anniversaire = $dateObj->format('m-d');
-            $today = date('m-d'); 
+            $today = date('m-d');
         ?>
 
             <div class="hidden lg:flex  place-items-center  self-center justify-end pr-10">
                 <img class="w-6" src="./assets/images/compte.svg" alt="compte identifier">
                 <a href="index.php?profil">
                     <p class="font-semibold text-sm text-blue-800"> <?= $_SESSION['prenom'] ?> <?= $_SESSION['nom'] ?><?php if ($anniversaire == $today) {
-                                                                                                                        echo "🎉";
-                                                                                                                    } ?></p>
+                                                                                                                            echo "🎉";
+                                                                                                                        } ?></p>
                 </a>
             </div>
+
+        <?php
+        } elseif (isset($_SESSION['AdminNom']) && isset($_SESSION['AdminPrenom']) && isset($_SESSION['AdminEmail']) && isset($_SESSION['AdminTelephone'])) {
+        ?>
+            <div class="hidden lg:flex  place-items-center  self-center justify-end pr-10">
+                <img class="w-6" src="./assets/images/compte.svg" alt="compte identifier">
+                <p class="font-semibold text-sm text-blue-800"> <?= $_SESSION['AdminPrenom'] ?> <?= $_SESSION['AdminNom'] ?> ✅</p>
+            </div>
+
 
         <?php
         } else {
         ?>
             <div class="hidden lg:grid place-items-center grid-cols-2 pl-14 ">
                 <div class=" grid"> <a class="  w-full text-center rounded-sm text-white  text-md cursor-pointer  py-2 px-5  font-Arial bg-blue-800 hover:bg-blue-600 duration-300  hover:scale-105 " href="index.php?connexion">Se connecter</a></div>
-
             </div>
 
         <?php
