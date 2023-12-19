@@ -40,8 +40,8 @@
         } elseif (isset($_SESSION['AdminNom']) && isset($_SESSION['AdminPrenom']) && isset($_SESSION['AdminEmail']) && isset($_SESSION['AdminTelephone'])) {
         ?>
             <div class="hidden lg:flex  place-items-center  self-center justify-end pr-10">
+                <img class="w-6" src="./assets/images/compte.svg" alt="compte identifier">
                 <a href="index.php?admin">
-                    <img class="w-6" src="./assets/images/compte.svg" alt="compte identifier">
                     <p class="font-semibold text-sm text-blue-800"> <?= $_SESSION['AdminPrenom'] ?> <?= $_SESSION['AdminNom'] ?> ✅</p>
                 </a>
             </div>
