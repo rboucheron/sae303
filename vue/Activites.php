@@ -19,4 +19,6 @@
             <p class="w-2/4 m-auto text-center mt-3 text-gray-700"> Location d’emplacement ULM dans des hangars pour les particuliers</p>
         </div>
     </div>
+
+    
 </section>
