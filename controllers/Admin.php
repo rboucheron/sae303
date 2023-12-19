@@ -1,12 +1,15 @@
 <?php
 function Admin()
 {
-    include('./model/administrateur.php');
+    require('./model/administrateur.php');
+    require('./model/Adherent.php'); 
+    require('./model/Plane.php');
+    require('./model/Reservation.php'); 
     require('./vue/Header.php');
     if (isset($_SESSION['AdminNom']) && isset($_SESSION['AdminPrenom']) && isset($_SESSION['AdminEmail']) && isset($_SESSION['AdminTelephone'])) {
-        echo "salut";
+        require('./vue/AdminBoard.php');
     } else {
-        include('./vue/ConnexionAdmin.php');
+        require('./vue/ConnexionAdmin.php');
     }
     require('./vue/Footer.php');
 }
