@@ -105,9 +105,6 @@ class Adherent extends Model
         $this->requete($query);
         
     }
-
-
-
     private function ashpassword()
     {
         return password_hash($this->password, PASSWORD_DEFAULT);

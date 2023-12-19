@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:8889
--- Généré le : lun. 11 déc. 2023 à 13:22
+-- Généré le : mar. 19 déc. 2023 à 07:45
 -- Version du serveur : 5.7.39
 -- Version de PHP : 8.2.0
 
@@ -43,11 +43,27 @@ CREATE TABLE `adherent` (
 --
 
 INSERT INTO `adherent` (`Nom`, `prenom`, `civilité`, `naissance`, `email`, `telephone`, `password`, `id`) VALUES
-('Bamba', 'Annick', '2', '2003-11-30', 'bambaannick5@gmail.com', '0789390495', '$2y$10$4CWD0wR34oeW6ZwjjBrAVuRzg2Jwr/Ly4tOWMUAuO/BYDOmGHoswS', 29),
-('Boucheron', 'Raphael', '1', '2004-05-12', 'raphaelboucheron3@gmail.com', '0638910234', '$2y$10$gypxVa6NXVAMxT3JOqUuBe4BIVwAsaymEJuLttBkGhz6yR19/pKK6', 33),
+('Boucheron', 'Raphaël', '1', '2004-05-12', 'raphaelboucheron3@gmail.com', '0638910234', '$2y$10$gypxVa6NXVAMxT3JOqUuBe4BIVwAsaymEJuLttBkGhz6yR19/pKK6', 33),
 ('boot', 'sanjy', '1', '2023-12-11', 'sanjy@gmail.com', '0789390496', '$2y$10$deVznVeh1olE6X5QKBttSeXRUJvcRmHHbXTpmTstPGkg1./aiWpOO', 34),
-('cccc', 'wwww', '2', '2023-12-11', 'admin@admin.com', '05950692', '$2y$10$qetun3Ne3fvvs8lfowE3YeIzwF9kVUBGxzhstF0LyPLrFJmk/QON.', 35),
-('sdtius', 'dytsyu', '1', '2023-12-11', 'dyud@gmail.com', '09950695', '$2y$10$2gTYe02RHTlsdZtzY6ZVoetle6VyoTOAgxjtLuV5wQF1HYup9GzBS', 36);
+('jehu', 'yalou', '2', '2023-12-18', 'yaelle@gmail.com', '9999', '$2y$10$3GPaeRfNf2xn8eZ11eEJp.nmlUsLUYpHsjEApyKUZKzN2VnEJBKIu', 37),
+('Raphael', 'Boucheron', '1', '2004-09-12', 'admin@gmail.com', '3945898', '$2y$10$fbnepJ8QEyCf2c17QPw3EuhFx3CWRHx/XGs7QtLO2agAjqe3DLQyy', 38),
+('Boucheron', 'Raphael', '1', '2004-05-12', 'raphaelboucheron.college@outlook.fr', '05950694', '$2y$10$gW8dzMmPmcRz//CeyY1xdejgymVScTz8T.XxjDFADXkqVXuf7mud.', 39),
+('Boucheron', 'Raphael', '1', '1999-12-18', 'raphelle@gmail.com', '854930', '$2y$10$bcRVwc1saJ8w5P5AHA8XFuT3xk2qdKhu9oXvuhKbdpAY9T5cTccv2', 40);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `administrateur`
+--
+
+CREATE TABLE `administrateur` (
+  `id` int(11) NOT NULL,
+  `nom` varchar(25) NOT NULL,
+  `prenom` varchar(25) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `telephone` varchar(50) NOT NULL,
+  `password` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -68,7 +84,8 @@ CREATE TABLE `Plane` (
 --
 
 INSERT INTO `Plane` (`modele`, `marque`, `immatriculation`, `type`, `id`) VALUES
-('Yamaha_B', 'Yamaha', 'EF9028', 'UML', 1);
+('Yamaha_B', 'Yamaha', 'EF9028', 'UML', 1),
+('Yamaha', 'Yamaha', 'EDGHEO', 'UML', 2);
 
 -- --------------------------------------------------------
 
@@ -96,6 +113,13 @@ ALTER TABLE `adherent`
   ADD UNIQUE KEY `unique_contrainte_telephone` (`telephone`);
 
 --
+-- Index pour la table `administrateur`
+--
+ALTER TABLE `administrateur`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`,`telephone`);
+
+--
 -- Index pour la table `Plane`
 --
 ALTER TABLE `Plane`
@@ -116,13 +140,19 @@ ALTER TABLE `reservation`
 -- AUTO_INCREMENT pour la table `adherent`
 --
 ALTER TABLE `adherent`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+
+--
+-- AUTO_INCREMENT pour la table `administrateur`
+--
+ALTER TABLE `administrateur`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `Plane`
 --
 ALTER TABLE `Plane`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Contraintes pour les tables déchargées
