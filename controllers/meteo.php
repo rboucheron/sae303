@@ -3,10 +3,10 @@
 function LaMeteo()
 {
     // models 
-    require('./class/Meteo.php');
+    require('./model/Meteo.php');
 
     // vues 
-    require('./component/Header.php');
-    require('./component/MeteoActuelle.php');
-    require('./component/Footer.php');
+    require('./vue/Header.php');
+    require('./vue/MeteoActuelle.php');
+    require('./vue/Footer.php');
 }

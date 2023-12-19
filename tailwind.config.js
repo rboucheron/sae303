@@ -1,5 +1,5 @@
 module.exports = {
-  content: ["./component/**/*.php"],
+  content: ["./vue/**/*.php"],
   theme: {
     extend: {
       fontFamily: {

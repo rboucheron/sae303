@@ -3,9 +3,9 @@
 function connexion()
 {
     // models 
-    require('./class/Adherent.php');
+    require('./model/Adherent.php');
     // vues 
-    require('./component/Header.php');
-    require('./component/ConnexionForm.php');
-    require('./component/Footer.php');
+    require('./vue/Header.php');
+    require('./vue/ConnexionForm.php');
+    require('./vue/Footer.php');
 }

@@ -2,11 +2,11 @@
 function profil()
 {
     // models 
-    require('./class/Adherent.php');
+    require('./model/Adherent.php');
     // vues 
-    require('./component/Header.php');
-    require('./component/Profil.php');
-    require('./component/ChangeinfoForm.php');
-    require('./component/Footer.php');
+    require('./vue/Header.php');
+    require('./vue/Profil.php');
+    require('./vue/ChangeinfoForm.php');
+    require('./vue/Footer.php');
 
 }

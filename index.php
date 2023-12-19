@@ -1,6 +1,6 @@
 <?php
 session_start();
-require('./class/Model.php');
+require('./model/Model.php');
 include('./controllers/home.php');
 include('./controllers/connexion.php');
 include('./controllers/inscription.php');

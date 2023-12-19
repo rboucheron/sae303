@@ -3,15 +3,15 @@
 function home()
 {
     // models 
-    require('./class/Plane.php');
+    require('./model/Plane.php');
     // vues 
-    require('./component/Header.php');
-    require('./component/PhoneMenu.php');
-    require('./component/Accueil.php');
-    require('./component/WhiteBlock.php');
-    require('./component/Activites.php');
-    require('./component/AllPlane.php');
-    require('./component/Galerie.php');
-    require('./component/Forfait.php');
-    require('./component/Footer.php');
+    require('./vue/Header.php');
+    require('./vue/PhoneMenu.php');
+    require('./vue/Accueil.php');
+    require('./vue/WhiteBlock.php');
+    require('./vue/Activites.php');
+    require('./vue/AllPlane.php');
+    require('./vue/Galerie.php');
+    require('./vue/Forfait.php');
+    require('./vue/Footer.php');
 }

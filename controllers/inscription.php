@@ -2,10 +2,10 @@
 function inscription()
 {
     // models 
-    require('./class/Adherent.php');
+    require('./model/Adherent.php');
     // vues 
-    require('./component/Header.php');
-    require('./component/InscriptionForm.php');
-    require('./component/Footer.php');
+    require('./vue/Header.php');
+    require('./vue/InscriptionForm.php');
+    require('./vue/Footer.php');
 }
 
