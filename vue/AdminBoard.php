@@ -12,15 +12,27 @@ $CountPlane = $nbPlane->Count();
 //reservation 
 $nbReservation = new Reservation();
 $CountReservation = $nbReservation->Count();
-
 $today = date('Y-m-d');
 for ($i = 0; $i <= 6; $i++) {
     $daytoday = date('Y-m-d', strtotime($today . ' +' . $i . ' day'));
     $TodayCount = $nbReservation->CountDay($daytoday);
-    $date[$i] = $daytoday; 
-    $dateCount[$i] = $TodayCount[0]['count']; 
+    $date[$i] = $daytoday;
+    $dateCount[$i] = $TodayCount[0]['count'];
 }
+
+$month = date("Y-m");
+
+for ($e = 0; $e <= 12; $e++) {
+    $lastMonth = date('Y-m', strtotime('-' . $e . ' month'));
+    $affMonth[$e] = date('M', strtotime('-' . $e . ' month'));
+    $monthYearCount = $nbReservation->CountMonth($lastMonth);
+
+    $monthYear[$e] = $lastMonth;
+    $themonthYearCount[$e] = $monthYearCount[0]['count'];
+}
+
 ?>
+
 <section class="w-full">
     <div class="w-3/4 m-auto mt-20 gap-4 grid grid-cols-3">
         <div class="bg-purple-800 p-2 rounded-xl">
@@ -70,13 +82,18 @@ for ($i = 0; $i <= 6; $i++) {
         </tbody>
     </table>
 </section>
-<section class="mt-20 w-full bg-white pt-2 pb-2">
-    <canvas id="myChart" class="w-3/4 m-auto mt-20"></canvas>
+<section class="mt-20 w-full bg-white gap-4 pt-2 pb-2 grid grid-cols-2">
+    <div>
+        <canvas id="day" class=" mt-20 w-1/4 "></canvas>
+    </div>
+    <div>
+        <canvas id="month" class=" mt-20 w-1/4 "></canvas>
+    </div>
 </section>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
-    const ctx = document.getElementById('myChart');
+    const ctx = document.getElementById('day');
 
     new Chart(ctx, {
         type: 'bar',
@@ -85,6 +102,29 @@ for ($i = 0; $i <= 6; $i++) {
             datasets: [{
                 label: 'Nombre de Reservation',
                 data: [<?= $dateCount[0] ?>, <?= $dateCount[1] ?>, <?= $dateCount[3] ?>, <?= $dateCount[4] ?>, <?= $dateCount[5] ?>, <?= $dateCount[6] ?>],
+                borderWidth: 3
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
+<script>
+    const xtc = document.getElementById('month');
+
+    new Chart(xtc, {
+        type: 'line',
+        data: {
+
+            labels: ['<?= $affMonth[11] ?>', '<?= $affMonth[10] ?>', '<?= $affMonth[9] ?>', '<?= $affMonth[8] ?>', '<?= $affMonth[7] ?>', '<?= $affMonth[6] ?>', '<?= $affMonth[5] ?>', '<?= $affMonth[4] ?>', '<?= $affMonth[3] ?>', '<?= $affMonth[2] ?>', '<?= $affMonth[1] ?>', '<?= $affMonth[0] ?>'],
+            datasets: [{
+                label: 'Nombre de Reservation',
+                data: [<?= $themonthYearCount[11] ?>, <?= $themonthYearCount[10] ?>, <?= $themonthYearCount[9] ?>, <?= $themonthYearCount[8] ?>, <?= $themonthYearCount[7] ?>, <?= $themonthYearCount[6] ?>, <?= $themonthYearCount[5] ?>, <?= $themonthYearCount[4] ?>, <?= $themonthYearCount[3] ?>, <?= $themonthYearCount[2] ?>, <?= $themonthYearCount[1] ?>, <?= $themonthYearCount[0] ?>],
                 borderWidth: 3
             }]
         },
