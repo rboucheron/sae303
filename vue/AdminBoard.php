@@ -13,6 +13,7 @@ $CountPlane = $nbPlane->Count();
 $nbReservation = new Reservation();
 $CountReservation = $nbReservation->Count();
 $today = date('Y-m-d');
+
 for ($i = 0; $i <= 6; $i++) {
     $daytoday = date('Y-m-d', strtotime($today . ' +' . $i . ' day'));
     $TodayCount = $nbReservation->CountDay($daytoday);

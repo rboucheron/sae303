@@ -7,6 +7,7 @@ include('./controllers/inscription.php');
 include('./controllers/profil.php');
 include('./controllers/meteo.php');
 include('./controllers/Admin.php'); 
+include('./controllers/reservation.php'); 
 
 
 
@@ -21,6 +22,9 @@ if (isset($_GET['connexion'])) {
     LaMeteo();
 }elseif (isset($_GET['admin'])){
     Admin(); 
+}elseif (isset($_GET['plane'])){
+    reservation(); 
+
 } else {
     home();
 }
