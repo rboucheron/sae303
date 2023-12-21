@@ -8,6 +8,8 @@ class Plane  extends Model
     private $immatriculation;
     private $type;
     private $id; 
+    private $image; 
+    private $description; 
 
     public function __construct()
     {
