@@ -27,9 +27,14 @@ class Plane  extends Model
     }
     public function findSomeone($id)
     {
-        $this->id = $id; 
-        $query = $this->requete("SELECT * FROM {$this->table} WHERE id = {$this->id}");
-        return $query->fetchAll(PDO::FETCH_ASSOC);
+        try{
+            $this->id = $id; 
+            $query = $this->requete("SELECT * FROM {$this->table} WHERE id = {$this->id}");
+            return $query->fetchAll(PDO::FETCH_ASSOC);
+        }catch (Exception $e){
+            return "erreur"; 
+        }
+       
     }
     public function Count()
     {
