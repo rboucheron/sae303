@@ -23,6 +23,13 @@ if (isset($_GET['plane'])) {
 
         <div class="w-3/4 m-auto  p-2">
             <h2 class="text-5xl text-sky-800 w-full text-center">Choisir la date</h2>
+            <div class="w-2/5 m-auto ">
+
+                <h3 class="text-2xl text-gray-800 text-center mt-10 mb-10" id="month"></h3>
+           
+
+            </div>
+
             <div class="grid grid-cols-7 mt-5">
                 <div class="border border-white  text-start p-2">
                     Dimanche
@@ -54,7 +61,6 @@ if (isset($_GET['plane'])) {
                 </div>
             </div>
             <div class="grid grid-cols-7 mt-5" id="calendar">
-
             </div>
 
 
@@ -67,19 +73,52 @@ if (isset($_GET['plane'])) {
 
 </section>
 <script>
+    const months = [
+        'Janvier',
+        'Février',
+        'Mars',
+        'Avril',
+        'Mai',
+        'Juin',
+        'Juillet',
+        'Aout',
+        'Septembre',
+        'Octobre',
+        'Novembre',
+        'Decembre',
+    ];
     var today = new Date();
     var firstDay = new Date(today.getFullYear(), today.getMonth(), 1);
     var lastDay = new Date(today.getFullYear(), today.getMonth() + 1, 0);
     var div = "<div class='border border-white p-2'></div>";
-    var calendar= div;
-    console.log(firstDay.getDay()); 
-    if (firstDay.getDay() > 1) {
-        for (let y = 2; y <= firstDay.getDay(); y++) {
-            calendar += div;
+    var calendar = div;
+    Fill();
+    Write();
+    function AddMonth() {
+        firstDay = new Date(today.getFullYear(), today.getMonth() + 1, 1);
+        lastDay = new Date(today.getFullYear(), today.getMonth() + 2, 0);
+        calendar = div;
+        Fill();
+        Write();
+    }
+    function Fill() {
+        if (firstDay.getDay() > 1) {
+            for (let y = 2; y <= firstDay.getDay(); y++) {
+                calendar += div;
+            }
+        }
+        var Classe;
+        for (let i = firstDay.getDate(); i <= lastDay.getDate(); i++) {
+            if ((i < today.getDate())&&(firstDay.getMonth < today.getMonth)) {
+                Classe = "border border-sky-500 text-start p-2 pb-10 bg-gray-200";
+            } else {
+                Classe = "border border-sky-500 text-start p-2 pb-10 cursor-pointer hover:bg-sky-200";
+            }
+            calendar += "<div class='" + Classe + "' id='" + i + "/" + today.getMonth() + "'>" + i + "</div>";
         }
     }
-    for (let i = firstDay.getDate(); i <= lastDay.getDate(); i++) {
-        calendar += "<div class='border border-sky-500 text-start p-2 pb-10 cursor-pointer hover:bg-sky-200' id='" + i + "/" + today.getMonth() + "'>" + i + "</div>";
+    function Write() {
+        document.getElementById('month').innerText = months[firstDay.getMonth()];
+        document.getElementById('calendar').innerHTML = calendar;
     }
-    document.getElementById('calendar').innerHTML = calendar;
 </script>
