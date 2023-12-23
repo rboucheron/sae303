@@ -48,11 +48,21 @@ if (isset($_GET['plane'])) {
                 <div class="border border-white text-start p-2">Samedi</div>
             </div>
             <div class="grid grid-cols-7 mt-5" id="calendar"></div>
+            <div class="p-2 bg-cyan-500 w-1/4 m-auto mt-2 text-center text-xl rounded-xl text-white cursor-pointer hover:bg-cyan-200" onclick="openForm(), Form()">Reservé</div>
         </div>
     </div>
 
 
 </section>
+
+<div class="hidden bg-gradient-to-r to-blue-500 bg-cyan-500 from-cyan-500 absolute z-90 w-full h-full" id="updateForm">
+    <form action="" method="post">
+        <div id="form">
+
+
+        </div>
+    </form>
+</div>
 <script>
     const months = [
         'Janvier',
@@ -68,6 +78,7 @@ if (isset($_GET['plane'])) {
         'Novembre',
         'Decembre',
     ];
+    var form;
     var today = new Date();
     var month = today.getMonth();
     var year = today.getFullYear();
@@ -78,6 +89,7 @@ if (isset($_GET['plane'])) {
     var calendar = div;
     Fill();
     Write();
+    var ChooseDate = [];
 
     function AddMonth() {
         month++;
@@ -111,7 +123,6 @@ if (isset($_GET['plane'])) {
         }
         var Classe;
         for (let i = 1; i <= lastDay.getDate(); i++) {
-
             if (
                 (firstDay.getFullYear() < today.getFullYear()) ||
                 (firstDay.getFullYear() === today.getFullYear() && firstDay.getMonth() < today.getMonth()) ||
@@ -121,8 +132,7 @@ if (isset($_GET['plane'])) {
             } else {
                 Classe = "border border-sky-500 text-start p-2 pb-10 cursor-pointer hover:bg-sky-200";
             }
-
-            calendar += "<div class='" + Classe + "' id='" + i + "/" + firstDay.getMonth() + "'>" + i + "</div>";
+            calendar += "<div class='" + Classe + "' id='" + i + "/" + firstDay.getMonth() + "/" + firstDay.getFullYear() + "' " + " " + "onclick='Choose(event)'" + ">" + i + "</div>";
         }
     }
 
@@ -135,4 +145,28 @@ if (isset($_GET['plane'])) {
         firstDay = new Date(year, month, 1);
         lastDay = new Date(year, month + 1, 0);
     }
+
+    function Choose(event) {
+        var dateClique = event.target;
+        var iddateClique = dateClique.id;
+        var index = ChooseDate.indexOf(iddateClique);
+        if (index !== -1) {
+            ChooseDate.splice(index, 1);
+            document.getElementById(iddateClique).classList.remove('bg-green-300');
+        } else {
+            document.getElementById(iddateClique).classList.add('bg-green-300');
+            ChooseDate.push(iddateClique);
+        }
+
+    }
+
+    function Form() {
+    var form = "<h2>Confirmer Vos dates</h2>"
+    for (let i = 0; i < ChooseDate.length; i++) {
+        form += '<input class="placeholder:italic placeholder:text-slate-400 mt-2  block bg-white w-3/4 m-auto border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" type="date" name="reservation' + i + '" value="' + ChooseDate[i] + '"/>';
+    }
+    console.log(form); 
+    document.getElementById('form').innerHTML = form;
+} 
+
 </script>
