@@ -102,6 +102,7 @@ if (isset($_GET['plane'])) {
         Fill();
         Write();
     }
+
     function Fill() {
         if (firstDay.getDay() > 1) {
             for (let y = 2; y <= firstDay.getDay(); y++) {
@@ -110,22 +111,26 @@ if (isset($_GET['plane'])) {
         }
         var Classe;
         for (let i = 1; i <= lastDay.getDate(); i++) {
-            if ((firstDay.getMonth() < today.getMonth()) && (firstDay.getFullYear() <= today.getFullYear())) {
+
+            if (
+                (firstDay.getFullYear() < today.getFullYear()) ||
+                (firstDay.getFullYear() === today.getFullYear() && firstDay.getMonth() < today.getMonth()) ||
+                (firstDay.getFullYear() === today.getFullYear() && firstDay.getMonth() === today.getMonth() && i < today.getDate())
+            ) {
                 Classe = "border border-sky-500 text-start p-2 pb-10 bg-gray-200";
             } else {
-                if ((firstDay.getMonth() == today.getMonth()) && (firstDay.getDate() < today.getDate())) {
-                    Classe = "border border-sky-500 text-start p-2 pb-10 bg-gray-200";
-                } else {
-                    Classe = "border border-sky-500 text-start p-2 pb-10 cursor-pointer hover:bg-sky-200";
-                }
+                Classe = "border border-sky-500 text-start p-2 pb-10 cursor-pointer hover:bg-sky-200";
             }
+
             calendar += "<div class='" + Classe + "' id='" + i + "/" + firstDay.getMonth() + "'>" + i + "</div>";
         }
     }
+
     function Write() {
         document.getElementById('month').innerText = months[firstDay.getMonth()];
         document.getElementById('calendar').innerHTML = calendar;
     }
+
     function Give() {
         firstDay = new Date(year, month, 1);
         lastDay = new Date(year, month + 1, 0);
