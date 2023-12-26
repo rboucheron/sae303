@@ -7,9 +7,12 @@ class Plane  extends Model
     private $marque;
     private $immatriculation;
     private $type;
+    private $id; 
+    private $image; 
+    private $description; 
+
     public function __construct()
     {
-        parent::__construct();
         $this->table = __CLASS__;
     }
     public function requete(string $sql)
@@ -20,6 +23,22 @@ class Plane  extends Model
     public function findAll()
     {
         $query = $this->requete('SELECT * FROM ' . $this->table);
+        return $query->fetchAll(PDO::FETCH_ASSOC);
+    }
+    public function findSomeone($id)
+    {
+        try{
+            $this->id = $id; 
+            $query = $this->requete("SELECT * FROM {$this->table} WHERE id = {$this->id}");
+            return $query->fetchAll(PDO::FETCH_ASSOC);
+        }catch (Exception $e){
+            return "erreur"; 
+        }
+       
+    }
+    public function Count()
+    {
+        $query = $this->requete('SELECT COUNT(*) as count FROM ' . $this->table);
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
     public function Add($modele, $marque, $immatriculation, $type)

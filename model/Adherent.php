@@ -1,6 +1,4 @@
 <?php
-
-
 class Adherent extends Model
 {
     private $nom;
@@ -14,7 +12,6 @@ class Adherent extends Model
 
     public function __construct()
     {
-        parent::__construct();
         $this->table = __CLASS__;
     }
     public function requete(string $sql)
@@ -25,8 +22,7 @@ class Adherent extends Model
     public function findAll()
     {
         $query = $this->requete('SELECT * FROM ' . $this->table);
-        var_dump($query);
-        return $query->fetchAll();
+        return $query->fetchAll(PDO::FETCH_ASSOC);
     }
     public function findSomeone()
     {
@@ -78,7 +74,7 @@ class Adherent extends Model
     }
     public function NewSession()
     {
-     
+
         $_SESSION['nom'] = $this->nom;
         $_SESSION['prenom'] = $this->prenom;
         $_SESSION['naissance'] = $this->naissance;
@@ -103,7 +99,11 @@ class Adherent extends Model
         $this->id = $id;
         $query = "UPDATE `adherent` SET `Nom`='{$this->nom}', `prenom`='{$this->prenom}', `civilité`='{$this->civilite}', `naissance`='{$this->naissance}', `email`='{$this->email}', `telephone`='{$this->telephone}' WHERE id = {$this->id}";
         $this->requete($query);
-        
+    }
+    public function Count()
+    {
+        $query = $this->requete('SELECT COUNT(*) as count FROM ' . $this->table  );
+        return $query->fetchAll(PDO::FETCH_ASSOC);
     }
     private function ashpassword()
     {

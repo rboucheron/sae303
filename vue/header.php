@@ -48,7 +48,7 @@
         <?php
         } else {
         ?>
-            <div class="hidden lg:grid place-items-center grid-cols-2 pl-14 ">
+            <div class="hidden lg:grid place-items-center  pl-14 ">
                 <div class=" grid"> <a class="  w-full text-center rounded-sm text-white  text-md cursor-pointer  py-2 px-5  font-Arial bg-blue-800 hover:bg-blue-600 duration-300  hover:scale-105 " href="index.php?connexion">Se connecter</a></div>
             </div>
         <?php

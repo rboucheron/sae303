@@ -9,7 +9,7 @@ class administrateur extends Model
     private $password;
     public function __construct()
     {
-        parent::__construct();
+    
         $this->table = __CLASS__;
     }
     public function requete(string $sql)

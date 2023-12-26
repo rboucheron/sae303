@@ -21,9 +21,9 @@
                 foreach ($searchPlane as $model) {
                 ?>
                     <div class="bg-gray-50  w-80 rounded-xl flex-none p-2">
-                        <img src="./assets/images/b.jpg" alt="image d'élicoptère">
+                        <img src="./assets/images/<?= $model['image'] ?>" alt="image d'élicoptère">
                         <p class="p-2 mb-4"> <?= $model['modele'] ?> <?= $model['marque'] ?> <?= $model['type'] ?></p>
-                        <a class="p-2 bg-cyan-500 rounded-xl mb-2" href="#reserver">Réserver</a>
+                        <a class="p-2 bg-cyan-500 rounded-xl mb-2" href="index.php?plane=<?= $model['id'] ?>">Réserver</a>
                     </div>
                 <?php } ?>
             </div>
