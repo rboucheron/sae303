@@ -34,13 +34,14 @@ class Reservation extends Model
     }
     public function Add($date, $duree, $adherent, $plane)
     {
-        $this->date = $date; 
-        $this->duree = $duree; 
-        $this->adherent = $adherent; 
-        $this->plane = $plane; 
-        $query = "INSERT INTO {$this->table} `reservation`(`date`, `duree`, `adherent`, `plane`) VALUES ('{$this->date}', '{$this->duree}', '{$this->adherent}', '{$this->plane}')";
+        $this->date = $date;
+        $this->duree = $duree;
+        $this->adherent = $adherent;
+        $this->plane = $plane;
+    
+        $query = "INSERT INTO {$this->table} (date, duree, adherent, plane) VALUES ('$this->date', '$this->duree', '$this->adherent', '$this->plane')";
         $this->requete($query);
-
     }
+    
     
 }

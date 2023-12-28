@@ -3,9 +3,17 @@ if (isset($_GET['plane'])) {
     $id = $_GET['plane'];
     $plane = new plane();
     $result = $plane->findSomeone($id);
+    if (isset($_POST['reservation0'])) {
+        $reservation = new Reservation; 
+        $array = array_keys($_POST);
+        foreach ($array as $value) {
+            $reservation->Add($_POST[$value], 30, $_SESSION['id'], $_GET['plane']); 
+        }
+    }
 } else {
     echo "avion innéxistant";
 }
+
 ?>
 <section>
     <div class="grid grid-cols-2 mt-20 gap-4">
@@ -55,12 +63,17 @@ if (isset($_GET['plane'])) {
 
 </section>
 
-<div class="hidden bg-gradient-to-r to-blue-500 bg-cyan-500 from-cyan-500 absolute z-90 w-full h-full" id="updateForm">
+<div class="hidden fixed w-full h-full bg-cyan-700 bg-opacity-75 top-0 left-0" id="updateForm">
     <form action="" method="post">
         <div id="form">
 
 
         </div>
+
+        <button type="submit" class=" mt-10 text-white text-xl border-2 border-white rounded-xl w-1/4 m-auto">Confirmé</button>
+
+
+
     </form>
 </div>
 <script>
@@ -132,7 +145,7 @@ if (isset($_GET['plane'])) {
             } else {
                 Classe = "border border-sky-500 text-start p-2 pb-10 cursor-pointer hover:bg-sky-200";
             }
-            calendar += "<div class='" + Classe + "' id='" + i + "/" + firstDay.getMonth() + "/" + firstDay.getFullYear() + "' " + " " + "onclick='Choose(event)'" + ">" + i + "</div>";
+            calendar += "<div class='" + Classe + "' id='" + firstDay.getFullYear() + "-" + firstDay.getMonth() + "-" + i + "' " + " " + "onclick='Choose(event)'" + ">" + i + "</div>";
         }
     }
 
@@ -161,12 +174,13 @@ if (isset($_GET['plane'])) {
     }
 
     function Form() {
-    var form = "<h2>Confirmer Vos dates</h2>"
-    for (let i = 0; i < ChooseDate.length; i++) {
-        form += '<input class="placeholder:italic placeholder:text-slate-400 mt-2  block bg-white w-3/4 m-auto border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" type="date" name="reservation' + i + '" value="' + ChooseDate[i] + '"/>';
+        var form = "<h2 class='w-full text-white text-5xl text-center mt-2'>Confirmer Vos dates</h2>"
+        for (let i = 0; i < ChooseDate.length; i++) {
+            e = i + 1;
+            form += '<h3 class=" ml-2 text-left text-white text-2xl">Date n°' + e + '</h3>';
+            form += '<input class="placeholder:italic placeholder:text-slate-400 mt-2  block bg-white w-3/4 m-auto border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" type="date" name="reservation' + i + '" value="' + ChooseDate[i] + '"/>';
+        }
+        console.log(form);
+        document.getElementById('form').innerHTML = form;
     }
-    console.log(form); 
-    document.getElementById('form').innerHTML = form;
-} 
-
 </script>

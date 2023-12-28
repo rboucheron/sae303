@@ -6,8 +6,6 @@ window.addEventListener('scroll', function() {
 function openForm() {
     var form = document.getElementById('updateForm');
     form.classList.remove('hidden');
-    form.style.top = y + "px"; 
-    form.style.left = x + "px"; 
     document.body.style.overflow = "hidden"; 
  
 }
