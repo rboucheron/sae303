@@ -17,8 +17,7 @@ function clodeForm() {
 function openMenu(){
     var Menu = document.getElementById('Menu');
     Menu.classList.remove('hidden');
-    Menu.style.top = y + "px"; 
-    Menu.style.left = x + "px"; 
+
     document.body.style.overflow = "hidden"; 
 }
 function closeMenu(){

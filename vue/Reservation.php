@@ -3,18 +3,26 @@ if (isset($_GET['plane'])) {
     $id = $_GET['plane'];
     $plane = new plane();
     $result = $plane->findSomeone($id);
-    if (isset($_POST['reservation0'])) {
-        $reservation = new Reservation; 
-        $array = array_keys($_POST);
-        foreach ($array as $value) {
-            $reservation->Add($_POST[$value], 30, $_SESSION['id'], $_GET['plane']); 
+    if (isset($_SESSION['id'])) {
+        if (isset($_POST['reservation0'])) {
+            $reservation = new Reservation;
+            $array = array_keys($_POST);
+            foreach ($array as $value) {
+                $reservation->Add($_POST[$value], 30, $_SESSION['id'], $_GET['plane']);
+            }
         }
+        $find = new Reservation;
+        $resultat = $find->find($_SESSION['id'], $_GET['plane']);
+?><?php
     }
 } else {
     echo "avion innéxistant";
 }
 
-?>
+    ?>
+
+
+
 <section>
     <div class="grid grid-cols-2 mt-20 gap-4">
         <div>
@@ -27,56 +35,68 @@ if (isset($_GET['plane'])) {
 
         </div>
     </div>
-    <div class="w-full bg-white mt-10">
+    <?php if (isset($_SESSION['id'])) { ?>
+        <div class="w-full bg-white mt-10">
 
-        <div class="w-3/4 m-auto  p-2">
-            <h2 class="text-5xl text-sky-800 w-full text-center">Choisir la date</h2>
-            <div class="w-2/5 m-auto grid grid-cols-3 mt-10 mb-10">
-                <div>
-                    <div class="bg-gray-200 p-2 rounded-xl place-items-end w-1/2 m-auto cursor-pointer hover:bg-sky-200" onclick="RemoveMonth()">
+            <div class="w-3/4 m-auto  p-2">
+                <h2 class="text-5xl text-sky-800 w-full text-center">Choisir la date</h2>
+                <div class="w-2/5 m-auto grid grid-cols-3 mt-10 mb-10">
+                    <div>
+                        <div class="bg-gray-200 p-2 rounded-xl place-items-end w-1/2 m-auto cursor-pointer hover:bg-sky-200" onclick="RemoveMonth()">
 
-                        <img src="./assets/images/chevron-left.svg" alt="right">
+                            <img src="./assets/images/chevron-left.svg" alt="right">
+                        </div>
+                    </div>
+                    <h3 class="text-2xl text-gray-800 text-center " id="month"></h3>
+                    <div>
+                        <div class="bg-gray-200 p-2 rounded-xl place-items-end w-1/2 m-auto cursor-pointer hover:bg-sky-200" onclick="AddMonth()">
+                            <img src="./assets/images/chevron-right.svg" alt="right">
+                        </div>
                     </div>
                 </div>
-                <h3 class="text-2xl text-gray-800 text-center " id="month"></h3>
-                <div>
-                    <div class="bg-gray-200 p-2 rounded-xl place-items-end w-1/2 m-auto cursor-pointer hover:bg-sky-200" onclick="AddMonth()">
-                        <img src="./assets/images/chevron-right.svg" alt="right">
-                    </div>
-                </div>
-            </div>
 
-            <div class="grid grid-cols-7 mt-5">
-                <div class="border border-white text-start p-2">Dimanche</div>
-                <div class="border border-white text-start p-2 ">Lundi</div>
-                <div class="border border-white text-start p-2">Mardi</div>
-                <div class="border border-white text-start p-2">Mercredi</div>
-                <div class="border border-white text-start p-2">Jeudi</div>
-                <div class="border border-white text-start p-2">Vendredi</div>
-                <div class="border border-white text-start p-2">Samedi</div>
+                <div class="grid grid-cols-7 mt-5">
+                    <div class="border border-white text-start p-2">Dimanche</div>
+                    <div class="border border-white text-start p-2 ">Lundi</div>
+                    <div class="border border-white text-start p-2">Mardi</div>
+                    <div class="border border-white text-start p-2">Mercredi</div>
+                    <div class="border border-white text-start p-2">Jeudi</div>
+                    <div class="border border-white text-start p-2">Vendredi</div>
+                    <div class="border border-white text-start p-2">Samedi</div>
+                </div>
+                <div class="grid grid-cols-7 mt-5" id="calendar"></div>
+                <div class="p-2 bg-cyan-500 w-1/4 m-auto mt-2 text-center text-xl rounded-xl text-white cursor-pointer hover:bg-cyan-200" onclick="openForm(), Form()">Reservé</div>
             </div>
-            <div class="grid grid-cols-7 mt-5" id="calendar"></div>
-            <div class="p-2 bg-cyan-500 w-1/4 m-auto mt-2 text-center text-xl rounded-xl text-white cursor-pointer hover:bg-cyan-200" onclick="openForm(), Form()">Reservé</div>
         </div>
-    </div>
+    <?php } else { ?>
+
+        <div class="mt-10 bg-white w-full  p-2">
+            <h2 class="mt-2 text-3xl text-sky-800 w-full text-center">Vous devez vous connecter, pour finaliser votre reservation </h2>
+            <div class="mt-10 mb-10 flex items-center text-xl justify-center">
+                <div>
+                    <a href="index.php?connexion" class="text-sky-600 decoration-solid font-semibold">Me Connecter</a>
+                    ou
+                    <a href="index.php?inscription" class="text-sky-600 decoration-solid font-semibold"> M'inscrire</a>
+                </div>
+            </div>
+        </div>
+    <?php } ?>
+
 
 
 </section>
-
 <div class="hidden fixed w-full h-full bg-cyan-700 bg-opacity-75 top-0 left-0" id="updateForm">
     <form action="" method="post">
         <div id="form">
-
-
         </div>
-
         <button type="submit" class=" mt-10 text-white text-xl border-2 border-white rounded-xl w-1/4 m-auto">Confirmé</button>
-
-
-
     </form>
 </div>
+
 <script>
+    const ever = [<?php foreach ($resultat as $alldates) {
+                        echo "'" . $alldates['date'] . "'" . "," . " ";
+                    } ?>];
     const months = [
         'Janvier',
         'Février',
@@ -136,6 +156,9 @@ if (isset($_GET['plane'])) {
         }
         var Classe;
         for (let i = 1; i <= lastDay.getDate(); i++) {
+            var idMonth = firstDay.getMonth();
+            idMonth++;
+            var idDate = firstDay.getFullYear() + "-" + idMonth + "-" + i;
             if (
                 (firstDay.getFullYear() < today.getFullYear()) ||
                 (firstDay.getFullYear() === today.getFullYear() && firstDay.getMonth() < today.getMonth()) ||
@@ -143,9 +166,15 @@ if (isset($_GET['plane'])) {
             ) {
                 Classe = "border border-sky-500 text-start p-2 pb-10 bg-gray-200";
             } else {
-                Classe = "border border-sky-500 text-start p-2 pb-10 cursor-pointer hover:bg-sky-200";
+                var index = ever.indexOf(idDate);
+                if (index !== -1) {
+                    Classe = "border border-sky-500 text-start p-2 pb-10 bg-green-500";
+                } else {
+                    Classe = "border border-sky-500 text-start p-2 pb-10 cursor-pointer hover:bg-sky-200";
+                }
+
             }
-            calendar += "<div class='" + Classe + "' id='" + firstDay.getFullYear() + "-" + firstDay.getMonth() + "-" + i + "' " + " " + "onclick='Choose(event)'" + ">" + i + "</div>";
+            calendar += "<div class='" + Classe + "' id='" + idDate + "' " + " " + "onclick='Choose(event)'" + ">" + i + "</div>";
         }
     }
 
