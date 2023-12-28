@@ -38,7 +38,26 @@ if (isset($_GET['plane'])) {
     <?php if (isset($_SESSION['id'])) { ?>
         <div class="w-full bg-white mt-10">
 
-            <div class="w-3/4 m-auto  p-2">
+
+            <div class="w-3/4 relative m-auto  p-2">
+
+                <div class="hidden absolute top-0 w-full h-full bg-white" id="hourly">
+                    <h2 class="mt-5 w-full text-center text-2xl text-sky-800">Choisissez votre Créneaux</h2>
+                    <div class=" text-black text-xl text-center mt-10" id="hourly_date">Jeudi 28 Décembre</div>
+                    <div class=" w-2/5 m-auto mt-10" id="hourly-hour">
+                        <div class="border-y border-sky-800 text-xl text-black p-10 text-center cursor-pointer duration-300  hover:text-2xl hover:text-sky-800" onclick='Choose(event)' id="10:00:00">
+                            10h - 12h
+                        </div>
+                        <div class=" border-sky-800 text-xl text-black p-10 text-center cursor-pointer duration-300  hover:text-2xl hover:text-sky-800" onclick='Choose(event)' id="13:00:00">
+                            13h - 15h
+                        </div>
+                        <div class="border-y border-sky-800 text-xl text-black p-10 text-center cursor-pointer duration-300  hover:text-2xl hover:text-sky-800" onclick='Choose(event)' id="15:10:00">
+                            15h10 - 17h10
+                        </div>
+                    </div>
+                </div>
+
+
                 <h2 class="text-5xl text-sky-800 w-full text-center">Choisir la date</h2>
                 <div class="w-2/5 m-auto grid grid-cols-3 mt-10 mb-10">
                     <div>
@@ -54,7 +73,6 @@ if (isset($_GET['plane'])) {
                         </div>
                     </div>
                 </div>
-
                 <div class="grid grid-cols-7 mt-5">
                     <div class="border border-white text-start p-2">Dimanche</div>
                     <div class="border border-white text-start p-2 ">Lundi</div>
@@ -92,6 +110,8 @@ if (isset($_GET['plane'])) {
         <button type="submit" class=" mt-10 text-white text-xl border-2 border-white rounded-xl w-1/4 m-auto">Confirmé</button>
     </form>
 </div>
+
+
 
 <script>
     const ever = [<?php foreach ($resultat as $alldates) {
@@ -156,9 +176,17 @@ if (isset($_GET['plane'])) {
         }
         var Classe;
         for (let i = 1; i <= lastDay.getDate(); i++) {
+
             var idMonth = firstDay.getMonth();
+            var idDay = i;
             idMonth++;
-            var idDate = firstDay.getFullYear() + "-" + idMonth + "-" + i;
+            if (idMonth < 10) {
+                idMonth = "0" + idMonth;
+            }
+            if (idDay < 10) {
+                idDay = "0" + idDay;
+            }
+            var idDate = firstDay.getFullYear() + "-" + idMonth + "-" + idDay;
             if (
                 (firstDay.getFullYear() < today.getFullYear()) ||
                 (firstDay.getFullYear() === today.getFullYear() && firstDay.getMonth() < today.getMonth()) ||
@@ -189,16 +217,43 @@ if (isset($_GET['plane'])) {
     }
 
     function Choose(event) {
-        var dateClique = event.target;
-        var iddateClique = dateClique.id;
+        var dateClique;
+        var iddateClique;
+        var hourClique;
+        var idhourClique;
+        var hourly = document.getElementById('hourly');
+        
+        /*
         var index = ChooseDate.indexOf(iddateClique);
+       
         if (index !== -1) {
             ChooseDate.splice(index, 1);
+          
             document.getElementById(iddateClique).classList.remove('bg-green-300');
         } else {
+            */
+        if (hourly.classList.contains("hidden")) {
+            dateClique = event.target;
+            iddateClique = dateClique.id;
+            document.getElementById('hourly').classList.remove('hidden');
+            document.getElementById('hourly_date').innerText = iddateClique;
+        }else{  
+            hourClique = event.target;
+            idhourClique = dateClique.id;
+            document.getElementById(iddateClique).classList.add('bg-green-300');
+            ChooseDate.push(idhourClique + " " + iddateClique);
+            document.getElementById('hourly').classList.add('hidden');
+     
+        }
+
+
+
+        /*
             document.getElementById(iddateClique).classList.add('bg-green-300');
             ChooseDate.push(iddateClique);
+           
         }
+         */
 
     }
 

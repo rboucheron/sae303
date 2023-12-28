@@ -7,6 +7,7 @@ function LaMeteo()
 
     // vues 
     require('./vue/Header.php');
+    require('./vue/PhoneMenu.php');
     require('./vue/MeteoActuelle.php');
     require('./vue/Footer.php');
 }
