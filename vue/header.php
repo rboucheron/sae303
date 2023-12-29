@@ -7,6 +7,7 @@
     <title>AC2FL</title>
     <link rel="stylesheet" href="./dist/style.css">
     <link rel="icon" type="image/svg+xml" href="./assets/images/logo.svg" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body class="bg-cyan-500 overflow-hidden overflow-y-scroll">
