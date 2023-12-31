@@ -80,12 +80,19 @@ function Fill() {
     ) {
       Classe = "border border-sky-500 text-start p-2 pb-10 bg-gray-200";
     } else {
-      var index = ever.indexOf(idDate);
-      if (index !== -1) {
+      
+      var dateUser = ever.findIndex(function(element) {
+        return element.date === idDate;
+      });
+      var dateother = other.findIndex(function(element) {
+        return element.date === idDate;
+      });
+      if (dateUser !== -1) {
         Classe = "border border-sky-500 text-start p-2 pb-10 bg-green-500";
-      } else {
-        Classe =
-          "border border-sky-500 text-start p-2 pb-10 cursor-pointer hover:bg-sky-200";
+      } else if(dateother !== -1){
+        Classe = "border bg-yellow-300 text-start p-2 pb-10 cursor-pointer";
+      }else{
+        Classe = "border border-sky-500 text-start p-2 pb-10 cursor-pointer hover:bg-sky-200";
       }
     }
     calendar +=

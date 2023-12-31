@@ -7,20 +7,23 @@ if (isset($_GET['plane'])) {
         if (isset($_POST['reservation0'])) {
             $reservation = new Reservation;
             $array = array_keys($_POST);
-            for ($i = 0; $i<1; $i++) {
-                $value = 'reservation' . $i; 
-                $reservation->Add($_POST[$value], 30, $_SESSION['id'], $_GET['plane']);
+            for ($i = 0; $i < 1; $i++) {
+                $date = 'reservation' . $i;
+                $heur = 'reservationhour' . $i;
+
+
+                $reservation->Add($_POST[$date], $_POST[$heur], 30, $_SESSION['id'], $_GET['plane']);
             }
         }
         $find = new Reservation;
         $resultat = $find->find($_SESSION['id'], $_GET['plane']);
-?><?php
+        $other =  $find->Findother($_SESSION['id'], $_GET['plane']); 
     }
 } else {
     echo "avion innéxistant";
 }
 
-    ?>
+?>
 
 
 
@@ -117,7 +120,9 @@ if (isset($_GET['plane'])) {
 
 
 <script>
-    const ever = [<?php foreach ($resultat as $alldates) {
-                        echo "'" . $alldates['date'] . "'" . "," . " ";
-                    } ?>];
+
+    const ever = <?php echo json_encode($resultat, JSON_UNESCAPED_UNICODE); ?>;
+    const other = <?php echo json_encode($other, JSON_UNESCAPED_UNICODE); ?>;
+
+
 </script>
