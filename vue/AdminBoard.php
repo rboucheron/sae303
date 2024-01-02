@@ -91,7 +91,7 @@ for ($e = 0; $e <= 12; $e++) {
         <canvas id="month" class=" mt-20 w-1/4 "></canvas>
     </div>
 </section>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 
 <script>
     const ctx = document.getElementById('day');
