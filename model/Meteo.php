@@ -4,6 +4,7 @@ class Meteo
 {
     private $url = "https://api.openweathermap.org/data/2.5/forecast?q=Paris&appid=78886a19c93163d930ae4268518360a0&units=metric";
     private $response;
+  
     public function __construct()
     {
         $ch = curl_init($this->url);
@@ -15,4 +16,15 @@ class Meteo
     {
         return json_decode($this->response, true);
     }
+    public function today()
+    {
+        $result = $this->decode(); 
+        $today = [
+            'temperature' => $result['list'][0]['main']['temp'],
+            'humidity' => $result['list'][0]['main']['humidity'],
+            'weather' => $result['list'][0]['weather']['id'],
+        ];
+        return $today; 
+    }
+
 }
