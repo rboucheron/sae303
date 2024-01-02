@@ -829,6 +829,10 @@ video {
   width: 100%;
 }
 
+.w-3\/5 {
+  width: 60%;
+}
+
 .max-w-2xl {
   max-width: 42rem;
 }
@@ -974,6 +978,16 @@ video {
   border-top-right-radius: 0.75rem;
 }
 
+.rounded-l-xl {
+  border-top-left-radius: 0.75rem;
+  border-bottom-left-radius: 0.75rem;
+}
+
+.rounded-r-xl {
+  border-top-right-radius: 0.75rem;
+  border-bottom-right-radius: 0.75rem;
+}
+
 .border {
   border-width: 1px;
 }
@@ -997,6 +1011,10 @@ video {
 
 .border-r-2 {
   border-right-width: 2px;
+}
+
+.border-r {
+  border-right-width: 1px;
 }
 
 .border-dashed {

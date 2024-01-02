@@ -22,7 +22,9 @@ class Meteo
         $today = [
             'temperature' => $result['list'][0]['main']['temp'],
             'humidity' => $result['list'][0]['main']['humidity'],
-            'weather' => $result['list'][0]['weather']['id'],
+            'weather' => $result['list'][0]['weather'][0]['main'],
+            'wind'  =>  $result['list'][0]['wind']['speed'],
+
         ];
         return $today; 
     }

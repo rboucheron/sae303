@@ -1,5 +1,5 @@
 <section class=" mt-20 w-full">
-    <h1 class="text-2xl lg:text-4xl w-3/4 m-auto text-center text-slate-700 font-bold">Catégories d'ULM</h1>
+    <h1 class="text-2xl lg:text-4xl w-3/4 m-auto text-center text-slate-700 font-bold">Les Avions</h1>
     <div class="block w-full lg:w-3/4 m-auto mt-20">
         <div class="w-full m-auto mt-10 ">
             <p class="text-2xl text-slate-700 font-semibold">Il existe 6 classes d’ULM : </p>
@@ -17,7 +17,7 @@
         $CountPlane = $nbPlane->Count();
 
         ?>
-        <div class="w-full m-auto mt-10 ">
+        <div class="w-full m-auto mt-10 " id="plane">
             <p class="text-2xl text-slate-700 font-semibold">L'association possède <?= $CountPlane[0]['count'] ?> appareils : </p>
             <div class="mt-2 flex flex-wrap flex-row justify-between relative gap-4 w-full">
 

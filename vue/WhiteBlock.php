@@ -18,7 +18,7 @@
 
     
     <div class="  p-16 	flex ">
-        <div class=" bg-blue-800 py-2 m-auto rounded-sm p-14 text-center text-white ">Je réserve !</div>
+        <a class=" bg-blue-800 py-2 m-auto rounded-sm p-14 text-center text-white " href="#plane">Je réserve !</a>
     </div>
 
 </section>

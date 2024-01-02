@@ -4,6 +4,7 @@ function home()
 {
     // models 
     require('./model/Plane.php');
+    require('./model/Meteo.php');
     // vues 
     require('./vue/Header.php');
     require('./vue/PhoneMenu.php');
@@ -11,7 +12,9 @@ function home()
     require('./vue/WhiteBlock.php');
     require('./vue/Activites.php');
     require('./vue/AllPlane.php');
-    require('./vue/Galerie.php');
+    require('./vue/MeteoActuelle.php');
+
     require('./vue/Forfait.php');
     require('./vue/Footer.php');
 }
+
