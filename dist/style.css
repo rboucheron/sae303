@@ -837,6 +837,10 @@ video {
   max-width: 42rem;
 }
 
+.w-2 {
+  width: 0.5rem;
+}
+
 .flex-none {
   flex: none;
 }
@@ -1545,6 +1549,7 @@ video {
 }
 
 @media (min-width: 640px) {
+<<<<<<< Updated upstream
   .sm\:h-10 {
     height: 2.5rem;
   }
@@ -1568,11 +1573,25 @@ video {
   .sm\:text-3xl {
     font-size: 1.875rem;
     line-height: 2.25rem;
+=======
+  .sm\:w-8 {
+    width: 2rem;
+  }
+
+  .sm\:w-14 {
+    width: 3.5rem;
+>>>>>>> Stashed changes
   }
 
   .sm\:text-sm {
     font-size: 0.875rem;
     line-height: 1.25rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:w-14 {
+    width: 3.5rem;
   }
 }
 
@@ -1603,6 +1622,10 @@ video {
 
   .lg\:w-3\/4 {
     width: 75%;
+  }
+
+  .lg\:w-14 {
+    width: 3.5rem;
   }
 
   .lg\:grid-cols-4 {
