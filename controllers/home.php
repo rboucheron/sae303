@@ -10,7 +10,7 @@ function home()
     require('./vue/Accueil.php');
     require('./vue/WhiteBlock.php');
     require('./vue/Activites.php');
-    require('./vue/activitetest.php');
+
     require('./vue/AllPlane.php');
     require('./vue/Galerie.php');
     require('./vue/Forfait.php');
