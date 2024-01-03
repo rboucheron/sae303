@@ -1,4 +1,6 @@
 <?php
+
+
 session_start();
 require('./model/Model.php');
 include('./controllers/home.php');
@@ -8,6 +10,7 @@ include('./controllers/profil.php');
 include('./controllers/meteo.php');
 include('./controllers/Admin.php'); 
 include('./controllers/reservation.php'); 
+include('./controllers/addplane.php'); 
 
 
 
@@ -24,7 +27,8 @@ if (isset($_GET['connexion'])) {
     Admin(); 
 }elseif (isset($_GET['plane'])){
     reservation(); 
-
+}elseif (isset($_GET['newplane'])){
+    addplane(); 
 } else {
     home();
 }

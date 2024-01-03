@@ -11,10 +11,6 @@ function home()
     require('./vue/Accueil.php');
     require('./vue/WhiteBlock.php');
     require('./vue/Activites.php');
-<<<<<<< HEAD
-
-=======
->>>>>>> c81f84751ac81633fa092aa5293b2249aed9d539
     require('./vue/AllPlane.php');
     require('./vue/MeteoActuelle.php');
 

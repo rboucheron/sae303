@@ -5,19 +5,18 @@ if (isset($_GET['plane'])) {
     $result = $plane->findSomeone($id);
     if (isset($_SESSION['id'])) {
         if (isset($_POST['reservation0'])) {
-            $reservation = new Reservation;
-            $array = array_keys($_POST);
-            for ($i = 0; $i < 1; $i++) {
+            $i = 0;
+            while (isset($_POST['reservation' . $i])) {
                 $date = 'reservation' . $i;
                 $heur = 'reservationhour' . $i;
-
-
+                $reservation = new Reservation;
                 $reservation->Add($_POST[$date], $_POST[$heur], 30, $_SESSION['id'], $_GET['plane']);
+                $i++;
             }
         }
         $find = new Reservation;
         $resultat = $find->find($_SESSION['id'], $_GET['plane']);
-        $other =  $find->Findother($_SESSION['id'], $_GET['plane']); 
+        $other =  $find->Findother($_SESSION['id'], $_GET['plane']);
     }
 } else {
     echo "avion innéxistant";
@@ -43,7 +42,7 @@ if (isset($_GET['plane'])) {
         <div class="w-full bg-white mt-10">
 
 
-            <div class="w-3/4 relative m-auto  p-2">
+            <div class="w-full lg:w-3/4 relative m-auto  p-2">
 
                 <div class="hidden absolute top-0 w-full h-full bg-white" id="hourly">
                     <h2 class="mt-5 w-full text-center text-2xl text-sky-800">Choisissez votre Créneaux</h2>
@@ -63,10 +62,9 @@ if (isset($_GET['plane'])) {
 
 
                 <h2 class="text-5xl text-sky-800 w-full text-center">Choisir la date</h2>
-                <div class="w-2/5 m-auto grid grid-cols-3 mt-10 mb-10">
+                <div class="w-full lg:w-1/2  m-auto grid grid-cols-3 mt-10 mb-10">
                     <div>
                         <div class="bg-gray-200 p-2 rounded-xl place-items-end w-1/2 m-auto cursor-pointer hover:bg-sky-200" onclick="RemoveMonth()">
-
                             <img src="./assets/images/chevron-left.svg" alt="right">
                         </div>
                     </div>
@@ -77,7 +75,7 @@ if (isset($_GET['plane'])) {
                         </div>
                     </div>
                 </div>
-                <div class="grid grid-cols-7 mt-5">
+                <div class="w-full grid grid-cols-7 mt-5 text-sm lg:text-2sm text-center">
                     <div class="border border-white text-start p-2">Dimanche</div>
                     <div class="border border-white text-start p-2 ">Lundi</div>
                     <div class="border border-white text-start p-2">Mardi</div>
@@ -112,7 +110,7 @@ if (isset($_GET['plane'])) {
         <div id="form">
         </div>
         <div class="w-full flex justify-center">
-            <button type="submit" class=" mt-10 text-white text-xl border-2 border-white rounded-xl p-2">Confirmé</button>
+            <button type="submit" class=" mt-10 text-white text-xl border-2 p-2 bg-sky-800 rounded-xl">Confirmé</button>
         </div>
     </form>
 </div>
@@ -120,9 +118,6 @@ if (isset($_GET['plane'])) {
 
 
 <script>
-
     const ever = <?php echo json_encode($resultat, JSON_UNESCAPED_UNICODE); ?>;
     const other = <?php echo json_encode($other, JSON_UNESCAPED_UNICODE); ?>;
-
-
 </script>

@@ -3,7 +3,7 @@
 class Plane  extends Model
 {
 
-    private $modele;
+    private $model;
     private $marque;
     private $immatriculation;
     private $type;
@@ -41,13 +41,17 @@ class Plane  extends Model
         $query = $this->requete('SELECT COUNT(*) as count FROM ' . $this->table);
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
-    public function Add($modele, $marque, $immatriculation, $type)
+    public function Add($model, $marque, $immatriculation, $description, $type, $image)
     {
-        $this->modele = $modele;
+        $this->model = $model;
         $this->marque = $marque;
         $this->immatriculation = $immatriculation;
+        $this->description = $description; 
         $this->type = $type;
-        $query = "INSERT INTO {$this->table} (`modele`, `marque`, `immatriculation`, `type`) VALUES ('{$this->modele}', '{$this->marque}', '{$this->immatriculation}', '{$this->type}')";
+        $this->image = $image; 
+    
+        $query = "INSERT INTO {$this->table} (`modele`, `marque`, `immatriculation`, `type`, `image`, `description`) VALUES ('$this->model', '$this->marque', '$this->immatriculation', '$this->type', '$this->image', '$this->description')";
         $this->requete($query);
     }
+    
 }
