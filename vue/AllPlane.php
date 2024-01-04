@@ -38,9 +38,9 @@ if (isset($_SESSION['AdminId'])) {
                 $searchPlane = $plane->findAll();
                 foreach ($searchPlane as $model) {
                 ?>
-                    <div class="bg-gray-50  w-80 rounded-xl border-2 border-dashed border-sky-800 relative">
+                    <div class="bg-gray-50  w-80 rounded-lg border-2  relative">
                         <div class="w-full h-1/2">
-                            <img class="w-full h-full cover rounded-t-xl" src="./assets/images/<?= $model['image'] ?>" alt="image d'élicoptère">
+                            <img class="w-full h-full cover rounded-t-lg" src="./assets/images/<?= $model['image'] ?>" alt="image d'élicoptère">
                         </div>
                         <p class="p-2 text-xl text-sky-800 font-bold"> <?= $model['modele'] ?> </p>
                         <p class="p-2 text-sky-800 pb-4">Avion de type <?= $model['type'] ?>, de la marque <?= $model['marque'] ?>. </p>
@@ -51,7 +51,7 @@ if (isset($_SESSION['AdminId'])) {
                                 <a href="?see=<?= $model['id'] ?>" class="bg-sky-800  text-white p-2 rounded-xl relative hover:bg-sky-500">Consulter</a>
                             </div>
                         <?php } else { ?>
-                            <a class="p-2 bg-sky-800 rounded-xl mb-2 mr-2 text-white absolute bottom-0 right-0 hover:bg-sky-500" href="index.php?plane=<?= $model['id'] ?>">Réserver</a>
+                            <a class="py-2 px-5 bg-sky-500 rounded-3xl mb-2 mr-2 text-white absolute bottom-0 right-0 hover:bg-black duration-300" href="index.php?plane=<?= $model['id'] ?>">Réserver</a>
                         <?php } ?>
                     </div>
                 <?php } ?>
