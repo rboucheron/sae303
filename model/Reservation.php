@@ -53,12 +53,18 @@ class Reservation extends Model
         $query = "INSERT INTO {$this->table} (date, heur, duree, adherent, plane) VALUES ('$this->date', '$this->heur', '$this->duree', '$this->adherent', '$this->plane')";
         $this->requete($query);
     }
-    public function Findother($user, $plane)
+    public function Findother($plane)
     {
-        $this->adherent = $user; 
+  
         $this->plane = $plane; 
-        $query = $this->requete('SELECT * FROM ' . $this->table . ' WHERE plane = \'' . $this->plane . '\' AND adherent != \'' . $this->adherent . '\'');
+        $query = $this->requete('SELECT * FROM ' . $this->table . ' WHERE plane = \'' . $this->plane . '\'');
         return $query->fetchAll(PDO::FETCH_ASSOC);
+    }
+    public function DeleteWplane($plane)
+    {
+        $this->plane = $plane; 
+        $query = "DELETE FROM  {$this->table} WHERE plane = {$this->plane}";
+        $this->requete($query);
     }
     
     

@@ -84,14 +84,10 @@ function Fill() {
       var dateUser = ever.findIndex(function(element) {
         return element.date === idDate;
       });
-      var dateother = other.findIndex(function(element) {
-        return element.date === idDate;
-      });
+  
       if (dateUser !== -1) {
         Classe = "border border-sky-500 text-start p-2 pb-10 bg-green-500";
-      } else if(dateother !== -1){
-        Classe = "border bg-yellow-300 text-start p-2 pb-10 cursor-pointer";
-      }else{
+      } else {
         Classe = "border border-sky-500 text-start p-2 pb-10 cursor-pointer hover:bg-sky-200";
       }
     }

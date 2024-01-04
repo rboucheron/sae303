@@ -5,19 +5,29 @@
 if (isset($_POST['email']) && isset($_POST['password'])) {
     $connexion = new Adherent();
     $message = $connexion->connexion($_POST['email'], $_POST['password']);
-    if ($message == false){
-        echo "mot de passe incorrect"; 
-    }else{
-        $connexion->NewSession(); 
+    if ($message == false) {
+        $admin = new administrateur();
+        $messages = $admin->connexion($_POST['email'], $_POST['password']);
+
+        if ($messages == false) {
+            echo "mot de passe incorrect";
+           
+        } else {
+            $admin->NewSession(); 
+            header('Location: index.php');
+            exit();
+        }
+    } else {
+        $connexion->NewSession();
         header('Location: index.php');
         exit();
-      
     }
 }
 
+
 ?>
 
-<section id="connexion" class="mt-20 w-full" > 
+<section id="connexion" class="mt-20 w-full">
     <h1 class="text-sm lg:text-4xl w-3/4 m-auto text-center text-slate-700 font-bold">Connecter Vous</h1>
     <form action="" method="post">
         <div class="w-3/4 m-auto flex flex-col ">
@@ -31,5 +41,3 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 
     <p class="mt-4 text-sm text-gray-600 text-center">Pas encore inscrit? <a href="index.php?inscription" class="text-blue-500 hover:underline">Inscrivez-vous</a></p>
 </section>
-
- 

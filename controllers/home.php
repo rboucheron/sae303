@@ -5,6 +5,7 @@ function home()
     // models 
     require('./model/Plane.php');
     require('./model/Meteo.php');
+    require('./model/Reservation.php');
     // vues 
     require('./vue/Header.php');
     require('./vue/PhoneMenu.php');
