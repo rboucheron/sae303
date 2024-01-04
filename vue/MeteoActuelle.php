@@ -20,6 +20,9 @@ $date = date("F j, Y");
                 <?php if ($data['weather'] == 'Clouds') { ?>
                     <img src="./assets/images/meteo-nuage.svg" alt="nuage" />
                 <?php } ?>
+                <?php if ($data['weather'] == 'Clear') { ?>
+                    <img src="./assets/images/meteo-sun.svg" alt="nuage" />
+                <?php } ?>
             </div>
             <div class="pt-2 flex justify-center">
                 <p class="bg-sky-800 text-white text-5sm  p-2 rounded-l-xl border-r border-white flex"> <img src="./assets/images/meteo_temperature.svg" alt="temperatures"> <?= $data['temperature'] ?> °C</p>

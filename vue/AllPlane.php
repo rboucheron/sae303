@@ -1,5 +1,17 @@
+<?php
+if (isset($_SESSION['AdminId'])) {
+    if (isset($_GET['delete'])) {
+        $deleteReservation = new Reservation;
+        $deleteReservation->DeleteWplane($_GET['delete']);
+        $deletePlane = new Plane;
+        $deletePlane->delete($_GET['delete']);
+    }
+}
+?>
+
+
 <section class=" mt-20 w-full">
-    <h1 class="text-2xl w-3/4 m-auto text-center text-slate-700 font-bold">Les Avions</h1>
+    <h1 class="text-2xl w-3/4 m-auto text-center text-slate-700 text-3xl font-bold">Les Avions</h1>
     <div class="block w-full lg:w-3/4 m-auto mt-20">
         <div class="w-full m-auto mt-10 p-10 lg:p-2">
             <p class="text-2xl text-slate-700 font-semibold">Il existe 6 classes d’ULM : </p>
@@ -19,7 +31,7 @@
         ?>
         <div class="w-full m-auto mt-10 " id="plane">
             <p class="text-2xl text-slate-700 font-semibold w-3/4 m-auto lg:w-full">L'association possède <?= $CountPlane[0]['count'] ?> appareils : </p>
-            <div class="mt-2 flex flex-wrap justify-center lg:flex-row lg:justify-between relative gap-4 w-full">
+            <div class="mt-2 flex flex-wrap justify-center lg:flex-row  relative gap-4 w-full">
 
                 <?php
                 $plane = new Plane();
@@ -32,7 +44,15 @@
                         </div>
                         <p class="p-2 text-xl text-sky-800 font-bold"> <?= $model['modele'] ?> </p>
                         <p class="p-2 text-sky-800 pb-4">Avion de type <?= $model['type'] ?>, de la marque <?= $model['marque'] ?>. </p>
-                        <a class="p-2 bg-sky-800 rounded-xl mb-2 mr-2 text-white absolute bottom-0 right-0" href="index.php?plane=<?= $model['id'] ?>">Réserver</a>
+                        <?php if (isset($_SESSION['AdminId'])) { ?>
+                            <div class="p-2  mb-2 mr-2 absolute bottom-0 right-0 flex">
+                                <a href="?modify=<?= $model['id'] ?>" class="bg-yellow-500 text-white p-2 rounded-xl relative mr-2 hover:bg-yellow-700">Modifier</a>
+                                <a href="?delete=<?= $model['id'] ?>" class="bg-red-500 text-white p-2 rounded-xl relative mr-2 hover:bg-red-700 ">Supprimer</a>
+                                <a href="?see=<?= $model['id'] ?>" class="bg-sky-800  text-white p-2 rounded-xl relative hover:bg-sky-500">Consulter</a>
+                            </div>
+                        <?php } else { ?>
+                            <a class="p-2 bg-sky-800 rounded-xl mb-2 mr-2 text-white absolute bottom-0 right-0 hover:bg-sky-500" href="index.php?plane=<?= $model['id'] ?>">Réserver</a>
+                        <?php } ?>
                     </div>
                 <?php } ?>
                 <?php if (isset($_SESSION['AdminId'])) { ?>

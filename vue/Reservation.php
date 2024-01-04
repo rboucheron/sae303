@@ -121,3 +121,4 @@ if (isset($_GET['plane'])) {
     const ever = <?php echo json_encode($resultat, JSON_UNESCAPED_UNICODE); ?>;
     const other = <?php echo json_encode($other, JSON_UNESCAPED_UNICODE); ?>;
 </script>
+<script src="./js/calendar.js"></script>

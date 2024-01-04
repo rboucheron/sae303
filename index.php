@@ -29,6 +29,8 @@ if (isset($_GET['connexion'])) {
     reservation(); 
 }elseif (isset($_GET['newplane'])){
     addplane(); 
+}elseif (isset($_GET['modify'])){
+    addplane(); 
 } else {
     home();
 }

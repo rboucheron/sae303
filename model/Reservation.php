@@ -60,6 +60,12 @@ class Reservation extends Model
         $query = $this->requete('SELECT * FROM ' . $this->table . ' WHERE plane = \'' . $this->plane . '\' AND adherent != \'' . $this->adherent . '\'');
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
+    public function DeleteWplane($plane)
+    {
+        $this->plane = $plane; 
+        $query = "DELETE FROM  {$this->table} WHERE plane = {$this->plane}";
+        $this->requete($query);
+    }
     
     
 }
