@@ -55,9 +55,9 @@ class Reservation extends Model
     }
     public function Findother($plane)
     {
-  
+
         $this->plane = $plane; 
-        $query = $this->requete('SELECT * FROM ' . $this->table . ' WHERE plane = \'' . $this->plane . '\'');
+        $query = $this->requete('SELECT Reservation.date, Reservation.heur, Reservation.duree, Reservation.adherent, Reservation.plane, Adherent.nom, Adherent.prenom FROM Adherent, ' . $this->table . ' WHERE plane = \'' . $this->plane . '\' AND Reservation.Adherent = Adherent.id');
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
     public function DeleteWplane($plane)
