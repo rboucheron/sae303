@@ -11,6 +11,7 @@ include('./controllers/meteo.php');
 include('./controllers/Admin.php'); 
 include('./controllers/reservation.php'); 
 include('./controllers/addplane.php'); 
+include('./controllers/seeplane.php'); 
 
 
 
@@ -31,6 +32,8 @@ if (isset($_GET['connexion'])) {
     addplane(); 
 }elseif (isset($_GET['modify'])){
     addplane(); 
+}elseif (isset(($_GET['see']))){
+    seeplane();
 } else {
     home();
 }

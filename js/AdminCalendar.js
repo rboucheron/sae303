@@ -59,6 +59,7 @@ const months = [
       }
     }
     var Classe;
+    var v; 
     for (let i = 1; i <= lastDay.getDate(); i++) {
       var idMonth = firstDay.getMonth();
       var idDay = i;
@@ -70,6 +71,7 @@ const months = [
         idDay = "0" + idDay;
       }
       var idDate = firstDay.getFullYear() + "-" + idMonth + "-" + idDay;
+      v = ""; 
       if (
         firstDay.getFullYear() < today.getFullYear() ||
         (firstDay.getFullYear() === today.getFullYear() &&
@@ -80,20 +82,17 @@ const months = [
       ) {
         Classe = "border border-sky-500 text-start p-2 pb-10 bg-gray-200";
       } else {
-        
-        var dateUser = ever.findIndex(function(element) {
-          return element.date === idDate;
-        });
-        var dateother = other.findIndex(function(element) {
-          return element.date === idDate;
-        });
-        if (dateUser !== -1) {
-          Classe = "border border-sky-500 text-start p-2 pb-10 bg-green-500";
-        } else if(dateother !== -1){
-          Classe = "border bg-yellow-300 text-start p-2 pb-10 cursor-pointer";
+        var reserv = reservation.filter(function(element) {
+            return element.date === idDate;
+        }).length;
+        if(reserv == 0){
+            
         }else{
-          Classe = "border border-sky-500 text-start p-2 pb-10 cursor-pointer hover:bg-sky-200";
+            v = "<div class='absolute -top-2 -left-2 px-2 bg-green-500 text-white opacity-85 rounded-full text-sm'>" + reserv + "</div>"; 
         }
+     
+          Classe = "relative border border-sky-500 text-start p-2 pb-10 cursor-pointer hover:bg-sky-200";
+      
       }
       calendar +=
         "<div class='" +
@@ -103,7 +102,7 @@ const months = [
         "' " +
         " " +
         "onclick='ChooseDates(event)'" +
-        ">" +
+        ">"+ v +
         i +
         "</div>";
     }
@@ -119,46 +118,4 @@ const months = [
     lastDay = new Date(year, month + 1, 0);
   }
   
-  function ChooseDates(event) {
-    var hourly = document.getElementById("hourly");
-    dateClique = event.target;
-    iddateClique = dateClique.id;
-    hourly.classList.remove("hidden");
-    document.getElementById("hourly_date").innerText = iddateClique;
-  }
-  
-  function ChooseHours(event) {
-    var hourClique;
-    var hourly = document.getElementById("hourly");
-    hourClique = event.target;
-    idhourClique = hourClique.id;
-    document.getElementById(iddateClique).classList.add("bg-green-300");
-    ChooseDate.push({ hour: idhourClique, date: iddateClique });
-    hourly.classList.add("hidden");
-    compte = 0;
-    console.log(ChooseDate);
-  }
-  
-  function Form() {
-    var form =
-      "<h2 class='w-full text-white text-5xl text-center mt-2'>Confirmer Vos dates</h2>";
-    for (let i = 0; i < ChooseDate.length; i++) {
-      e = i + 1;
-      form +=
-        '<h3 class=" ml-2 text-left text-white text-2xl">Date n°' + e + "</h3>";
-      form +=
-        '<input class="placeholder:italic placeholder:text-slate-400 mt-2  block bg-white w-3/4 m-auto border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" type="date" name="reservation' +
-        i +
-        '" value="' +
-        ChooseDate[i].date +
-        '"/>';
-      form +=
-        '<input class="placeholder:italic placeholder:text-slate-400 mt-2  block bg-white w-3/4 m-auto border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" type="time" name="reservationhour' +
-        i +
-        '" value="' +
-        ChooseDate[i].hour +
-        '"/>';
-    }
-    console.log(form);
-    document.getElementById("form").innerHTML = form;
-  }
+
