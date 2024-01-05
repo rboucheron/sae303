@@ -1,5 +1,5 @@
-<body>
-    <div>salut</div>
+
+
     
 
     <script src="./js/allModal.js"></script>

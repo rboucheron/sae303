@@ -50,6 +50,8 @@ if (isset($_SESSION['AdminId'])) {
                                 <a href="?delete=<?= $model['id'] ?>" class="bg-red-500 text-white p-2 rounded-xl relative mr-2 hover:bg-red-700 ">Supprimer</a>
                                 <a href="?see=<?= $model['id'] ?>" class="bg-sky-800  text-white p-2 rounded-xl relative hover:bg-sky-500">Consulter</a>
                             </div>
+                        <?php } elseif (isset($_SESSION['MoniteurId'])) { ?>
+                            <a class="p-2 bg-sky-800 rounded-xl mb-2 mr-2 text-white absolute bottom-0 right-0 hover:bg-sky-500" href="index.php?plane=<?= $model['id'] ?>">Crée</a><!--  -->
                         <?php } else { ?>
                             <a class="py-2 px-5 bg-sky-500 rounded-3xl mb-2 mr-2 text-white absolute bottom-0 right-0 hover:bg-black duration-300" href="index.php?plane=<?= $model['id'] ?>">Réserver</a>
                         <?php } ?>

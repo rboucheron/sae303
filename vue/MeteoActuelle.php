@@ -12,6 +12,7 @@ switch ($data['weather']) {
         break;
     case 'Clouds':
         $bgImageClass = 'clouds-bg';
+        
         break;
     case 'Clear':
         $bgImageClass = 'clear-bg';

@@ -8,6 +8,6 @@ function seeplane()
     // vues 
     require('./vue/Header.php');
     require('./vue/PhoneMenu.php');
-    require('./vue/seePlane.php');
+    require('./vue/admin-vue/seePlane.php');
     require('./vue/Footer.php');
 }

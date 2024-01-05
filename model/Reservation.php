@@ -7,6 +7,8 @@ class Reservation extends Model
     private $duree;
     private $adherent;
     private $plane;
+    private $moniteur;
+    private $id; 
     public function __construct()
     {
         $this->table = __CLASS__;
@@ -35,29 +37,26 @@ class Reservation extends Model
     }
     public function Find($user, $plane)
     {
-        $this->adherent = $user; 
+        $this->moniteur = $user; 
         $this->plane = $plane; 
-        $query = $this->requete('SELECT * FROM ' . $this->table . ' WHERE  adherent = \'' . $this->adherent  . '\' AND plane = \'' . $this->plane . '\'');
+        $query = $this->requete('SELECT * FROM ' . $this->table . ' WHERE  moniteur = \'' . $this->moniteur  . '\' AND plane = \'' . $this->plane . '\'');
         return $query->fetchAll(PDO::FETCH_ASSOC);
-
-
     }
-    public function Add($date, $heur, $duree, $adherent, $plane)
+    public function Add($date, $heur, $duree, $moniteur, $plane)
     {
         $this->date = $date;
         $this->heur = $heur;
         $this->duree = $duree;
-        $this->adherent = $adherent;
         $this->plane = $plane;
-    
-        $query = "INSERT INTO {$this->table} (date, heur, duree, adherent, plane) VALUES ('$this->date', '$this->heur', '$this->duree', '$this->adherent', '$this->plane')";
+        $this->moniteur = $moniteur; 
+        $query = "INSERT INTO {$this->table} (date, heur, duree, plane, moniteur) VALUES ('$this->date', '$this->heur', '$this->duree', '$this->plane', '$this->moniteur')";
         $this->requete($query);
     }
     public function Findother($plane)
     {
 
         $this->plane = $plane; 
-        $query = $this->requete('SELECT Reservation.date, Reservation.heur, Reservation.duree, Reservation.adherent, Reservation.plane, Adherent.nom, Adherent.prenom FROM Adherent, ' . $this->table . ' WHERE plane = \'' . $this->plane . '\' AND Reservation.Adherent = Adherent.id');
+        $query = $this->requete('SELECT date, heur, duree, adherent, plane, moniteur, id FROM ' . $this->table . ' WHERE plane = \'' . $this->plane . '\' ');
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
     public function DeleteWplane($plane)

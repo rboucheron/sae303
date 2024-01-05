@@ -1,44 +1,36 @@
 <?php
-if (isset($_GET['plane'])) {
-    $id = $_GET['plane'];
-    $plane = new plane();
-    $result = $plane->findSomeone($id);
-    if (isset($_SESSION['id'])) {
+if (isset($_SESSION['MoniteurId'])) {
+    if (isset($_GET['plane'])) {
+        $id = $_GET['plane'];
+        $plane = new plane();
+        $result = $plane->findSomeone($id);
         if (isset($_POST['reservation0'])) {
             $i = 0;
             while (isset($_POST['reservation' . $i])) {
                 $date = 'reservation' . $i;
                 $heur = 'reservationhour' . $i;
                 $reservation = new Reservation;
-                $reservation->Add($_POST[$date], $_POST[$heur], 30, $_SESSION['id'], $_GET['plane']);
+                $reservation->Add($_POST[$date], $_POST[$heur], 2, $_SESSION['MoniteurId'], $_GET['plane']);
                 $i++;
             }
         }
         $find = new Reservation;
-        $resultat = $find->find($_SESSION['id'], $_GET['plane']);
-       
+        $resultat = $find->find($_SESSION['MoniteurId'], $_GET['plane']);
     }
-} else {
-    echo "avion innéxistant";
-}
-
 ?>
+    <section>
+        <div class="block lg:grid grid-cols-2 mt-20 gap-4">
+            <div>
+                <img class="w-3/4 m-auto" src="./assets/images/<?= $result[0]['image'] ?>" alt="<?= $result[0]['modele'] ?>">
+            </div>
+            <div class="p-2">
+                <h1 class="text-5xl text-white text-center lg:text-left"><?= $result[0]['modele'] ?><?= $result[0]['marque'] ?></h1>
+                <h2 class="text-2xl text-white text-center lg:text-left"><?= $result[0]['type'] ?></h2>
+                <p class="m-2 lg:w-3/4 text-xl"><?= $result[0]['description'] ?></p>
 
-
-
-<section>
-    <div class="block lg:grid grid-cols-2 mt-20 gap-4">
-        <div>
-            <img class="w-3/4 m-auto" src="./assets/images/<?= $result[0]['image'] ?>" alt="<?= $result[0]['modele'] ?>">
+            </div>
         </div>
-        <div class="p-2">
-            <h1 class="text-5xl text-white text-center lg:text-left"><?= $result[0]['modele'] ?><?= $result[0]['marque'] ?></h1>
-            <h2 class="text-2xl text-white text-center lg:text-left"><?= $result[0]['type'] ?></h2>
-            <p class="m-2 lg:w-3/4 text-xl"><?= $result[0]['description'] ?></p>
 
-        </div>
-    </div>
-    <?php if (isset($_SESSION['id'])) { ?>
         <div class="w-full bg-white mt-10">
 
 
@@ -88,37 +80,25 @@ if (isset($_GET['plane'])) {
                 <div class="p-2 bg-cyan-500 w-1/4 m-auto mt-2 text-center text-xl rounded-xl text-white cursor-pointer hover:bg-cyan-200" onclick="openForm(), Form()">Reservé</div>
             </div>
         </div>
-    <?php } else { ?>
 
-        <div class="mt-10 bg-white w-full  p-2">
-            <h2 class="mt-2 text-3xl text-sky-800 w-full text-center">Vous devez vous connecter, pour finaliser votre reservation </h2>
-            <div class="mt-10 mb-10 flex items-center text-xl justify-center">
-                <div>
-                    <a href="index.php?connexion" class="text-sky-600 decoration-solid font-semibold">Me Connecter</a>
-                    ou
-                    <a href="index.php?inscription" class="text-sky-600 decoration-solid font-semibold"> M'inscrire</a>
-                </div>
+
+
+
+    </section>
+    <div class="hidden fixed w-full h-full bg-cyan-700 bg-opacity-75 top-0 left-0 scroll-y" id="updateForm">
+        <form action="" method="post">
+            <div id="form">
             </div>
-        </div>
-    <?php } ?>
+            <div class="w-full flex justify-center">
+                <button type="submit" class=" mt-10 text-white text-xl border-2 p-2 bg-sky-800 rounded-xl">Confirmé</button>
+            </div>
+        </form>
+    </div>
 
 
 
-</section>
-<div class="hidden fixed w-full h-full bg-cyan-700 bg-opacity-75 top-0 left-0 scroll-y" id="updateForm">
-    <form action="" method="post">
-        <div id="form">
-        </div>
-        <div class="w-full flex justify-center">
-            <button type="submit" class=" mt-10 text-white text-xl border-2 p-2 bg-sky-800 rounded-xl">Confirmé</button>
-        </div>
-    </form>
-</div>
-
-
-
-<script>
-    const ever = <?php echo json_encode($resultat, JSON_UNESCAPED_UNICODE); ?>;
-  
-</script>
-<script src="./js/calendar.js"></script>
+    <script>
+        const ever = <?php echo json_encode($resultat, JSON_UNESCAPED_UNICODE); ?>;
+    </script>
+    <script src="./js/calendar.js"></script>
+<?php } ?>

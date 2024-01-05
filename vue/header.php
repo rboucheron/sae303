@@ -47,6 +47,15 @@
                 </a>
             </div>
         <?php
+        } elseif (isset($_SESSION['MoniteurNom']) && isset($_SESSION['MoniteurPrenom']) && isset($_SESSION['MoniteurEmail']) && isset($_SESSION['MoniteurTelephone'])) {
+        ?>
+            <div class="hidden lg:flex  place-items-center  self-center justify-end pr-10">
+                <img class="w-6" src="./assets/images/compte.svg" alt="compte identifier">
+                <a href="index.php?admin">
+                    <p class="font-semibold text-sm text-blue-800"> <?= $_SESSION['MoniteurPrenom'] ?> <?= $_SESSION['MoniteurNom'] ?> ✅</p>
+                </a>
+            </div>
+        <?php
         } else {
         ?>
             <div class="hidden lg:grid place-items-center  pl-14 ">

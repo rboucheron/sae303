@@ -1,19 +1,22 @@
 <?php
-
-
-
 if (isset($_POST['email']) && isset($_POST['password'])) {
     $connexion = new Adherent();
     $message = $connexion->connexion($_POST['email'], $_POST['password']);
     if ($message == false) {
         $admin = new administrateur();
         $messages = $admin->connexion($_POST['email'], $_POST['password']);
-
         if ($messages == false) {
-            echo "mot de passe incorrect";
-           
+            $moniteur = new moniteur();
+            $messages = $moniteur->connexion($_POST['email'], $_POST['password']);
+            if ($messages == false) {
+                echo "mot de passe incorrect";
+            } else {
+                $moniteur->NewSession();
+                header('Location: index.php');
+                exit();
+            }
         } else {
-            $admin->NewSession(); 
+            $admin->NewSession();
             header('Location: index.php');
             exit();
         }
@@ -23,8 +26,6 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
         exit();
     }
 }
-
-
 ?>
 
 <section id="connexion" class="mt-20 w-full">

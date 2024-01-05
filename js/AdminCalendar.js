@@ -126,9 +126,10 @@ function seeDates(event) {
       calendar +=
         '<div class="bg-sky-800  w-80 rounded-xl border-2 border relative">' +
         '<p class="p-2 text-xl text-white font-bold">' +
-        reservation[i].prenom +
-        " " +
-        reservation[i].nom +
+        'Adhérent :' +
+        reservation[i].adherent +
+        'Moniteur :' +
+        reservation[i].moniteur +
         "</p>" +
         '<p class="p-2 text-xl text-white font-bold"> Début : ' +
         reservation[i].heur +
