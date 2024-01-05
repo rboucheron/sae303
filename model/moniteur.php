@@ -7,6 +7,8 @@ class Moniteur extends Model
     private $telephone;
     private $password;
     private $id;
+    private $role; 
+    private $profil; 
     public function __construct()
     {
         $this->table = __CLASS__;
@@ -16,16 +18,17 @@ class Moniteur extends Model
         $this->db = Database::getInstance();
         return $this->db->query($sql);
     }
-    public function Add($nom, $prenom, $email, $telephone, $password)
+    public function Add($nom, $prenom, $email, $telephone, $password, $role, $profil)
     {
         $this->nom = $nom;
         $this->prenom = $prenom;
-
         $this->email = $email;
         $this->telephone = $telephone;
+        $this->role = $role; 
         $this->password = $password;
+        $this->profil = $profil; 
         $hashedPassword = $this->ashpassword();
-        $query = "INSERT INTO {$this->table} (`Nom`, `prenom`, `email`, `telephone`, `password`) VALUES ('{$this->nom}', '{$this->prenom}', '{$this->email}', '{$this->telephone}', '{$hashedPassword}')";
+        $query = "INSERT INTO {$this->table} (`Nom`, `prenom`, `email`, `telephone`, `password`, `role`, `profil`) VALUES ('{$this->nom}', '{$this->prenom}', '{$this->email}', '{$this->telephone}', '{$hashedPassword}', '{$this->role}', '{$this->profil}')";
         $this->requete($query);
     }
     public function connexion($email, $password)
@@ -74,7 +77,11 @@ class Moniteur extends Model
         $query = $this->requete('SELECT * FROM ' . $this->table . ' WHERE email = \'' . $this->email . '\'');
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
-
+    public function findAll()
+    {
+        $query = $this->requete('SELECT * FROM ' . $this->table);
+        return $query->fetchAll(PDO::FETCH_ASSOC);
+    }
     private function ashpassword()
     {
         return password_hash($this->password, PASSWORD_DEFAULT);

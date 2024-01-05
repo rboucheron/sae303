@@ -5,6 +5,9 @@ $nbAdherent = new Adherent;
 $CountAdherent = $nbAdherent->Count();
 $tablAdherent = $nbAdherent->findAll();
 
+$moniteur = new moniteur;
+$tablMoniteur = $moniteur->findAll();
+
 //plane 
 $nbPlane = new Plane;
 $CountPlane = $nbPlane->Count();
@@ -67,7 +70,7 @@ for ($e = 0; $e <= 12; $e++) {
     </div>
 </section>
 <section class="w-full mt-20">
-<h2 class=" text-2xl text-white text-center">Adhérents</h2>
+    <h2 class=" text-2xl text-white text-center">Adhérents</h2>
     <table class="w-3/4 m-auto mt-2">
         <thead class="p-2 lg:p-11 bg-gray-300 ">
             <tr>
@@ -92,6 +95,42 @@ for ($e = 0; $e <= 12; $e++) {
                     <td class=" border-b border-blue-300 p-4">
                         <a href="?deleteuser=<?= $rowAdherent['id'] ?>" class="bg-red-500 text-white p-2 rounded-xl relative mr-2 hover:bg-red-700 ">Supprimer</a>
                         <a href="?modifyUser=<?= $rowAdherent['id'] ?>" class="bg-yellow-500 text-white p-2 rounded-xl relative mr-2 hover:bg-yellow-700">Modifier</a>
+                    </td>
+                </tr>
+            <?php } ?>
+        </tbody>
+    </table>
+</section>
+
+
+<section class="w-full mt-20">
+    <h2 class=" text-2xl text-white text-center">Moniteurs</h2>
+    <div class="mt-4 w-full flex items-center justify-center">
+        <a href="?AddMoniteur" class="bg-green-400 text-2xl text-white p-2 rounded-xl relative mr-2 hover:bg-green-700">Ajouter + </a>
+    </div>
+    <table class="w-3/4 m-auto mt-2">
+        <thead class="p-2 lg:p-11 bg-gray-300 ">
+            <tr>
+                <th class="border-r-2 border-b-2 border-blue-300 p-2">Id</th>
+                <th class="border-r-2 border-b-2 border-blue-300 ">Nom</th>
+                <th class="border-r-2 border-b-2 border-blue-300 ">Prenom</th>
+                <th class="border-r-2 border-b-2 border-blue-300 ">Email</th>
+                <th class="border-r-2  border-b-2 border-blue-300">Téléphone</th>
+                <th class=" border-b-2 border-blue-300 ">Options</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($tablMoniteur as $rowMoniteur) { ?>
+                <tr class="p2 lg:p-11 bg-white ">
+                    <td class="border-r-2 border-b border-blue-300 p-2"><?= $rowMoniteur['id'] ?></td>
+                    <td class="border-r-2 border-b border-blue-300 p-2"><?= $rowMoniteur['nom'] ?></td>
+                    <td class="border-r-2 border-b border-blue-300 p-2"><?= $rowMoniteur['prenom'] ?></td>
+
+                    <td class="border-r-2 border-b border-blue-300 p-2"><?= $rowMoniteur['email'] ?></td>
+                    <td class="border-r-2 border-b border-blue-300 p-2"><?= $rowMoniteur['telephone'] ?></td>
+                    <td class=" border-b border-blue-300 p-4">
+                        <a href="?deleteMoniteur=<?= $rowMoniteur['id'] ?>" class="bg-red-500 text-white p-2 rounded-xl relative mr-2 hover:bg-red-700 ">Supprimer</a>
+                        <a href="?modifyMoniteur=<?= $rowMoniteur['id'] ?>" class="bg-yellow-500 text-white p-2 rounded-xl relative mr-2 hover:bg-yellow-700">Modifier</a>
                     </td>
                 </tr>
             <?php } ?>
