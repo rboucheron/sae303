@@ -72,6 +72,13 @@ class Adherent extends Model
         $resultat = $query->fetchAll(PDO::FETCH_ASSOC);
         $this->id = $resultat[0]['id'];
     }
+    function findbyId($id)
+    {
+        $this->id = $id;
+        $query = $this->requete('SELECT * FROM ' . $this->table . ' WHERE id = \'' . $this->id . '\'');
+        return $query->fetchAll(PDO::FETCH_ASSOC);
+
+    }
     public function NewSession()
     {
 
@@ -88,6 +95,13 @@ class Adherent extends Model
             $_SESSION['id'] = $this->id;
         }
     }
+    public function Delete($id)
+    {
+        $this->id = $id;
+
+        $query = "DELETE FROM  {$this->table} WHERE id = {$this->id}";
+        $this->requete($query);
+    }
     public function update($nom, $prenom, $civilite, $naissance, $email, $telephone, $id)
     {
         $this->nom = $nom;
@@ -102,7 +116,7 @@ class Adherent extends Model
     }
     public function Count()
     {
-        $query = $this->requete('SELECT COUNT(*) as count FROM ' . $this->table  );
+        $query = $this->requete('SELECT COUNT(*) as count FROM ' . $this->table);
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
     private function ashpassword()

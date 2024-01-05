@@ -56,10 +56,20 @@ for ($e = 0; $e <= 12; $e++) {
         </div>
     </div>
 </section>
-
-<section>
-    <table class="w-3/4 m-auto mt-20">
-        <thead class="p-11 bg-gray-300 ">
+<section class="mt-20 w-full bg-white gap-4 p-2 block lg:grid grid-cols-2">
+    <div class="mt-10">
+        <h2 class=" text-2xl text-blue-800 text-center">Nombres de Reservation cette semaine</h2>
+        <canvas id="day" class=" mt-2 w-1/4 "></canvas>
+    </div>
+    <div class="mt-10">
+        <h2 class=" text-2xl text-blue-800 text-center">Nombres de Reservation par Mois</h2>
+        <canvas id="month" class=" mt-2 w-1/4 "></canvas>
+    </div>
+</section>
+<section class="w-full mt-20">
+<h2 class=" text-2xl text-white text-center">Adhérents</h2>
+    <table class="w-3/4 m-auto mt-2">
+        <thead class="p-2 lg:p-11 bg-gray-300 ">
             <tr>
                 <th class="border-r-2 border-b-2 border-blue-300 p-2">Id</th>
                 <th class="border-r-2 border-b-2 border-blue-300 ">Nom</th>
@@ -72,7 +82,7 @@ for ($e = 0; $e <= 12; $e++) {
         </thead>
         <tbody>
             <?php foreach ($tablAdherent as $rowAdherent) { ?>
-                <tr class="p-11 bg-white ">
+                <tr class="p2 lg:p-11 bg-white ">
                     <td class="border-r-2 border-b border-blue-300 p-2"><?= $rowAdherent['id'] ?></td>
                     <td class="border-r-2 border-b border-blue-300 p-2"><?= $rowAdherent['Nom'] ?></td>
                     <td class="border-r-2 border-b border-blue-300 p-2"><?= $rowAdherent['prenom'] ?></td>
@@ -80,7 +90,7 @@ for ($e = 0; $e <= 12; $e++) {
                     <td class="border-r-2 border-b border-blue-300 p-2"><?= $rowAdherent['email'] ?></td>
                     <td class="border-r-2 border-b border-blue-300 p-2"><?= $rowAdherent['telephone'] ?></td>
                     <td class=" border-b border-blue-300 p-4">
-                        <a href="?deleteUser=<?= $rowAdherent['id'] ?>" class="bg-red-500 text-white p-2 rounded-xl relative mr-2 hover:bg-red-700 ">Supprimer</a>
+                        <a href="?deleteuser=<?= $rowAdherent['id'] ?>" class="bg-red-500 text-white p-2 rounded-xl relative mr-2 hover:bg-red-700 ">Supprimer</a>
                         <a href="?modifyUser=<?= $rowAdherent['id'] ?>" class="bg-yellow-500 text-white p-2 rounded-xl relative mr-2 hover:bg-yellow-700">Modifier</a>
                     </td>
                 </tr>
@@ -88,16 +98,7 @@ for ($e = 0; $e <= 12; $e++) {
         </tbody>
     </table>
 </section>
-<section class="mt-20 w-full bg-white gap-4 p-2 block lg:grid grid-cols-2">
-    <div class="mt-10">
-        <h2 class=" text-2xl text-blue-800 text-center">Nombres de Reservation cette semaine</h2>
-        <canvas id="day" class=" mt-2 w-1/4 "></canvas>
-    </div>
-    <div class="mt-10">
-        <h2 class=" text-2xl text-blue-800 text-center">Nombres de Reservation par Mois</h2>
-        <canvas id="month" class=" mt-2 w-1/4 "></canvas>
-    </div>
-</section>
+
 
 
 <script>
