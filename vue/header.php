@@ -18,50 +18,69 @@
                 <line x1="3" x2="21" y1="12" y2="12" />
                 <line x1="3" x2="21" y1="18" y2="18" />
             </svg></div>
-        <div class="hidden lg:grid place-items-center col-span-2 grid-cols-3 p-3 ">
-            <a class="grid font-semibold text-md cursor-pointer text-black hover:underline text-black  pb-1 " href="index.php">ACCUEIL</a>
-            <a class="grid font-semibold text-md cursor-pointer text-black hover:underline text-black  pb-1 " href="index.php#activites">DECOUVRIR</a>
-            <a class="grid font-semibold text-md cursor-pointer text-black hover:underline text-black  pb-1 ">CONTACT</a>
-        </div>
-        <?php if (isset($_SESSION['nom']) && isset($_SESSION['prenom'])) {
+        <?php
+        if (isset($_SESSION['AdminNom']) && isset($_SESSION['AdminPrenom']) && isset($_SESSION['AdminEmail']) && isset($_SESSION['AdminTelephone'])) {
 
-            $dateObj = new DateTime($_SESSION['naissance']);
-            $anniversaire = $dateObj->format('m-d');
-            $today = date('m-d');
-        ?>
-            <div class="hidden lg:flex  place-items-center  self-center justify-end pr-10">
-                <img class="w-6" src="./assets/images/compte.svg" alt="compte identifier">
-                <a href="index.php?profil">
-                    <p class="font-semibold text-sm text-blue-800"> <?= $_SESSION['prenom'] ?> <?= $_SESSION['nom'] ?><?php if ($anniversaire == $today) {
-                                                                                                                            echo "🎉";
-                                                                                                                        } ?></p>
-                </a>
-            </div>
-        <?php
-        } elseif (isset($_SESSION['AdminNom']) && isset($_SESSION['AdminPrenom']) && isset($_SESSION['AdminEmail']) && isset($_SESSION['AdminTelephone'])) {
-        ?>
-            <div class="hidden lg:flex  place-items-center  self-center justify-end pr-10">
-                <img class="w-6" src="./assets/images/compte.svg" alt="compte identifier">
-                <a href="index.php?admin">
-                    <p class="font-semibold text-sm text-blue-800"> <?= $_SESSION['AdminPrenom'] ?> <?= $_SESSION['AdminNom'] ?> ✅</p>
-                </a>
-            </div>
-        <?php
-        } elseif (isset($_SESSION['MoniteurNom']) && isset($_SESSION['MoniteurPrenom']) && isset($_SESSION['MoniteurEmail']) && isset($_SESSION['MoniteurTelephone'])) {
-        ?>
-            <div class="hidden lg:flex  place-items-center  self-center justify-end pr-10">
-                <img class="w-6" src="./assets/images/compte.svg" alt="compte identifier">
-                <a href="index.php?admin">
-                    <p class="font-semibold text-sm text-blue-800"> <?= $_SESSION['MoniteurPrenom'] ?> <?= $_SESSION['MoniteurNom'] ?> ✅</p>
-                </a>
-            </div>
-        <?php
+        ?> 
+            <div class="hidden lg:grid place-items-center col-span-2 grid-cols-4 p-3  ">
+                <a class="grid font-semibold text-sm cursor-pointer text-black hover:underline text-black  pb-1 " href="index.php">ACCUEIL</a>
+                <a class="grid font-semibold text-sm cursor-pointer text-black hover:underline text-black  pb-1 " href="index.php#activites">DECOUVRIR</a>
+                <a class="grid font-semibold text-sm cursor-pointer text-black hover:underline text-black  pb-1 ">CONTACT</a>
+                <a class="grid font-semibold text-sm cursor-pointer text-black hover:underline text-black  pb-1 " href="index.php?admin">DASHBOARD</a>
+            <?php
         } else {
-        ?>
-            <div class="hidden lg:grid place-items-center  pl-14 ">
-                <div class=" grid"> <a class="  w-full text-center rounded-sm text-white  text-md cursor-pointer  py-2 px-5  font-Arial bg-blue-800 hover:bg-blue-600 duration-300  hover:scale-105 " href="index.php?connexion">Se connecter</a></div>
-            </div>
-        <?php
-        }
-        ?>
+            ?>
+                <div class="hidden lg:grid place-items-center col-span-2 grid-cols-3 p-3 ">
+                    <a class="grid font-semibold text-md cursor-pointer text-black hover:underline text-black  pb-1 " href="index.php">ACCUEIL</a>
+                    <a class="grid font-semibold text-md cursor-pointer text-black hover:underline text-black  pb-1 " href="index.php#activites">DECOUVRIR</a>
+                    <a class="grid font-semibold text-md cursor-pointer text-black hover:underline text-black  pb-1 ">CONTACT</a>
+       
+                <?php
+            }
+                ?>
+
+
+
+                </div>
+                <?php if (isset($_SESSION['nom']) && isset($_SESSION['prenom'])) {
+
+                    $dateObj = new DateTime($_SESSION['naissance']);
+                    $anniversaire = $dateObj->format('m-d');
+                    $today = date('m-d');
+                ?>
+                    <div class="hidden lg:flex  place-items-center  self-center justify-end pr-10">
+                        <img class="w-6" src="./assets/images/compte.svg" alt="compte identifier">
+                        <a href="index.php?profil">
+                            <p class="font-semibold text-sm text-blue-800"> <?= $_SESSION['prenom'] ?> <?= $_SESSION['nom'] ?><?php if ($anniversaire == $today) {
+                                                                                                                                    echo "🎉";
+                                                                                                                                } ?></p>
+                        </a>
+                    </div>
+                <?php
+                } elseif (isset($_SESSION['AdminNom']) && isset($_SESSION['AdminPrenom']) && isset($_SESSION['AdminEmail']) && isset($_SESSION['AdminTelephone'])) {
+                ?>
+                    <div class="hidden lg:flex  place-items-center  self-center justify-end pr-10">
+                        <img class="w-6" src="./assets/images/compte.svg" alt="compte identifier">
+                        <a href="index.php?profil">
+                            <p class="font-semibold text-sm text-blue-800"> <?= $_SESSION['AdminPrenom'] ?> <?= $_SESSION['AdminNom'] ?> ✅</p>
+                        </a>
+                    </div>
+                <?php
+                } elseif (isset($_SESSION['MoniteurNom']) && isset($_SESSION['MoniteurPrenom']) && isset($_SESSION['MoniteurEmail']) && isset($_SESSION['MoniteurTelephone'])) {
+                ?>
+                    <div class="hidden lg:flex  place-items-center  self-center justify-end pr-10">
+                        <img class="w-6" src="./assets/images/compte.svg" alt="compte identifier">
+                        <a href="index.php?profil">
+                            <p class="font-semibold text-sm text-blue-800"> <?= $_SESSION['MoniteurPrenom'] ?> <?= $_SESSION['MoniteurNom'] ?> ✅</p>
+                        </a>
+                    </div>
+                <?php
+                } else {
+                ?>
+                    <div class="hidden lg:grid place-items-center  pl-14 ">
+                        <div class=" grid"> <a class="  w-full text-center rounded-sm text-white  text-md cursor-pointer  py-2 px-5  font-Arial bg-blue-800 hover:bg-blue-600 duration-300  hover:scale-105 " href="index.php?connexion">Se connecter</a></div>
+                    </div>
+                <?php
+                }
+                ?>
     </header>

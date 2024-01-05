@@ -58,7 +58,7 @@ for ($e = 0; $e <= 12; $e++) {
 </section>
 
 <section>
-    <table class="w-full mt-20">
+    <table class="w-3/4 m-auto mt-20">
         <thead class="p-11 bg-gray-300 ">
             <tr>
                 <th class="border-r-2 border-b-2 border-blue-300 p-2">Id</th>
@@ -66,7 +66,8 @@ for ($e = 0; $e <= 12; $e++) {
                 <th class="border-r-2 border-b-2 border-blue-300 ">Prenom</th>
                 <th class="border-r-2 border-b-2 border-blue-300 ">Date de naissance</th>
                 <th class="border-r-2 border-b-2 border-blue-300 ">Email</th>
-                <th class=" border-b-2 border-blue-300 ">Téléphone</th>
+                <th class="border-r-2  border-b-2 border-blue-300">Téléphone</th>
+                <th class=" border-b-2 border-blue-300 ">Options</th>
             </tr>
         </thead>
         <tbody>
@@ -77,18 +78,24 @@ for ($e = 0; $e <= 12; $e++) {
                     <td class="border-r-2 border-b border-blue-300 p-2"><?= $rowAdherent['prenom'] ?></td>
                     <td class="border-r-2 border-b border-blue-300 p-2"><?= $rowAdherent['naissance'] ?></td>
                     <td class="border-r-2 border-b border-blue-300 p-2"><?= $rowAdherent['email'] ?></td>
-                    <td class=" border-b border-blue-300 p-2"><?= $rowAdherent['telephone'] ?></td>
+                    <td class="border-r-2 border-b border-blue-300 p-2"><?= $rowAdherent['telephone'] ?></td>
+                    <td class=" border-b border-blue-300 p-4">
+                        <a href="?deleteUser=<?= $rowAdherent['id'] ?>" class="bg-red-500 text-white p-2 rounded-xl relative mr-2 hover:bg-red-700 ">Supprimer</a>
+                        <a href="?modifyUser=<?= $rowAdherent['id'] ?>" class="bg-yellow-500 text-white p-2 rounded-xl relative mr-2 hover:bg-yellow-700">Modifier</a>
+                    </td>
                 </tr>
             <?php } ?>
         </tbody>
     </table>
 </section>
-<section class="mt-20 w-full bg-white gap-4 pt-2 pb-2 grid grid-cols-2">
-    <div>
-        <canvas id="day" class=" mt-20 w-1/4 "></canvas>
+<section class="mt-20 w-full bg-white gap-4 p-2 block lg:grid grid-cols-2">
+    <div class="mt-10">
+        <h2 class=" text-2xl text-blue-800 text-center">Nombres de Reservation cette semaine</h2>
+        <canvas id="day" class=" mt-2 w-1/4 "></canvas>
     </div>
-    <div>
-        <canvas id="month" class=" mt-20 w-1/4 "></canvas>
+    <div class="mt-10">
+        <h2 class=" text-2xl text-blue-800 text-center">Nombres de Reservation par Mois</h2>
+        <canvas id="month" class=" mt-2 w-1/4 "></canvas>
     </div>
 </section>
 

@@ -12,7 +12,7 @@ switch ($data['weather']) {
         break;
     case 'Clouds':
         $bgImageClass = 'clouds-bg';
-        
+
         break;
     case 'Clear':
         $bgImageClass = 'clear-bg';
@@ -22,38 +22,33 @@ switch ($data['weather']) {
         break;
 }
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        .rain-bg {
-            background: url('./assets/images/rainy.gif') center/cover no-repeat;
-            background-size: 60%;
-        }
 
-        .clouds-bg {
-            background: url('./assets/images/cloudy.gif') center/cover no-repeat;
-            background-size: 60%;
-        }
+<style>
+    .rain-bg {
+        background: url('./assets/images/rainy.gif') center/cover no-repeat;
+        background-size: 60%;
+    }
 
-        .clear-bg {
-            background: url('./assets/images/sunny.gif') center/cover no-repeat;
-            background-size: 60%;
-        }
+    .clouds-bg {
+        background: url('./assets/images/cloudy.gif') center/cover no-repeat;
+        background-size: 100%;
+    }
 
-        .default-bg {
-            background-color: #fff; 
-        }
-    </style>
-</head>
-<body>
+    .clear-bg {
+        background: url('./assets/images/sunny.gif') center/cover no-repeat;
+        background-size: 60%;
+    }
 
-<section class="w-full mt-10 <?= $bgImageClass ?> pb-4" id="meteo">
+    .default-bg {
+        background-color: #fff;
+    }
+</style>
+
+
+<section class="w-full mt-10 <?= $bgImageClass ?> p-2 pb-4" id="meteo">
     <h1 class="text-2xl lg:text-4xl w-3/4 m-auto text-white text-center text-slate-700 font-bold">Meteo</h1>
-   
-    <div class="block w-1/2 m-auto">
+
+    <div class="block w-full lg:w-1/2 m-auto">
         <div class="w-full mt-10 mb-2">
             <h2 id="clock" class="w-full text-center text-sky-800 text-white font-bold text-2xl"><?= $date ?> - <?= $time ?></h2>
         </div>
@@ -95,6 +90,3 @@ switch ($data['weather']) {
         setInterval(updateClock, 1000);
     </script>
 </section>
-
-</body>
-</html>
