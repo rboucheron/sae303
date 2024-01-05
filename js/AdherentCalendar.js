@@ -152,7 +152,8 @@ function Choose(event) {
   reservClick = event.target;
   idreservClick = reservClick.id;
   reservChoose.push({ reservation: idreservClick });
-  console.log(reservChoose); 
+  console.log(reservChoose);
+  document.getElementById(idreservClick).classList.add("hidden");
 }
 
 function Write() {
@@ -166,20 +167,34 @@ function Give() {
 }
 
 function Form() {
-    var form =
-      "<h2 class='w-full text-white text-5xl text-center mt-2'>Confirmer Vos dates</h2>";
-    for (let i = 0; i < reservChoose.length; i++) {
-      e = i + 1;
-      form +=
-        '<h3 class=" ml-2 text-left text-white text-2xl">Date n°' + e + "</h3>";
-
-      form +=
-        '<input class="placeholder:italic placeholder:text-slate-400 mt-2  block bg-white w-3/4 m-auto border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" type="text" name="reservation' +
-        i +
-        '" value="' +
-        reservChoose[i].reservation +
-        '"/>';
-    }
-    console.log(form);
-    document.getElementById("form").innerHTML = form;
+  var form =
+    "<h2 class='w-full text-white text-5xl text-center mt-2'>Confirmer Vos dates</h2>";
+  for (let i = 0; i < reservChoose.length; i++) {
+    var characteristic = reservation.filter(function (element) {
+      return element.id == reservChoose[i].reservation;
+    });
+    e = i + 1;
+    form +=
+      '<div class="border p-2 w-1/2 m-auto rounded-xl" ><h3 class=" ml-2 text-left text-white text-2xl">Date n°' +
+      e +
+      "</h3>";
+    form +=
+      '<p class=" ml-2 text-left text-white text-xl"> Date : ' +
+      characteristic[0].date +
+      "</p>" +
+      '<p class=" ml-2 text-left text-white text-xl"> Début : ' +
+      characteristic[0].heur +
+      "</p>" +
+      '<p class=" ml-2 text-left text-white text-xl"> Durée : ' +
+      characteristic[0].duree +
+      " heur </p>";
+    form +=
+      '<input class="hidden" type="text" name="reservation' +
+      i +
+      '" value="' +
+      reservChoose[i].reservation +
+      '"/>';
   }
+  console.log(form);
+  document.getElementById("form").innerHTML = form;
+}

@@ -42,6 +42,12 @@ class Reservation extends Model
         $query = $this->requete('SELECT * FROM ' . $this->table . ' WHERE  moniteur = \'' . $this->moniteur  . '\' AND plane = \'' . $this->plane . '\'');
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
+    public function withoutAdheran($plane){
+        $this->plane = $plane; 
+        $query = $this->requete('SELECT * FROM ' . $this->table . ' WHERE adherent IS NULL AND plane = \'' . $this->plane . '\'');
+        return $query->fetchAll(PDO::FETCH_ASSOC);
+
+    }
     public function Add($date, $heur, $duree, $moniteur, $plane)
     {
         $this->date = $date;
@@ -52,6 +58,7 @@ class Reservation extends Model
         $query = "INSERT INTO {$this->table} (date, heur, duree, plane, moniteur) VALUES ('$this->date', '$this->heur', '$this->duree', '$this->plane', '$this->moniteur')";
         $this->requete($query);
     }
+
     public function Findother($plane)
     {
 
@@ -74,6 +81,7 @@ class Reservation extends Model
 
 
     }
+
     
     
 }

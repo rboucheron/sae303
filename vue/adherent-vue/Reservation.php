@@ -2,7 +2,7 @@
     $plane = new Plane;
     $find = $plane->findSomeone($_GET['plane']);
     $reservation = new Reservation;
-    $findReservation =  $reservation->Findother($find[0]['id']);
+    $findReservation =  $reservation->withoutAdheran($find[0]['id']);
     if (isset($_POST['reservation0'])) {
         $i = 0;
         while (isset($_POST['reservation' . $i])) {
