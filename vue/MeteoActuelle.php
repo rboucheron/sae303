@@ -2,7 +2,7 @@
 $meteo = new Meteo;
 $data = $meteo->today();
 $date = date("F j, Y");
-
+$time = date("H:i"); // Current time in 24-hour format
 
 $bgImageClass = '';
 
@@ -30,8 +30,6 @@ switch ($data['weather']) {
         .rain-bg {
             background: url('./assets/images/rainy.gif') center/cover no-repeat;
             background-size: 60%;
- 
-
         }
 
         .clouds-bg {
@@ -47,7 +45,6 @@ switch ($data['weather']) {
         .default-bg {
             background-color: #fff; 
         }
-
     </style>
 </head>
 <body>
@@ -57,7 +54,7 @@ switch ($data['weather']) {
    
     <div class="block w-1/2 m-auto">
         <div class="w-full mt-10 mb-2">
-            <h2 class="w-full text-center text-sky-800 text-white font-bold text-2xl"><?= $date ?></h2>
+            <h2 id="clock" class="w-full text-center text-sky-800 text-white font-bold text-2xl"><?= $date ?> - <?= $time ?></h2>
         </div>
         <div class="w-1/4 m-auto">
             <?php if ($data['weather'] == 'Rain') { ?>
@@ -83,6 +80,19 @@ switch ($data['weather']) {
             </p>
         </div>
     </div>
+
+    <script>
+        function updateClock() {
+            var currentTime = new Date();
+            var hours = currentTime.getHours();
+            var minutes = currentTime.getMinutes();
+            var timeString = hours + ":" + (minutes < 10 ? "0" : "") + minutes;
+            document.getElementById("clock").innerHTML = '<?= $date ?> - ' + timeString;
+        }
+
+        // Update time every second
+        setInterval(updateClock, 1000);
+    </script>
 </section>
 
 </body>
