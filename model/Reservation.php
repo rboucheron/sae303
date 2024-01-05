@@ -65,6 +65,15 @@ class Reservation extends Model
         $query = "DELETE FROM  {$this->table} WHERE plane = {$this->plane}";
         $this->requete($query);
     }
+    public function AddAdherent($id, $adherent)
+    {
+        $this->adherent = $adherent; 
+        $this->id = $id; 
+        $query = "UPDATE {$this->table} SET `adherent`='$this->adherent' WHERE `id`= {$this->id}";
+        $this->requete($query);
+
+
+    }
     
     
 }
