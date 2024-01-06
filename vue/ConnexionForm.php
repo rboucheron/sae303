@@ -1,32 +1,4 @@
-<?php
-if (isset($_POST['email']) && isset($_POST['password'])) {
-    $connexion = new Adherent();
-    $message = $connexion->connexion($_POST['email'], $_POST['password']);
-    if ($message == false) {
-        $admin = new administrateur();
-        $messages = $admin->connexion($_POST['email'], $_POST['password']);
-        if ($messages == false) {
-            $moniteur = new moniteur();
-            $messages = $moniteur->connexion($_POST['email'], $_POST['password']);
-            if ($messages == false) {
-                echo "mot de passe incorrect";
-            } else {
-                $moniteur->NewSession();
-                header('Location: index.php');
-                exit();
-            }
-        } else {
-            $admin->NewSession();
-            header('Location: index.php');
-            exit();
-        }
-    } else {
-        $connexion->NewSession();
-        header('Location: index.php');
-        exit();
-    }
-}
-?>
+
 
 <section id="connexion" class="mt-20 w-full">
     <h1 class="text-sm lg:text-4xl w-3/4 m-auto text-center text-slate-700 font-bold">Connecter Vous</h1>

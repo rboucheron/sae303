@@ -1,11 +1,4 @@
-<?php
-if (isset($_GET['profil']) && $_GET['profil'] === 'disconnect') {
-    session_unset();
-    session_destroy();
-    header('Location: index.php');
-    exit();
-}
-?>
+
 
 
 <?php if (isset($_SESSION['nom']) && isset($_SESSION['prenom']) && isset($_SESSION['naissance']) && isset($_SESSION['civilite'])) {

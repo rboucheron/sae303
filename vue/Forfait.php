@@ -1,4 +1,4 @@
-<section class="w-full mt-36 ">
+<section class="w-full mt-36 " id="forfait">
     <div class="px-6 py-4">
         <h1 class="text-2xl lg:text-4xl w-3/4 m-auto text-center text-slate-700 font-bold ">Forfait</h1>
     </div>

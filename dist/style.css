@@ -596,6 +596,10 @@ video {
   top: 50%;
 }
 
+.-top-5 {
+  top: -1.25rem;
+}
+
 .z-30 {
   z-index: 30;
 }
@@ -870,6 +874,10 @@ video {
 
 .grid-cols-7 {
   grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+.flex-row {
+  flex-direction: row;
 }
 
 .flex-col {
@@ -1616,6 +1624,10 @@ video {
 }
 
 @media (min-width: 1024px) {
+  .lg\:top-0 {
+    top: 0px;
+  }
+
   .lg\:col-span-1 {
     grid-column: span 1 / span 1;
   }

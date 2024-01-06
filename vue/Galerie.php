@@ -1,4 +1,4 @@
-<section class=" mt-20 p-16 w-full">
+<section class=" mt-20 p-16 w-full" id="galerie">
   <h1 class="text-2xl lg:text-4xl w-3/4 m-auto text-center text-slate-700 font-bold">Galerie photo</h1>
   <div class="block lg:grid grid-cols-3 ap-4 mt-10">
 

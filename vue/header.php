@@ -26,8 +26,8 @@
                 <a class="grid font-semibold text-sm cursor-pointer text-black hover:underline text-black  pb-1 " href="index.php">Accueil</a>
                 <a class="grid font-semibold text-sm cursor-pointer text-black hover:underline text-black  pb-1 " href="index.php#activites">Activités</a>
                 <a class="grid font-semibold text-sm cursor-pointer text-black hover:underline text-black  pb-1 " href="index.php#plane">Avions</a>
-                <a class="grid font-semibold text-sm cursor-pointer text-black hover:underline text-black  pb-1 " href="index.php#activites">Galerie</a>
-                <a class="grid font-semibold text-sm cursor-pointer text-black hover:underline text-black  pb-1 " href="index.php#activites">Forfait</a>
+                <a class="grid font-semibold text-sm cursor-pointer text-black hover:underline text-black  pb-1 " href="index.php#galerie">Galerie</a>
+                <a class="grid font-semibold text-sm cursor-pointer text-black hover:underline text-black  pb-1 " href="index.php#forfait">Forfait</a>
                 <a class="grid font-semibold text-sm cursor-pointer text-black hover:underline text-black  pb-1 ">Contact</a>
                 <a class="grid font-semibold text-sm cursor-pointer text-black hover:underline text-black  pb-1 " href="index.php?admin">Dashboard</a>
             <?php
@@ -36,9 +36,9 @@
                 <div class="hidden lg:grid place-items-center col-span-2 grid-cols-6 p-3 ">
                 <a class="grid font-semibold text-sm cursor-pointer text-black hover:underline text-black  pb-1 " href="index.php">Accueil</a>
                 <a class="grid font-semibold text-sm cursor-pointer text-black hover:underline text-black  pb-1 " href="index.php#activites">Activités</a>
-                <a class="grid font-semibold text-sm cursor-pointer text-black hover:underline text-black  pb-1 " href="index.php#activites">Avions</a>
-                <a class="grid font-semibold text-sm cursor-pointer text-black hover:underline text-black  pb-1 " href="index.php#activites">Galerie</a>
-                <a class="grid font-semibold text-sm cursor-pointer text-black hover:underline text-black  pb-1 " href="index.php#activites">Forfait</a>
+                <a class="grid font-semibold text-sm cursor-pointer text-black hover:underline text-black  pb-1 " href="index.php#plane">Avions</a>
+                <a class="grid font-semibold text-sm cursor-pointer text-black hover:underline text-black  pb-1 " href="index.php#galerie">Galerie</a>
+                <a class="grid font-semibold text-sm cursor-pointer text-black hover:underline text-black  pb-1 " href="index.php#forfait">Forfait</a>
                 <a class="grid font-semibold text-sm cursor-pointer text-black hover:underline text-black  pb-1 ">Contact</a>
        
                 <?php

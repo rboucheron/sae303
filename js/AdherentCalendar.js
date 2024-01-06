@@ -143,15 +143,15 @@ function seeDates(event) {
   iddateClique = dateClique.id;
   calendar;
   calendar =
-    '<div class="relative mt-10 w-full flex flex-wrap justify-center lg:flex-row  relative gap-4 w-full">';
+    '<div class="relative mt-10 w-full block lg:flex justify-center flex-row  relative gap-4 w-full">';
   calendar +=
-    '<div class="absolute top-0 left-0 text-blue-800 text-x cursor-pointer" onclick="Goback()">Revenir en arrière</div>';
+    '<div class="absolute -top-5 lg:top-0 left-0 text-blue-800 text-x cursor-pointer" onclick="Goback()">Revenir en arrière</div>';
   for (var i = 0; i < reservation.length; i++) {
     console.log(i);
     console.log(reservation[i].date);
     if (reservation[i].date == iddateClique) {
       calendar +=
-        '<div class="bg-sky-800  w-80 rounded-xl border-2 border relative">' +
+        '<div class="bg-sky-800 mt-10 w-80 rounded-xl border-2 border ">' +
         '<p class="p-2 text-xl text-white font-bold">' +
         "Moniteur :" +
         reservation[i].moniteur +
@@ -165,8 +165,7 @@ function seeDates(event) {
         reservation[i].id +
         '" class="py-2 px-5 bg-sky-500 cursor-pointer rounded-3xl text-white hover:bg-black duration-300" onclick="Choose(event)">' +
         "Reservé" +
-        "</div>" +
-        "</div>";
+        "</div></div></div>";
     }
   }
   calendar += "</div>";
