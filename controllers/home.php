@@ -18,6 +18,7 @@ function home()
     require('./vue/MeteoActuelle.php');
 
     require('./vue/Forfait.php');
+    require('./vue/Galerie.php');
     
     require('./vue/Footer.php');
 }

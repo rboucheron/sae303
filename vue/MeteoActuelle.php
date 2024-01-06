@@ -31,7 +31,7 @@ switch ($data['weather']) {
 
     .clouds-bg {
         background: url('./assets/images/cloudy.gif') center/cover no-repeat;
-        background-size: 100%;
+        background-size: 60%;
     }
 
     .clear-bg {

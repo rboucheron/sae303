@@ -14,8 +14,8 @@
         }
     }
 ?>
-    <section>
-        <div class="block lg:grid grid-cols-2 mt-20 gap-4">
+    <section class="bg-yellow-200">
+        <div class=" block lg:grid grid-cols-2 mt-20 gap-4">
             <div>
                 <img class="w-3/4 m-auto" src="./assets/images/<?= $find[0]['image'] ?>" alt="<?= $find[0]['modele'] ?>">
             </div>
