@@ -14,7 +14,7 @@
         }
     }
 ?>
-    <section class="bg-yellow-200">
+    <section>
         <div class=" block lg:grid grid-cols-2 mt-20 gap-4">
             <div>
                 <img class="w-3/4 m-auto" src="./assets/images/<?= $find[0]['image'] ?>" alt="<?= $find[0]['modele'] ?>">
@@ -29,19 +29,7 @@
         <div class="w-full bg-white mt-10">
             <div class="w-full lg:w-3/4 relative m-auto  p-2">
                 <h2 class="text-5xl text-sky-800 w-full text-center">Choisissez une date</h2>
-                <div class="w-full lg:w-1/2  m-auto grid grid-cols-3 mt-10 mb-10">
-                    <div>
-                        <div class="bg-gray-200 p-2 rounded-xl place-items-end w-1/2 m-auto cursor-pointer hover:bg-sky-200" onclick="RemoveMonth()">
-                            <img src="./assets/images/chevron-left.svg" alt="right">
-                        </div>
-                    </div>
-                    <h3 class="text-2xl text-gray-800 text-center " id="month"></h3>
-                    <div>
-                        <div class="bg-gray-200 p-2 rounded-xl place-items-end w-1/2 m-auto cursor-pointer hover:bg-sky-200" onclick="AddMonth()">
-                            <img src="./assets/images/chevron-right.svg" alt="right">
-                        </div>
-                    </div>
-                </div>
+  
                 <div id="calendar"></div>
                 <div class="p-2 border-2 border-sky-800 text-sky-800 w-1/4 m-auto mt-10 text-center text-xl rounded-xl cursor-pointer hover:bg-sky-800 hover:text-white" onclick="openForm(), Form()">Reservé</div>
             </div>

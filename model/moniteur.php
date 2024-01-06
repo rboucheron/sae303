@@ -13,6 +13,13 @@ class Moniteur extends Model
     {
         $this->table = __CLASS__;
     }
+    public function Delete($id)
+    {
+        $this->id = $id;
+
+        $query = "DELETE FROM  {$this->table} WHERE id = {$this->id}";
+        $this->requete($query);
+    }
     public function requete(string $sql)
     {
         $this->db = Database::getInstance();

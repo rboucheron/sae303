@@ -3,12 +3,12 @@
 class Reservation extends Model
 {
     private $date;
-    private $heur; 
+    private $heur;
     private $duree;
     private $adherent;
     private $plane;
     private $moniteur;
-    private $id; 
+    private $id;
     public function __construct()
     {
         $this->table = __CLASS__;
@@ -37,16 +37,16 @@ class Reservation extends Model
     }
     public function Find($user, $plane)
     {
-        $this->moniteur = $user; 
-        $this->plane = $plane; 
+        $this->moniteur = $user;
+        $this->plane = $plane;
         $query = $this->requete('SELECT * FROM ' . $this->table . ' WHERE  moniteur = \'' . $this->moniteur  . '\' AND plane = \'' . $this->plane . '\'');
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
-    public function withoutAdheran($plane){
-        $this->plane = $plane; 
+    public function withoutAdheran($plane)
+    {
+        $this->plane = $plane;
         $query = $this->requete('SELECT * FROM ' . $this->table . ' WHERE adherent IS NULL AND plane = \'' . $this->plane . '\'');
         return $query->fetchAll(PDO::FETCH_ASSOC);
-
     }
     public function Add($date, $heur, $duree, $moniteur, $plane)
     {
@@ -54,7 +54,7 @@ class Reservation extends Model
         $this->heur = $heur;
         $this->duree = $duree;
         $this->plane = $plane;
-        $this->moniteur = $moniteur; 
+        $this->moniteur = $moniteur;
         $query = "INSERT INTO {$this->table} (date, heur, duree, plane, moniteur) VALUES ('$this->date', '$this->heur', '$this->duree', '$this->plane', '$this->moniteur')";
         $this->requete($query);
     }
@@ -62,26 +62,33 @@ class Reservation extends Model
     public function Findother($plane)
     {
 
-        $this->plane = $plane; 
+        $this->plane = $plane;
         $query = $this->requete('SELECT date, heur, duree, adherent, plane, moniteur, id FROM ' . $this->table . ' WHERE plane = \'' . $this->plane . '\' ');
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
     public function DeleteWplane($plane)
     {
-        $this->plane = $plane; 
+        $this->plane = $plane;
         $query = "DELETE FROM  {$this->table} WHERE plane = {$this->plane}";
         $this->requete($query);
     }
     public function AddAdherent($id, $adherent)
     {
-        $this->adherent = $adherent; 
-        $this->id = $id; 
+        $this->adherent = $adherent;
+        $this->id = $id;
         $query = "UPDATE {$this->table} SET `adherent`='$this->adherent' WHERE `id`= {$this->id}";
         $this->requete($query);
-
-
     }
-
-    
-    
+    public function DeleteAdherent($adherent)
+    {
+        $this->$adherent = $adherent; 
+        $query = "UPDATE {$this->table} SET adherent = NULL WHERE `adherent` = {$this->$adherent}";
+        $this->requete($query);
+    }
+    public function DeleteMoniteur($moniteur)
+    {
+        $this->$moniteur = $moniteur; 
+        $query = "UPDATE {$this->table} SET moniteur = NULL WHERE `moniteur` = {$this->$moniteur}";
+        $this->requete($query);
+    }
 }

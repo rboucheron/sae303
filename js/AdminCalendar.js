@@ -53,7 +53,25 @@ function RemoveMonth() {
 }
 
 function Fill() {
-  calendar = '<div class="grid grid-cols-7 mt-5">';
+  calendar =
+    '<div class="w-full lg:w-1/2  m-auto grid grid-cols-3 mt-10 mb-10">' +
+    '<div><div class="bg-gray-200 p-2 rounded-xl place-items-end w-1/2 m-auto cursor-pointer hover:bg-sky-200" onclick="RemoveMonth()"><img src="./assets/images/chevron-left.svg" alt="right"></div></div>' +
+    '<h3 class="text-2xl text-gray-800 text-center " >' +
+    months[firstDay.getMonth()] +
+    "</h3>" +
+    '<div><div class="bg-gray-200 p-2 rounded-xl place-items-end w-1/2 m-auto cursor-pointer hover:bg-sky-200" onclick="AddMonth()"><img src="./assets/images/chevron-right.svg" alt="right"></div></div></div>';
+
+  calendar +=
+    '<div class="w-full grid grid-cols-7 mt-5 text-sm lg:text-2sm text-center">' +
+    '<div class="border border-white text-start p-2">Dimanche</div>' +
+    '<div class="border border-white text-start p-2 ">Lundi</div>' +
+    '<div class="border border-white text-start p-2">Mardi</div>' +
+    '<div class="border border-white text-start p-2">Mercredi</div>' +
+    '<div class="border border-white text-start p-2">Jeudi</div>' +
+    '<div class="border border-white text-start p-2">Vendredi</div>' +
+    '<div class="border border-white text-start p-2">Samedi</div>' +
+    "</div>";
+  calendar += '<div class="grid grid-cols-7 mt-5">';
 
   if (firstDay.getDay() > 1) {
     for (let y = 1; y <= firstDay.getDay(); y++) {
@@ -113,12 +131,20 @@ function Fill() {
   }
   calendar += "</div>";
 }
+function Goback() {
+  Give();
+  Fill();
+  Write();
+}
+
 function seeDates(event) {
   dateClique = event.target;
   iddateClique = dateClique.id;
   calendar;
   calendar =
-    '<div class="w-full flex flex-wrap justify-center lg:flex-row  relative gap-4 w-full">';
+    '<div class="relative mt-10 w-full flex flex-wrap justify-center lg:flex-row  relative gap-4 w-full">';
+  calendar +=
+    '<div class="absolute top-0 left-0 text-blue-800 text-x cursor-pointer" onclick="Goback()">Revenir en arrière</div>';
   for (var i = 0; i < reservation.length; i++) {
     console.log(i);
     console.log(reservation[i].date);
@@ -126,9 +152,9 @@ function seeDates(event) {
       calendar +=
         '<div class="bg-sky-800  w-80 rounded-xl border-2 border relative">' +
         '<p class="p-2 text-xl text-white font-bold">' +
-        'Adhérent :' +
+        "Adhérent :" +
         reservation[i].adherent +
-        'Moniteur :' +
+        "Moniteur :" +
         reservation[i].moniteur +
         "</p>" +
         '<p class="p-2 text-xl text-white font-bold"> Début : ' +
@@ -149,7 +175,6 @@ function seeDates(event) {
 }
 
 function Write() {
-  document.getElementById("month").innerText = months[firstDay.getMonth()];
   document.getElementById("calendar").innerHTML = calendar;
 }
 

@@ -1,5 +1,6 @@
+
 <?php
-function DeleteUser()
+function DeleteMoniteur()
 {
     // models 
     require('./model/administrateur.php');
@@ -11,11 +12,11 @@ function DeleteUser()
     require('./vue/Header.php');
     require('./vue/PhoneMenu.php');
     if (isset($_SESSION['AdminNom']) && isset($_SESSION['AdminPrenom']) && isset($_SESSION['AdminEmail']) && isset($_SESSION['AdminTelephone'])) {
-        if(isset($_GET['deleteuser'])){
-            $Delete = new Adherent; 
+        if(isset($_GET['deleteMoniteur'])){
+            $Delete = new Moniteur; 
             $DeleteReservation = new Reservation; 
-            $DeleteReservation->DeleteAdherent($_GET['deleteuser']); 
-            $Delete->delete($_GET['deleteuser']); 
+            $DeleteReservation->DeleteMoniteur($_GET['deleteMoniteur']); 
+            $Delete->delete($_GET['deleteMoniteur']); 
             require('./vue/admin-vue/AdminBoard.php');
         }
     } 
