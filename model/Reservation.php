@@ -42,6 +42,13 @@ class Reservation extends Model
         $query = $this->requete('SELECT * FROM ' . $this->table . ' WHERE  moniteur = \'' . $this->moniteur  . '\' AND plane = \'' . $this->plane . '\'');
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
+    public function FindUser($user, $plane)
+    {
+        $this->adherent = $user;
+        $this->plane = $plane;
+        $query = $this->requete('SELECT * FROM ' . $this->table . ' WHERE  adherent = \'' . $this->adherent  . '\' AND plane = \'' . $this->plane . '\'');
+        return $query->fetchAll(PDO::FETCH_ASSOC);
+    }
     public function withoutAdheran($plane)
     {
         $this->plane = $plane;

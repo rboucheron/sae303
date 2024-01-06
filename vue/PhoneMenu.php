@@ -19,7 +19,23 @@
             <a class="text-5xl text-white">Contact</a>
         </div>
 
+        <?php if (isset($_SESSION['nom']) && isset($_SESSION['prenom'])) {
+        ?>
+            <div class="w-full mt-5 mb-5 text-center">
+                <a class="text-5xl text-white" href="index.php?profil"><?= $_SESSION['prenom'] ?> <?= $_SESSION['nom'] ?></a>
+            </div>
 
+
+        <?php
+        } else {
+
+        ?>
+            <div class="w-full mt-5 mb-5  text-center">
+                <a href="index.php?connexion" class="text-5xl text-white" onclick="closeMenu()">Connexion</a>
+            </div>
+        <?php
+        }
+        ?>
 
     </div>
 

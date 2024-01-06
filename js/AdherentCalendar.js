@@ -41,7 +41,6 @@ function AddMonth() {
   Fill();
   Write();
 }
-
 function RemoveMonth() {
   month--;
   if (month < 0) {
@@ -53,7 +52,6 @@ function RemoveMonth() {
   Fill();
   Write();
 }
-
 function Fill() {
   calendar =
     '<div class="w-full lg:w-1/2  m-auto grid grid-cols-3 mt-10 mb-10">' +
@@ -64,7 +62,7 @@ function Fill() {
     '<div><div class="bg-gray-200 p-2 rounded-xl place-items-end w-1/2 m-auto cursor-pointer hover:bg-sky-200" onclick="AddMonth()"><img src="./assets/images/chevron-right.svg" alt="right"></div></div></div>';
 
   calendar +=
-    '<div class="w-full grid grid-cols-7 mt-5 text-sm lg:text-2sm text-center">' +
+    '<div class="hidden w-full lg:grid grid-cols-7 mt-5 text-sm lg:text-2sm text-center">' +
     '<div class="border border-white text-start p-2">Dimanche</div>' +
     '<div class="border border-white text-start p-2 ">Lundi</div>' +
     '<div class="border border-white text-start p-2">Mardi</div>' +
@@ -115,8 +113,18 @@ function Fill() {
           "</div>";
       }
 
-      Classe =
-        "relative border border-sky-500 text-start p-2 pb-10 cursor-pointer hover:bg-sky-200";
+      var dateUser = userReservation.findIndex(function (element) {
+        return element.date == idDate;
+      });
+      console.log(dateUser);
+
+      if (dateUser !== -1) {
+        Classe =
+          "relative  border border-sky-500 text-start p-2 pb-10 cursor-pointer bg-green-500";
+      } else {
+        Classe =
+          " relative border border-sky-500 text-start p-2 pb-10 cursor-pointer hover:bg-sky-200";
+      }
     }
     calendar +=
       "<div class='" +
@@ -147,8 +155,6 @@ function seeDates(event) {
   calendar +=
     '<div class="absolute -top-5 lg:top-0 left-0 text-blue-800 text-x cursor-pointer" onclick="Goback()">Revenir en arrière</div>';
   for (var i = 0; i < reservation.length; i++) {
-    console.log(i);
-    console.log(reservation[i].date);
     if (reservation[i].date == iddateClique) {
       calendar +=
         '<div class="bg-sky-800 mt-10 w-80 rounded-xl border-2 border ">' +
@@ -168,6 +174,22 @@ function seeDates(event) {
         "</div></div></div>";
     }
   }
+  for (var j = 0; j < userReservation.length; j++) {
+    if (userReservation[j].date == iddateClique) {
+      calendar +=
+        '<div class="bg-green-500 mt-10 w-80 rounded-xl border-2 border ">' +
+        '<p class="p-2 text-xl text-white font-bold">' +
+        "Moniteur :" +
+        userReservation[j].moniteur +
+        "</p>" +
+        '<p class="p-2 text-xl text-white font-bold"> Début : ' +
+        userReservation[j].heur +
+        ", durée :" +
+        userReservation[j].duree +
+        "heur </p>" +
+        "</div>";
+    }
+  }
   calendar += "</div>";
   Write();
   document.getElementById("month").innerText = iddateClique;
@@ -179,17 +201,13 @@ function Choose(event) {
   console.log(reservChoose);
   document.getElementById(idreservClick).classList.add("hidden");
 }
-
 function Write() {
- 
   document.getElementById("calendar").innerHTML = calendar;
 }
-
 function Give() {
   firstDay = new Date(year, month, 1);
   lastDay = new Date(year, month + 1, 0);
 }
-
 function Form() {
   var form =
     "<h2 class='w-full text-white text-5xl text-center mt-2'>Confirmer Vos dates</h2>";

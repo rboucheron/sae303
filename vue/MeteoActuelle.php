@@ -26,17 +26,31 @@ switch ($data['weather']) {
 <style>
     .rain-bg {
         background: url('./assets/images/rainy.gif') center/cover no-repeat;
-        background-size: 60%;
+        background-size: 100%;
     }
 
     .clouds-bg {
         background: url('./assets/images/cloudy.gif') center/cover no-repeat;
-        background-size: 60%;
+        background-size: 100%;
     }
 
     .clear-bg {
         background: url('./assets/images/sunny.gif') center/cover no-repeat;
-        background-size: 60%;
+        background-size: 100%;
+    }
+
+    @media (min-width: 1024px) {
+        .rain-bg {
+            background-size: 60%;
+        }
+
+        .clouds-bg {
+            background-size: 60%;
+        }
+
+        .clear-bg {
+            background-size: 60%;
+        }
     }
 
     .default-bg {
