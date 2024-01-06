@@ -10,7 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
-<body class="bg-gradient-to-r from-cyan-400 to-blue-500 overflow-hidden overflow-y-scroll">
+<body class="bg-gray-200 overflow-hidden overflow-y-scroll">
     <header class="bg-blue-950 w-full grid grid-cols-2 gap-4 lg:grid-cols-4  shadow-xl ">
         <div class="cursor-pointer grid place-items-start pt-2 lg:col-span-1  "><img src="./assets/images/logof.png" class="w-14 mt-0 ml-12 mb-1 " alt=""></div>
         <div class="cursor-pointer grid place-items-end pb-2 pr-6 lg:hidden " onclick="openMenu ()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-align-justify">
@@ -84,7 +84,7 @@
                 } else {
                 ?>
                     <div class="hidden lg:grid place-items-center  pl-14 ">
-                        <div class=" grid"> <a class="  w-full text-center rounded-sm text-white  text-md cursor-pointer  py-2 px-5  font-Arial bg-gradient-to-r from-cyan-400 to-blue-500  hover:from-blue-500 hover:to-blue-500 duration-300  hover:scale-105 " href="index.php?connexion">Se connecter</a></div>
+                        <div class=" grid"> <a class="  w-full text-center rounded-sm text-white  text-md cursor-pointer  py-2 px-5  font-Arial bg-gradient-to-r from-cyan-400 to-blue-500  hover:from-blue-500 hover:to-blue-500duration-300  hover:scale-105 " href="index.php?connexion">Se connecter</a></div>
                     </div>
                 <?php
                 }

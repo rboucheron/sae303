@@ -3,7 +3,7 @@ function reservation()
 {
     include('./model/Plane.php');
     include('./model/Reservation.php');
-    require('./vue/Header.php');
+    require('./vue/Header2.php');
     require('./vue/PhoneMenu.php');
     if(isset($_SESSION['id'])){
         include('./vue/adherent-vue/Reservation.php');

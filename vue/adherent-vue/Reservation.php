@@ -16,15 +16,15 @@
     $findUserReservation = $reservation->FindUser($_SESSION['id'], $find[0]['id']);
 
 ?>
-    <section>
-        <div class=" block lg:grid grid-cols-2 mt-20 gap-4">
+    <section >
+        <div class="bg-white rounded-xl mr-9 ml-9 py-9 block lg:grid grid-cols-2 mt-20 gap-4">
             <div>
                 <img class="w-3/4 m-auto" src="./assets/images/<?= $find[0]['image'] ?>" alt="<?= $find[0]['modele'] ?>">
             </div>
             <div class="p-2">
-                <h1 class="text-5xl text-white text-center lg:text-left"><?= $find[0]['modele'] ?><?= $find[0]['marque'] ?></h1>
-                <h2 class="text-2xl text-white text-center lg:text-left"><?= $find[0]['type'] ?></h2>
-                <p class="m-2 lg:w-3/4 text-xl"><?= $find[0]['description'] ?></p>
+                <h1 class="text-5xl text-sky-800 text-center lg:text-left font-test"><?= $find[0]['modele'] ?><?= $find[0]['marque'] ?></h1>
+                <h2 class="text-2xl text-slate-700 text-center font-bold lg:text-left"><?= $find[0]['type'] ?></h2>
+                <p class="m-2 text-slate-600 lg:w-3/4 text-lg"><?= $find[0]['description'] ?></p>
 
             </div>
         </div>

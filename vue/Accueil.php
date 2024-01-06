@@ -1,4 +1,4 @@
-<section class="w-full mt-14 ">
+<section class="bg-gradient-to-r from-cyan-200 to-blue-500 w-full  p-14 ">
         <h1 class="text-6xl lg:text-8xl w-3/4 m-auto text-center px-6 text-gray-50 font-bold ">VENEZ PILOTER <br>UN ULM</h1>
         <p class="mt-2 text-2xl w-1/3 m-auto text-center text-slate-700 font-semibold ">BIENVENUE CHEZ AC2FL</p>
         <div class="w-1/2 lg:w-1/3 m-auto mt-9 cursor-pointer">

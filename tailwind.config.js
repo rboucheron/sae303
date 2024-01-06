@@ -3,6 +3,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
+        test: ['Figtree']
+        
 
       },
     },

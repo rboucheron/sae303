@@ -12,5 +12,5 @@
         </div>
     </form>
 
-    <p class="mt-4 text-sm text-gray-600 text-center">Pas encore inscrit? <a href="index.php?inscription" class="text-blue-500 hover:underline">Inscrivez-vous</a></p>
+    <p class="mt-4 text-sm text-gray-600 text-center">Pas encore inscrit? <a href="index.php?inscription" class="text-blue-800 hover:underline">Inscrivez-vous</a></p>
 </section>
