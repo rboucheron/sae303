@@ -65,6 +65,22 @@ class Reservation extends Model
         $query = "INSERT INTO {$this->table} (date, heur, duree, plane, moniteur) VALUES ('$this->date', '$this->heur', '$this->duree', '$this->plane', '$this->moniteur')";
         $this->requete($query);
     }
+    public function Addall($date, $heur, $duree, $moniteur, $adherent, $plane)
+    {
+        $this->date = $date;
+        $this->heur = $heur;
+        $this->duree = $duree;
+        $this->adherent = $adherent; 
+        $this->plane = $plane;
+        $this->moniteur = $moniteur;
+        $query = "INSERT INTO {$this->table} (date, heur, duree, plane, moniteur, adherent) VALUES ('$this->date', '$this->heur', '$this->duree', '$this->plane', '$this->moniteur', '$this->adherent')";
+        $this->requete($query);
+    }
+    public function Findall()
+    {
+        $query = $this->requete('SELECT date, heur, duree, adherent, plane, moniteur, id FROM ' . $this->table . '');
+        return $query->fetchAll(PDO::FETCH_ASSOC);
+    }
 
     public function Findother($plane)
     {
@@ -86,15 +102,21 @@ class Reservation extends Model
         $query = "UPDATE {$this->table} SET `adherent`='$this->adherent' WHERE `id`= {$this->id}";
         $this->requete($query);
     }
+    public function Delete($id)
+    {
+        $this->id = $id;
+        $query = "DELETE FROM  {$this->table} WHERE id = {$this->id}";
+        $this->requete($query);
+    }
     public function DeleteAdherent($adherent)
     {
-        $this->$adherent = $adherent; 
+        $this->$adherent = $adherent;
         $query = "UPDATE {$this->table} SET adherent = NULL WHERE `adherent` = {$this->$adherent}";
         $this->requete($query);
     }
     public function DeleteMoniteur($moniteur)
     {
-        $this->$moniteur = $moniteur; 
+        $this->$moniteur = $moniteur;
         $query = "UPDATE {$this->table} SET moniteur = NULL WHERE `moniteur` = {$this->$moniteur}";
         $this->requete($query);
     }

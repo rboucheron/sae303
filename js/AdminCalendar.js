@@ -162,9 +162,8 @@ function seeDates(event) {
         ", durée :" +
         reservation[i].duree +
         "heur </p>" +
-        '<div class="p-2  mb-2 mr-2  bottom-0 right-0 flex"><a href="?modifyreserv=' +
-        reservation[i].id +
-        '" class="bg-yellow-500 text-white p-2 rounded-xl relative mr-2 hover:bg-yellow-700">Modifier</a><a href="?deletereserv=' +
+        '<div class="p-2  mb-2 mr-2  bottom-0 right-0 flex">'+
+        '<a href="?deletereserv=' +
         reservation[i].id +
         '" class="bg-red-500 text-white p-2 rounded-xl relative mr-2 hover:bg-red-700 ">Supprimer</a></div>' +
         "</div>";

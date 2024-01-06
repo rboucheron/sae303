@@ -15,7 +15,9 @@ include('./controllers/seeplane.php');
 include('./controllers/deleteuser.php');
 include('./controllers/ModifyUser.php');
 include('./controllers/addmoniteur.php');
-include('./controllers/deletemoniteur.php'); 
+include('./controllers/deletemoniteur.php');
+include('./controllers/addreservation.php'); 
+include('./controllers/deletereserv.php');
 
 
 
@@ -45,7 +47,11 @@ if (isset($_GET['connexion'])) {
 } elseif (isset($_GET['AddMoniteur'])) {
     Addmoniteur();
 } elseif (isset($_GET['deleteMoniteur'])) {
-    DeleteMoniteur(); 
+    DeleteMoniteur();
+} elseif (isset($_GET['AddReservation'])) {
+    AddReservation();
+} elseif (isset($_GET['deletereserv'])){
+    deletereserv(); 
 } else {
     home();
 }

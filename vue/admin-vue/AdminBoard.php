@@ -15,6 +15,7 @@ $CountPlane = $nbPlane->Count();
 //reservation 
 $nbReservation = new Reservation();
 $CountReservation = $nbReservation->Count();
+$allReservation = $nbReservation->Findall();
 $today = date('Y-m-d');
 
 for ($i = 0; $i <= 6; $i++) {
@@ -130,8 +131,45 @@ for ($e = 0; $e <= 12; $e++) {
                     <td class="border-r-2 border-b border-blue-300 p-2"><?= $rowMoniteur['telephone'] ?></td>
                     <td class=" border-b border-blue-300 p-4">
                         <a href="?deleteMoniteur=<?= $rowMoniteur['id'] ?>" class="bg-red-500 text-white p-2 rounded-xl relative mr-2 hover:bg-red-700 ">Supprimer</a>
-                        <a href="?modifyMoniteur=<?= $rowMoniteur['id'] ?>" class="bg-yellow-500 text-white p-2 rounded-xl relative mr-2 hover:bg-yellow-700">Modifier</a>
+                        
                     </td>
+                </tr>
+            <?php } ?>
+        </tbody>
+    </table>
+</section>
+<section class="w-full mt-20">
+    <h2 class=" text-2xl text-white text-center">Reservation</h2>
+    <div class="mt-4 w-full flex items-center justify-center">
+        <a href="?AddReservation" class="bg-green-400 text-2xl text-white p-2 rounded-xl relative mr-2 hover:bg-green-700">Ajouter + </a>
+    </div>
+    <table class="w-3/4 m-auto mt-2">
+        <thead class="p-2 lg:p-11 bg-gray-300 ">
+            <tr>
+                <th class="border-r-2 border-b-2 border-blue-300 p-2">Id</th>
+                <th class="border-r-2 border-b-2 border-blue-300 ">Adherent</th>
+                <th class="border-r-2 border-b-2 border-blue-300 ">moniteur</th>
+                <th class="border-r-2 border-b-2 border-blue-300 ">heur</th>
+                <th class="border-r-2  border-b-2 border-blue-300">duree</th>
+                <th class=" border-r-2  border-b-2 border-blue-300 ">date</th>
+                <th class=" border-r-2  border-b-2 border-blue-300 ">avion</th>
+                <th class=" border-r-2  border-b-2 border-blue-300 ">Supprimer</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($allReservation as $rowReservation) { ?>
+                <tr class="p2 lg:p-11 bg-white ">
+                    <td class="border-r-2 border-b border-blue-300 p-2"><?= $rowReservation['id'] ?></td>
+                    <td class="border-r-2 border-b border-blue-300 p-2"><?= $rowReservation['adherent'] ?></td>
+                    <td class="border-r-2 border-b border-blue-300 p-2"><?= $rowReservation['moniteur'] ?></td>
+
+                    <td class="border-r-2 border-b border-blue-300 p-2"><?= $rowReservation['heur'] ?></td>
+                    <td class="border-r-2 border-b border-blue-300 p-2"><?= $rowReservation['duree'] ?>h</td>
+                    <td class=" border-r-2 border-b border-blue-300 p-2"><?= $rowReservation['date'] ?></td>
+
+
+                    <td class=" border-r-2 border-b border-blue-300 p-2"><?= $rowReservation['plane'] ?></td>
+                    <td class=" border-r-2 border-b border-blue-300 p-2"> <a href="?deletereserv=<?= $rowReservation['id'] ?>" class="bg-red-500 text-white p-2 rounded-xl relative mr-2 hover:bg-red-700 ">Supprimer</a></td>
                 </tr>
             <?php } ?>
         </tbody>
