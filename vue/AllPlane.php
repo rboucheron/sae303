@@ -10,7 +10,7 @@ if (isset($_SESSION['AdminId'])) {
 ?>
 
 
-<section class=" mt-20 w-full">
+<section class=" mt-20 w-full" >
     <h1 class="text-2xl lg:text-4xl w-3/4 m-auto text-center text-slate-700 font-bold">Les Avions</h1>
     <div class="block w-full lg:w-3/4 m-auto mt-20">
         <div class="w-full m-auto mt-10 p-10 lg:p-2">

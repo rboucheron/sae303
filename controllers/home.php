@@ -16,9 +16,9 @@ function home()
     require('./vue/AllPlane.php');
     require('./vue/AllMoniteur.php');
     require('./vue/MeteoActuelle.php');
-
-    require('./vue/Forfait.php');
     require('./vue/Galerie.php');
+    require('./vue/Forfait.php');
+  
     
     require('./vue/Footer.php');
 }

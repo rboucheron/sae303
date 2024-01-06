@@ -22,18 +22,24 @@
         if (isset($_SESSION['AdminNom']) && isset($_SESSION['AdminPrenom']) && isset($_SESSION['AdminEmail']) && isset($_SESSION['AdminTelephone'])) {
 
         ?> 
-            <div class=" hidden lg:grid place-items-center col-span-2 grid-cols-4 p-3  ">
-                <a class="grid font-semibold text-sm cursor-pointer text-black hover:underline text-black  pb-1 " href="index.php">ACCUEIL</a>
-                <a class="grid font-semibold text-sm cursor-pointer text-black hover:underline text-black  pb-1 " href="index.php#activites">DECOUVRIR</a>
-                <a class="grid font-semibold text-sm cursor-pointer text-black hover:underline text-black  pb-1 ">CONTACT</a>
-                <a class="grid font-semibold text-sm cursor-pointer text-black hover:underline text-black  pb-1 " href="index.php?admin">DASHBOARD</a>
+            <div class=" hidden lg:grid place-items-center col-span-2 grid-cols-7 p-3  ">
+                <a class="grid font-semibold text-sm cursor-pointer text-black hover:underline text-black  pb-1 " href="index.php">Accueil</a>
+                <a class="grid font-semibold text-sm cursor-pointer text-black hover:underline text-black  pb-1 " href="index.php#activites">Activités</a>
+                <a class="grid font-semibold text-sm cursor-pointer text-black hover:underline text-black  pb-1 " href="index.php#plane">Avions</a>
+                <a class="grid font-semibold text-sm cursor-pointer text-black hover:underline text-black  pb-1 " href="index.php#activites">Galerie</a>
+                <a class="grid font-semibold text-sm cursor-pointer text-black hover:underline text-black  pb-1 " href="index.php#activites">Forfait</a>
+                <a class="grid font-semibold text-sm cursor-pointer text-black hover:underline text-black  pb-1 ">Contact</a>
+                <a class="grid font-semibold text-sm cursor-pointer text-black hover:underline text-black  pb-1 " href="index.php?admin">Dashboard</a>
             <?php
         } else {
             ?>
-                <div class="hidden lg:grid place-items-center col-span-2 grid-cols-3 p-3 ">
-                    <a class="grid font-semibold text-md cursor-pointer text-black hover:underline text-black  pb-1 " href="index.php">ACCUEIL</a>
-                    <a class="grid font-semibold text-md cursor-pointer text-black hover:underline text-black  pb-1 " href="index.php#activites">DECOUVRIR</a>
-                    <a href="index.php?gallery" class="grid font-semibold text-md cursor-pointer text-black hover:underline text-black  pb-1 ">CONTACT</a>
+                <div class="hidden lg:grid place-items-center col-span-2 grid-cols-6 p-3 ">
+                <a class="grid font-semibold text-sm cursor-pointer text-black hover:underline text-black  pb-1 " href="index.php">Accueil</a>
+                <a class="grid font-semibold text-sm cursor-pointer text-black hover:underline text-black  pb-1 " href="index.php#activites">Activités</a>
+                <a class="grid font-semibold text-sm cursor-pointer text-black hover:underline text-black  pb-1 " href="index.php#activites">Avions</a>
+                <a class="grid font-semibold text-sm cursor-pointer text-black hover:underline text-black  pb-1 " href="index.php#activites">Galerie</a>
+                <a class="grid font-semibold text-sm cursor-pointer text-black hover:underline text-black  pb-1 " href="index.php#activites">Forfait</a>
+                <a class="grid font-semibold text-sm cursor-pointer text-black hover:underline text-black  pb-1 ">Contact</a>
        
                 <?php
             }

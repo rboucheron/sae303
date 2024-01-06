@@ -13,7 +13,7 @@ $resultat = $moniteur->findAll();
                     <div class="w-full ">
                         <img class="w-1/2 m-auto cover rounded-t-lg" src="./assets/images/<?= $rowMoniteur['profil'] ?>" alt="image d'élicoptère">
                     </div>
-                    <p class="p-2 text-xl text-sky-800 font-bold"> <?= $rowMoniteur['prenom']  ?> <?= $rowMoniteur['nom']  ?></p>
+                    <p class="p-2 text-xl text-sky-800 font-bold text-center"> <?= $rowMoniteur['prenom']  ?> <?= $rowMoniteur['nom']  ?></p>
                     <p class="p-2 text-sky-800 pb-4"><?= $rowMoniteur['role'] ?></p>
                 </div>
             <?php } ?>
