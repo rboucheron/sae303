@@ -13,11 +13,9 @@
 <body class="bg-gradient-to-r from-cyan-400 to-blue-500 overflow-hidden overflow-y-scroll">
     <header class="bg-blue-950 w-full grid grid-cols-2 gap-4 lg:grid-cols-4  shadow-xl ">
         <div class="cursor-pointer grid place-items-start pt-2 lg:col-span-1  "><img src="./assets/images/logof.png" class="w-14 mt-0 ml-12 mb-1 " alt=""></div>
-        <div class="cursor-pointer grid place-items-end pb-2 pr-6 lg:hidden " onclick="openMenu ()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-align-justify">
-                <line x1="3" x2="21" y1="6" y2="6" />
-                <line x1="3" x2="21" y1="12" y2="12" />
-                <line x1="3" x2="21" y1="18" y2="18" />
-            </svg></div>
+        <div class="cursor-pointer grid place-items-end pb-2 pr-6 lg:hidden " onclick="openMenu ()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+        </div>
         <?php
         if (isset($_SESSION['AdminNom']) && isset($_SESSION['AdminPrenom']) && isset($_SESSION['AdminEmail']) && isset($_SESSION['AdminTelephone'])) {
 
