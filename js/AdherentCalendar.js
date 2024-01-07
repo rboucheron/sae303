@@ -170,7 +170,7 @@ function seeDates(event) {
         '<div class="mt-5 mb-2 ml-2 bottom-0 right-0 flex"><div id="' +
         reservation[i].id +
         '" class="py-2 px-5 bg-sky-500 cursor-pointer rounded-3xl text-white hover:bg-black duration-300" onclick="Choose(event)">' +
-        "Reservé" +
+        "Ajouter" +
         "</div></div></div>";
     }
   }

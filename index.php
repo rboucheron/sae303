@@ -17,8 +17,9 @@ include('./controllers/deleteuser.php');
 include('./controllers/ModifyUser.php');
 include('./controllers/addmoniteur.php');
 include('./controllers/deletemoniteur.php');
-include('./controllers/addreservation.php'); 
+include('./controllers/addreservation.php');
 include('./controllers/deletereserv.php');
+include('./controllers/addDispo.php'); 
 
 
 
@@ -51,8 +52,10 @@ if (isset($_GET['connexion'])) {
     DeleteMoniteur();
 } elseif (isset($_GET['AddReservation'])) {
     AddReservation();
-} elseif (isset($_GET['deletereserv'])){
-    deletereserv(); 
+} elseif (isset($_GET['deletereserv'])) {
+    deletereserv();
+} elseif (isset($_GET['AddDispo'])) {
+    AddDispo();
 } else {
     home();
 }

@@ -141,7 +141,8 @@ for ($e = 0; $e <= 12; $e++) {
 <section class="w-full mt-20">
     <h2 class=" text-2xl text-white text-center">Reservation</h2>
     <div class="mt-4 w-full flex items-center justify-center">
-        <a href="?AddReservation" class="bg-green-400 text-2xl text-white p-2 rounded-xl relative mr-2 hover:bg-green-700">Ajouter + </a>
+        <a href="?AddReservation" class="bg-green-400 text-2xl text-white p-2 rounded-xl relative mr-2 hover:bg-green-700">Reservation + </a>
+        <a href="?AddDispo" class="bg-green-400 text-2xl text-white p-2 rounded-xl relative mr-2 hover:bg-green-700">Disponibilité + </a>
     </div>
     <table class="w-3/4 m-auto mt-2">
         <thead class="p-2 lg:p-11 bg-gray-300 ">
