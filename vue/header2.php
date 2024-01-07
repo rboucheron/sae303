@@ -23,13 +23,13 @@
 
         ?>
             <div class=" hidden lg:grid place-items-center col-span-2 grid-cols-7 p-3  ">
-                <a class="grid font-semibold text-sm cursor-pointer text-black hover:underline text-black  pb-1 " href="index.php">Accueil</a>
-                <a class="grid font-semibold text-sm cursor-pointer text-black hover:underline text-black  pb-1 " href="index.php#activites">Activités</a>
-                <a class="grid font-semibold text-sm cursor-pointer text-black hover:underline text-black  pb-1 " href="index.php#plane">Avions</a>
-                <a class="grid font-semibold text-sm cursor-pointer text-black hover:underline text-black  pb-1 " href="index.php#galerie">Galerie</a>
-                <a class="grid font-semibold text-sm cursor-pointer text-black hover:underline text-black  pb-1 " href="index.php#forfait">Forfait</a>
-                <a class="grid font-semibold text-sm cursor-pointer text-black hover:underline text-black  pb-1 ">Contact</a>
-                <a class="grid font-semibold text-sm cursor-pointer text-black hover:underline text-black  pb-1 " href="index.php?admin">Dashboard</a>
+                <a class="grid font-semibold text-sm cursor-pointer text-white  hover:underline  pb-1 " href="index.php">Accueil</a>
+                <a class="grid font-semibold text-sm cursor-pointer text-white  hover:underline  pb-1 " href="index.php#activites">Activités</a>
+                <a class="grid font-semibold text-sm cursor-pointer text-white  hover:underline  pb-1 " href="index.php#plane">Avions</a>
+                <a class="grid font-semibold text-sm cursor-pointer text-white  hover:underline  pb-1 " href="index.php#galerie">Galerie</a>
+                <a class="grid font-semibold text-sm cursor-pointer text-white  hover:underline  pb-1 " href="index.php#forfait">Forfait</a>
+                <a class="grid font-semibold text-sm cursor-pointer text-white  hover:underline  pb-1 ">Contact</a>
+                <a class="grid font-semibold text-sm cursor-pointer text-white  hover:underline  pb-1 " href="index.php?admin">Dashboard</a>
             <?php
         } else {
             ?>
