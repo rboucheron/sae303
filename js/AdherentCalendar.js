@@ -235,7 +235,8 @@ function Form() {
       i +
       '" value="' +
       reservChoose[i].reservation +
-      '"/>';
+      '"/>' +
+      '</div></div>';
   }
   console.log(form);
   document.getElementById("form").innerHTML = form;
