@@ -1,25 +1,25 @@
 <footer class="bg-white rounded-lg mt-36 shadow dark:bg-blue-950 m-4">
     <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
         <div class="sm:flex sm:items-center sm:justify-between">
-            <a href="https://flowbite.com/" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
+            <div class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
                 <img src="./assets/images/logof.png" class="w-16" alt="Flowbite Logo" />
                 <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">AC2FL</span>
-            </a>
+            </div>
             <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
                 <li>
-                    <a href="#" class="hover:underline me-4 md:me-6">Accueil</a>
+                    <a href="index.php" class="hover:underline me-4 md:me-6">Accueil</a>
                 </li>
                 <li>
-                    <a href="#" class="hover:underline me-4 md:me-6">Activités</a>
+                    <a href="index.php#activites" class="hover:underline me-4 md:me-6">Activités</a>
                 </li>
                 <li>
-                    <a href="#" class="hover:underline me-4 md:me-6">Avions</a>
+                    <a href="index.php#plane" class="hover:underline me-4 md:me-6">Avions</a>
                 </li>
                 <li>
-                    <a href="#" class="hover:underline me-4 md:me-6">Galerie</a>
+                    <a href="index.php#galerie" class="hover:underline me-4 md:me-6">Galerie</a>
                 </li>
                 <li>
-                    <a href="#" class="hover:underline me-4 md:me-6">Forfait</a>
+                    <a href="index.php#forfait" class="hover:underline me-4 md:me-6">Forfait</a>
                 </li>
 
             </ul>

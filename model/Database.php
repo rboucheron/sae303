@@ -6,7 +6,7 @@ class Database extends PDO
     private static $instance;
     private const DBHOST = 'localhost';
     private const DBUSER = 'root';
-    private const DBPASS = '';
+    private const DBPASS = 'root';
     private const DBNAME = 'sae303';
 
     public function __construct()
