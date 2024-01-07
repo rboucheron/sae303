@@ -1,4 +1,4 @@
-<div class="hidden fixed w-full h-full bg-cyan-700 bg-opacity-75 " id="Menu">
+<div class="hidden z-50 fixed w-full h-full bg-cyan-700 bg-opacity-75 " id="Menu">
     <div class=" mt-10 w-3/4 m-auto block">
         <div class="w-full mt-5 mb-5 text-center">
             <a href="index.php" class="text-5xl text-white" onclick="closeMenu()">Accueil</a>
