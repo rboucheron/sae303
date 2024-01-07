@@ -7,8 +7,11 @@
 
     <div class="block lg:grid grid-cols-2 gap-4  w-3/4 m-auto p-3 rounded-xl mt-10 mb-10">
         <div>
+            
             <h2 class="text-5xl text-white">Données personnelles</h2>
+            
             <p class="mt-2 text-xl">
+                
                 <span class="text-white">Nom :</span> <?= $_SESSION['nom'] ?><br />
                 <span class="text-white">Prénom :</span> <?= $_SESSION['prenom'] ?><br />
                 <span class="text-white">Date de naissance :</span> <?= $_SESSION['naissance'] ?><br />

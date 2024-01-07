@@ -10,7 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
-<body class="bg-gradient-to-r from-cyan-400 to-blue-500 overflow-hidden overflow-y-scroll">
+<body class=" bg-gradient-to-r from-cyan-400 to-blue-500 overflow-hidden overflow-y-scroll">
     <header class="bg-blue-950 w-full grid grid-cols-2 gap-4 lg:grid-cols-4  shadow-xl ">
         <div class="cursor-pointer grid place-items-start pt-2 lg:col-span-1  "><img src="./assets/images/logof.png" class="w-14 mt-0 ml-12 mb-1 " alt=""></div>
         <div class="cursor-pointer grid place-items-end pb-2 pr-6 lg:hidden " onclick="openMenu ()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-align-justify">
@@ -57,7 +57,7 @@
                     <div class="hidden lg:flex  place-items-center  self-center justify-end pr-10">
                         <img class="w-6" src="./assets/images/compte.svg" alt="compte identifier">
                         <a href="index.php?profil">
-                            <p class="font-semibold text-sm text-blue-800"> <?= $_SESSION['prenom'] ?> <?= $_SESSION['nom'] ?><?php if ($anniversaire == $today) {
+                            <p class="font-semibold text-sm text-cyan-500"> <?= $_SESSION['prenom'] ?> <?= $_SESSION['nom'] ?><?php if ($anniversaire == $today) {
                                                                                                                                     echo "🎉";
                                                                                                                                 } ?></p>
                         </a>

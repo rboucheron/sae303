@@ -8,7 +8,7 @@ function home()
     require('./model/Reservation.php');
     require('./model/moniteur.php');
     // vues 
-    require('./vue/Header.php');
+    require('./vue/Header2.php');
     require('./vue/PhoneMenu.php');
     require('./vue/Accueil.php');
     require('./vue/WhiteBlock.php');

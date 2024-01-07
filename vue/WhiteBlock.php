@@ -1,4 +1,4 @@
-<section class="w-full bg-white pt-10 ">
+<section class="w-full bg-white shadow-xl pt-10 ">
     <div class=" flex ">
 
 

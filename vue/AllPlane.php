@@ -10,27 +10,134 @@ if (isset($_SESSION['AdminId'])) {
 ?>
 
 
-<section class=" mt-20 w-full" >
-    <h1 class="text-2xl lg:text-4xl w-3/4 m-auto text-center text-slate-700 font-bold">Les Avions</h1>
-    <div class="block w-full lg:w-3/4 m-auto mt-20">
-        <div class="w-full m-auto mt-10 p-10 lg:p-2">
-            <p class="text-2xl text-slate-700 font-semibold">Il existe 6 classes d’ULM : </p>
-            <ul>
-                <li class="text-white text-xl">Le paramoteur</li>
-                <li class="text-white text-xl">Le pendulaire</li>
-                <li class="text-white text-xl">Le multiaxes</li>
-                <li class="text-white text-xl">L’autogire ultraléger</li>
-                <li class="text-white text-xl">L’aérostat ultraléger</li>
-                <li class="text-white text-xl">L’hélicoptère ultraléger</li>
-            </ul>
+<section class="bg-white mt-20 w-full" >
+    
+    <h1 class="text-2xl p-10 lg:text-4xl w-3/4 m-auto text-center text-slate-700 font-bold">Les Avions</h1>
+    <div class="bg-white block w-full lg:w-3/4 m-auto mt-20">
+        
+        <div class=" w-full m-auto mt-10 p-10 lg:p-2">
+            <div>
+            <p class="text-2xl p-4 text-slate-700 font-semibold">Les 6 classes d’ULM  </p>
+
+                <div id="accordion-flush" data-accordion="collapse" data-active-classes="bg-white dark:bg-gray-900 text-gray-900 dark:text-white" data-inactive-classes="text-gray-500 dark:text-gray-400">
+                <h2 class="" id="accordion-flush-heading-1">
+                    <button type="button" class="p-4 flex items-center justify-between w-full py-5 font-medium rtl:text-right text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400 gap-3" data-accordion-target="#accordion-flush-body-1" aria-expanded="true" aria-controls="accordion-flush-body-1">
+                    <span>Paramoteur </span>
+                    <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+                    </svg>
+                    </button>
+                </h2>
+                <div id="accordion-flush-body-1" class="hidden" aria-labelledby="accordion-flush-heading-1">
+                    <div class="py-5 border-b border-gray-200 dark:border-gray-700">
+                    <p class="mb-2 text-gray-500 dark:text-gray-400">Le paramoteur est un type d'ULM caractérisé par l'utilisation d'un moteur portatif, généralement monté sur le dos du pilote, qui propulse une hélice. </p>
+                    <p class="text-gray-500 dark:text-gray-400">Ce moteur est associé à une voile similaire à celle d'un parachute. Les paramoteurs offrent une approche simple et légère pour voler, permettant aux pilotes de décoller et atterrir à pied.</p>
+                    </div>
+                </div>
+
+
+                <div id="accordion-flush-heading-2" data-accordion="collapse" data-active-classes="bg-white dark:bg-gray-900 text-gray-900 dark:text-white" data-inactive-classes="text-gray-500 dark:text-gray-400">
+                <h2 class="" id="accordion-flush-heading-2">
+                    <button type="button" class="p-4 flex items-center justify-between w-full py-5 font-medium rtl:text-right text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400 gap-3" data-accordion-target="#accordion-flush-body-2" aria-expanded="true" aria-controls="accordion-flush-body-1">
+                    <span>Pendulaire  </span>
+                    <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+                    </svg>
+                    </button>
+                </h2>
+                <div id="accordion-flush-body-2" class="hidden" aria-labelledby="accordion-flush-heading-1">
+                    <div class="py-5 border-b border-gray-200 dark:border-gray-700">
+                    <p class="mb-2 text-gray-500 dark:text-gray-400">Les ULM pendulaires utilisent un système de pendule pour soutenir la nacelle du pilote. Ils sont équipés d'une aile souple et d'une configuration qui permet une flexibilité de mouvement pendant le vol. </p>
+                    <p class="text-gray-500 dark:text-gray-400">Les ULM pendulaires offrent une expérience de vol unique avec une sensation proche du vol en deltaplane.</p>
+                    </div>
+                </div>
+
+
+                <div id="accordion-flush-heading-3" data-accordion="collapse" data-active-classes="bg-white dark:bg-gray-900 text-gray-900 dark:text-white" data-inactive-classes="text-gray-500 dark:text-gray-400">
+                <h2 class="" id="accordion-flush-heading-3">
+                    <button type="button" class="p-4 flex items-center justify-between w-full py-5 font-medium rtl:text-right text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400 gap-3" data-accordion-target="#accordion-flush-body-3" aria-expanded="true" aria-controls="accordion-flush-body-1">
+                    <span>Multiaxes  </span>
+                    <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+                    </svg>
+                    </button>
+                </h2>
+                <div id="accordion-flush-body-3" class="hidden" aria-labelledby="accordion-flush-heading-1">
+                    <div class="py-5 border-b border-gray-200 dark:border-gray-700">
+                    <p class="mb-2 text-gray-500 dark:text-gray-400">Les ULM multiaxes sont des aéronefs à ailes rigides dotés de commandes similaires à celles d'un avion conventionnel.</p>
+                    <p class="text-gray-500 dark:text-gray-400">Ils offrent une maniabilité et une stabilité en vol, ce qui les rend populaires pour les pilotes qui recherchent une expérience de vol similaire à celle des avions traditionnels, mais à une échelle plus légère et plus accessible.</p>
+                    </div>
+                </div>
+
+
+                <div id="accordion-flush-heading-4" data-accordion="collapse" data-active-classes="bg-white dark:bg-gray-900 text-gray-900 dark:text-white" data-inactive-classes="text-gray-500 dark:text-gray-400">
+                <h2 class="" id="accordion-flush-heading-4">
+                    <button type="button" class="p-4 flex items-center justify-between w-full py-5 font-medium rtl:text-right text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400 gap-3" data-accordion-target="#accordion-flush-body-4" aria-expanded="true" aria-controls="accordion-flush-body-1">
+                    <span>Autogire (Gyrocoptère) </span>
+                    <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+                    </svg>
+                    </button>
+                </h2>
+                <div id="accordion-flush-body-4" class="hidden" aria-labelledby="accordion-flush-heading-1">
+                    <div class="py-5 border-b border-gray-200 dark:border-gray-700">
+                    <p class="mb-2 text-gray-500 dark:text-gray-400">Les autogires, également connus sous le nom de gyrocoptères, sont des ULM équipés d'une voilure fixe et d'un rotor non moteur qui tourne librement grâce à l'effet du vent relatif. </p>
+                    <p class="text-gray-500 dark:text-gray-400">Ils combinent les caractéristiques d'un avion et d'un hélicoptère, offrant une solution de vol stable et efficace.</p>
+                    </div>
+                </div>
+
+
+                <div id="accordion-flush-heading-5" data-accordion="collapse" data-active-classes="bg-white dark:bg-gray-900 text-gray-900 dark:text-white" data-inactive-classes="text-gray-500 dark:text-gray-400">
+                <h2 class="" id="accordion-flush-heading-5">
+                    <button type="button" class="p-4 flex items-center justify-between w-full py-5 font-medium rtl:text-right text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400 gap-3" data-accordion-target="#accordion-flush-body-5" aria-expanded="true" aria-controls="accordion-flush-body-1">
+                    <span>Aérostat ultraléger </span>
+                    <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+                    </svg>
+                    </button>
+                </h2>
+                <div id="accordion-flush-body-5" class="hidden" aria-labelledby="accordion-flush-heading-1">
+                    <div class="py-5 border-b border-gray-200 dark:border-gray-700">
+                    <p class="mb-2 text-gray-500 dark:text-gray-400">Cette catégorie englobe les dirigeables ou ballons ultralégers propulsés par un moteur léger. Ils offrent une expérience de vol paisible et souvent plus lente, et sont utilisés à des fins récréatives ou publicitaires. </p>
+                    <p class="text-gray-500 dark:text-gray-400">Les aérostats ultralégers peuvent avoir une structure légère et flexible.</p>
+                    </div>
+                </div>
+
+
+                <div id="accordion-flush-heading-6" data-accordion="collapse" data-active-classes="bg-white dark:bg-gray-900 text-gray-900 dark:text-white" data-inactive-classes="text-gray-500 dark:text-gray-400">
+                <h2 class="" id="accordion-flush-heading-6">
+                    <button type="button" class="p-4 flex items-center justify-between w-full py-5 font-medium rtl:text-right text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400 gap-3" data-accordion-target="#accordion-flush-body-6" aria-expanded="true" aria-controls="accordion-flush-body-1">
+                    <span>Hélicoptère ultraléger </span>
+                    <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+                    </svg>
+                    </button>
+                </h2>
+                <div id="accordion-flush-body-6" class="hidden" aria-labelledby="accordion-flush-heading-1">
+                    <div class="py-5 border-b border-gray-200 dark:border-gray-700">
+                    <p class="mb-2 text-gray-500 dark:text-gray-400">Les hélicoptères ultralégers sont des ULM conçus avec des caractéristiques d'hélicoptère, mais à une échelle plus légère et souvent plus simple. </p>
+                    <p class="text-gray-500 dark:text-gray-400">Ils peuvent être équipés de rotors plus petits et d'un moteur adapté à la taille réduite de l'aéronef. Ces hélicoptères offrent une grande maniabilité et sont souvent utilisés pour des activités de loisirs.</p>
+                    </div>
+                </div>
+
+            
         </div>
+        </div>
+
+        
+           
+
+
+            
+           
+    </div>
         <?php
         $nbPlane = new Plane;
         $CountPlane = $nbPlane->Count();
 
         ?>
-        <div class="w-full m-auto mt-10 " id="plane">
-            <p class="text-2xl text-slate-700 font-semibold w-3/4 m-auto lg:w-full">L'association possède <?= $CountPlane[0]['count'] ?> appareils : </p>
+        <div class="bg-white w-full m-auto mt-10 " id="plane">
+            <p class="text-2xl text-slate-700 font-semibold w-3/4 m-auto text-center p-10 lg:w-full">L'association possède <?= $CountPlane[0]['count'] ?> appareils  </p>
             <div class="mt-2 flex flex-wrap justify-center lg:flex-row  relative gap-4 w-full">
 
                 <?php
