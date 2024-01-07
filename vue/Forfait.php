@@ -1,5 +1,5 @@
 <section class="w-full mt-36 " id="forfait">
-    <div class="px-6 py-4">
+    <div class="px-6 py-4 border border-white bg-gray-300">
         <h1 class="text-2xl lg:text-4xl w-3/4 m-auto text-center text-slate-700 font-bold ">Forfait</h1>
         <p class="mt-2 text-xl w-1/3 m-auto text-center text-slate-700 font-semibold ">DES PRIX SIMPLES ET DES OPTIONS FLEXIBLES</p>
     </div>
@@ -10,7 +10,7 @@
     <div class="w-full block lg:w-3/4 m-auto lg:grid grid-cols-3 gap-4">
 
 
-        <div class="mt-2 bg-gradient-to-r to-blue-300  shadow-xl from-cyan-200 rounded-xl p-2">
+        <div class="mt-2 bg-gradient-to-r to-blue-300  shadow-xl from-cyan-200 rounded-xl p-2 border border-white">
             <h2 class="font-bold text-2xl mb-2 text-white w-full text-center">Stage d'initiation</h2>
             <h3 class=" mt-10 mb-10  text-sky-950 text-5xl font-test w-full text-center">180€</h3>
             <p class="mt-3 text-gray-600 text-center text-xl border-b-2 border-indigo-600 w-3/4 m-auto">
@@ -29,7 +29,7 @@
         </div>
 
 
-        <div class="mt-2 bg-gradient-to-r to-blue-300 shadow-xl from-cyan-200 rounded-xl   p-2">
+        <div class="mt-2 bg-gradient-to-r to-blue-300  shadow-xl from-cyan-200 rounded-xl p-2 border border-white">
             <h2 class="font-bold text-2xl mb-2 text-white w-full text-center">Brevet de pilote</h2>
             <h3 class=" mt-10 mb-10  text-sky-950 text-5xl w-full font-test text-center">1200€</h3>
             <p class="mt-3 text-gray-600 text-center text-xl border-b-2 border-indigo-600 w-3/4 m-auto">
@@ -54,7 +54,7 @@
         </div>
 
 
-        <div class=" mt-2 bg-gradient-to-r to-blue-300 shadow-xl from-cyan-200 rounded-xl   p-2 pb-10">
+        <div class=" mt-2 bg-gradient-to-r to-blue-300  shadow-xl from-cyan-200 rounded-xl p-2 border border-white">
             <h2 class="font-bold text-2xl mb-2 text-white w-full  text-center">Emport de passager</h2>
             <h3 class=" mt-10 mb-10  text-sky-950 text-5xl w-full font-test text-center">450€</h3>
             <p class="mt-3 text-gray-600 text-center text-xl border-b-2 border-indigo-600 w-3/4 m-auto">

@@ -1,29 +1,30 @@
 <section class=" mt-20 p-16 w-full" id="galerie">
   <h1 class="text-2xl lg:text-4xl w-3/4 m-auto text-center text-slate-700 font-bold">Galerie photo</h1>
-  <div class="block lg:grid grid-cols-3 ap-4 mt-10">
+  <div class="block lg:grid grid-cols-3 p-4 mt-10">
 
-  <div class="mt-2 lg:mt-0 hover:scale-105 duration-300 modal-trigger">
+    <div class="mt-2 p-2 lg:mt-0 hover:scale-105 duration-300 modal-trigger">
       <img class="h-max cover max-w-full rounded-lg" src="./assets/images/b.jpg" alt="">
     </div>
-    <div class="mt-2 lg:mt-0 hover:scale-105 duration-300 modal-trigger">
+    <div class="mt-2  p-2 lg:mt-0 hover:scale-105 duration-300 modal-trigger">
       <img class="h-max cover max-w-full rounded-lg" src="./assets/images/course-5.jpg" alt="">
     </div>
-    <div class="mt-2 lg:mt-0 hover:scale-105 duration-300 modal-trigger">
+    <div class="mt-2 p-2 lg:mt-0 hover:scale-105 duration-300 modal-trigger">
       <img class="h-max cover max-w-full rounded-lg" src="./assets/images/troisAutogires.jpg" alt="">
     </div>
 
   </div>
-  <div class="w-3/4 m-auto mt-6 block lg:grid grid-cols-3 gap-4">
+  <div class="w-3/4 m-auto mt-0 block lg:grid grid-cols-3 gap-4">
 
     <div class="mt-2 lg:mt-0  hover:scale-105 duration-300 modal-trigger">
       <img class="h-auto max-w-full rounded-lg" src="./assets/images/course-4.jpg" alt="">
     </div>
     <div class="mt-2 lg:mt-0  hover:scale-105 duration-300 modal-trigger">
-      <img class="h-auto max-w-full rounded-lg" src="./assets/images/course-1.jpg" alt="">
+      <img class="h-auto max-w-full rounded-lg" src="./assets/images/AeropraktA-22Foxbat.jpg" alt="">
     </div>
     <div class="mt-2 lg:mt-0  hover:scale-105 duration-300 modal-trigger">
-      <img class="h-auto max-w-full rounded-lg" src="./assets/images/course-7.jpg" alt="">
+      <img class="h-auto max-w-full rounded-lg" src="./assets/images/course-1.jpg" alt="">
     </div>
+
 
   </div>
 

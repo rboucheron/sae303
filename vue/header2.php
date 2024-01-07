@@ -84,7 +84,7 @@
                 } else {
                 ?>
                     <div class="hidden lg:grid place-items-center  pl-14 ">
-                        <div class=" grid"> <a class="  w-full text-center rounded-sm text-white  text-md cursor-pointer  py-2 px-5  font-Arial bg-gradient-to-r from-cyan-400 to-blue-500  hover:from-blue-500 hover:to-blue-500duration-300  hover:scale-105 " href="index.php?connexion">Se connecter</a></div>
+                        <div class=" grid"> <a class="  w-full text-center rounded-sm text-white  text-md cursor-pointer  py-2 px-5  font-Arial bg-gradient-to-r from-cyan-400 to-blue-500  hover:from-blue-500 hover:to-blue-500 duration-300  hover:scale-105 " href="index.php?connexion">Se connecter</a></div>
                     </div>
                 <?php
                 }
