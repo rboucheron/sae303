@@ -2,14 +2,14 @@
   <h1 class="text-2xl lg:text-4xl w-3/4 m-auto text-center text-slate-700 font-bold">Galerie photo</h1>
   <div class="block lg:grid grid-cols-3 ap-4 mt-10">
 
-    <div class="mt-2 lg:mt-0 hover:scale-105 duration-300 modal-trigger">
-      <img class="h-max cover max-w-full rounded-lg bg-white" src="./assets/images/avion-Ultra-Leger-Motorise-0.jpg" alt="">
+  <div class="mt-2 lg:mt-0 hover:scale-105 duration-300 modal-trigger">
+      <img class="h-max cover max-w-full rounded-lg" src="./assets/images/b.jpg" alt="">
     </div>
     <div class="mt-2 lg:mt-0 hover:scale-105 duration-300 modal-trigger">
       <img class="h-max cover max-w-full rounded-lg" src="./assets/images/course-5.jpg" alt="">
     </div>
     <div class="mt-2 lg:mt-0 hover:scale-105 duration-300 modal-trigger">
-      <img class="h-auto max-w-full rounded-lg" src="./assets/images/troisAutogires.jpg" alt="">
+      <img class="h-max cover max-w-full rounded-lg" src="./assets/images/troisAutogires.jpg" alt="">
     </div>
 
   </div>
@@ -35,7 +35,7 @@
   </div>
 </section>
 
-<!-- Ajoutez le script JavaScript Tailwind pour gérer l'ouverture/fermeture de la modal -->
+
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     const modalTriggerElements = document.querySelectorAll('.modal-trigger');
@@ -57,7 +57,7 @@
     });
 
     modalImageElement.addEventListener('click', (event) => {
-      event.stopPropagation(); // Empêche la fermeture de la modal lors du clic sur l'image
+      event.stopPropagation(); 
     });
   });
 </script>

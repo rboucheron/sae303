@@ -3,7 +3,7 @@ $moniteur = new Moniteur();
 $resultat = $moniteur->findAll();
 ?>
 
-<section class="bg-gradient-to-r from-cyan-400 to-blue-500 p-10 w-full shadow-xl">
+<section class="bg-gradient-to-r from-cyan-400 to-blue-500  p-10 w-full shadow-xl">
     <h1 class="text-2xl lg:text-4xl w-3/4 m-auto text-center text-white font-test">Notre équipe</h1>
     <h2 class="text-xl lg:text-xl w-3/4 m-auto text-center text-slate-700 font-bold">Les personnes qui vont vous accueillir dans notre aéroclub</h2>
     <div class="w-full m-auto mt-10 " id="plane">

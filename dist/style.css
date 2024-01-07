@@ -1351,6 +1351,18 @@ video {
   padding: 1rem;
 }
 
+.p-20{
+  padding: 5rem;
+}
+
+.p-36{
+  padding: 9rem;
+}
+
+.p-24{
+  padding: 6rem;
+}
+
 .px-2{
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -1389,6 +1401,11 @@ video {
 .py-9{
   padding-top: 2.25rem;
   padding-bottom: 2.25rem;
+}
+
+.py-20{
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 
 .pb-1{
@@ -1576,6 +1593,26 @@ video {
 .text-white{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-purple-950{
+  --tw-text-opacity: 1;
+  color: rgb(59 7 100 / var(--tw-text-opacity));
+}
+
+.text-purple-500{
+  --tw-text-opacity: 1;
+  color: rgb(168 85 247 / var(--tw-text-opacity));
+}
+
+.text-purple-200{
+  --tw-text-opacity: 1;
+  color: rgb(233 213 255 / var(--tw-text-opacity));
+}
+
+.text-red-200{
+  --tw-text-opacity: 1;
+  color: rgb(254 202 202 / var(--tw-text-opacity));
 }
 
 .shadow-sm{

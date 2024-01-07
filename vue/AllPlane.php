@@ -137,7 +137,7 @@ if (isset($_SESSION['AdminId'])) {
 
         ?>
         <div class="bg-white w-full m-auto mt-10 " id="plane">
-            <p class="text-2xl text-slate-700 font-semibold w-3/4 m-auto text-center p-10 lg:w-full">L'association possède <?= $CountPlane[0]['count'] ?> appareils  </p>
+            <p class="text-2xl text-slate-700 p-10  font-semibold w-3/4 m-auto text-center  lg:w-full">L'association possède <?= $CountPlane[0]['count'] ?> appareils  </p>
             <div class="mt-2 flex flex-wrap justify-center lg:flex-row  relative gap-4 w-full">
 
                 <?php
@@ -160,7 +160,7 @@ if (isset($_SESSION['AdminId'])) {
                         <?php } elseif (isset($_SESSION['MoniteurId'])) { ?>
                             <a class="p-2 bg-sky-800 rounded-xl mb-2 mr-2 text-white absolute bottom-0 right-0 hover:bg-sky-500" href="index.php?plane=<?= $model['id'] ?>">Crée</a><!--  -->
                         <?php } elseif (isset($_SESSION['id'])) { ?>
-                            <a class="py-2 px-5 bg-sky-500 rounded-3xl mb-2 mr-2 text-white absolute bottom-0 right-0 hover:bg-black duration-300" href="index.php?plane=<?= $model['id'] ?>">Réserver</a>
+                            <a class="py-2 px-5 bg-sky-500 rounded-3xl mb-2 mr-2 text-white absolute bottom-0 right-0 hover:bg-black font-bold duration-300" href="index.php?plane=<?= $model['id'] ?>">Réserver</a>
                         <?php } ?>
                     </div>
                 <?php } ?>
