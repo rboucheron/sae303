@@ -30,7 +30,7 @@
                 <a class="grid font-semibold text-sm cursor-pointer text-white  hover:underline   pb-1 " href="index.php#plane">Avions</a>
                 <a class="grid font-semibold text-sm cursor-pointer text-white  hover:underline  pb-1 " href="index.php#galerie">Galerie</a>
                 <a class="grid font-semibold text-sm cursor-pointer text-white  hover:underline   pb-1 " href="index.php#forfait">Forfait</a>
-                <a class="grid font-semibold text-sm cursor-pointer text-white  hover:underline  pb-1 ">Contact</a>
+                <a class="grid font-semibold text-sm cursor-pointer text-white  hover:underline  pb-1 " href="index.php#footer">Contact</a>
                 <a class="grid font-semibold text-sm cursor-pointer text-white  hover:underline  pb-1 " href="index.php?admin">Dashboard</a>
             <?php
         } else {
@@ -41,7 +41,7 @@
                     <a class="grid font-semibold text-sm cursor-pointer text-white hover:underline text-white  pb-1 " href="index.php#plane">Avions</a>
                     <a class="grid font-semibold text-sm cursor-pointer text-white hover:underline text-white  pb-1 " href="index.php#galerie">Galerie</a>
                     <a class="grid font-semibold text-sm cursor-pointer text-white hover:underline text-white  pb-1 " href="index.php#forfait">Forfait</a>
-                    <a class="grid font-semibold text-sm cursor-pointer text-white hover:underline text-white  pb-1 ">Contact</a>
+                    <a class="grid font-semibold text-sm cursor-pointer text-white hover:underline text-white  pb-1 " href="index.php#footer">Contact</a>
 
                 <?php
             }

@@ -7,19 +7,19 @@
             </a>
             <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
                 <li>
-                    <a href="#" class="hover:underline me-4 md:me-6">Accueil</a>
+                    <a href="index.php" class="hover:underline me-4 md:me-6">Accueil</a>
                 </li>
                 <li>
-                    <a href="#" class="hover:underline me-4 md:me-6">Activités</a>
+                    <a href="index.php#activites" class="hover:underline me-4 md:me-6">Activités</a>
                 </li>
                 <li>
-                    <a href="#" class="hover:underline me-4 md:me-6">Avions</a>
+                    <a href="index.php#plane" class="hover:underline me-4 md:me-6">Avions</a>
                 </li>
                 <li>
-                    <a href="#" class="hover:underline me-4 md:me-6">Galerie</a>
+                    <a href="index.php#galerie" class="hover:underline me-4 md:me-6">Galerie</a>
                 </li>
                 <li>
-                    <a href="#" class="hover:underline me-4 md:me-6">Forfait</a>
+                    <a href="index.php#forfait" class="hover:underline me-4 md:me-6">Forfait</a>
                 </li>
 
             </ul>
