@@ -11,6 +11,11 @@
 </head>
 
 <body class="bg-gray-200 overflow-hidden overflow-y-scroll">
+    <div class="z-50 fixed w-full h-full" id="anime">
+        <video  class="w-full h-full bg-[#063a4e]" autoplay muted>
+            <source src="./assets/Avion_2023.mp4">
+        </video>
+    </div>
     <header class="bg-blue-950 w-full grid grid-cols-2 gap-4 lg:grid-cols-4  shadow-xl ">
         <div class="cursor-pointer grid place-items-start pt-2 lg:col-span-1  "><img src="./assets/images/logof.png" class="w-14 mt-0 ml-12 mb-1 " alt=""></div>
         <div class="cursor-pointer grid place-items-end pb-2 pr-6 lg:hidden " onclick="openMenu ()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-align-justify">
@@ -28,7 +33,7 @@
                 <a class="grid font-semibold text-sm cursor-pointer text-white  hover:underline  pb-1 " href="index.php#plane">Avions</a>
                 <a class="grid font-semibold text-sm cursor-pointer text-white  hover:underline  pb-1 " href="index.php#galerie">Galerie</a>
                 <a class="grid font-semibold text-sm cursor-pointer text-white  hover:underline  pb-1 " href="index.php#forfait">Forfait</a>
-                <a class="grid font-semibold text-sm cursor-pointer text-white  hover:underline  pb-1 "  href="index.php#footer">Contact</a>
+                <a class="grid font-semibold text-sm cursor-pointer text-white  hover:underline  pb-1 " href="index.php#footer">Contact</a>
                 <a class="grid font-semibold text-sm cursor-pointer text-white  hover:underline  pb-1 " href="index.php?admin">Dashboard</a>
             <?php
         } else {

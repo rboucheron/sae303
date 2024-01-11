@@ -104,3 +104,6 @@ switch ($data['weather']) {
         setInterval(updateClock, 1000);
     </script>
 </section>
+
+
+<!-- API météo -->
