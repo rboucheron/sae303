@@ -2,7 +2,7 @@
 
 class Meteo
 {
-    private $url = "https://api.openweathermap.org/data/2.5/forecast?q=Paris&appid=78886a19c93163d930ae4268518360a0&units=metric";
+    private $url = "https://api.openweathermap.org/data/2.5/forecast?q=Frotey-lès-Lure&&appid=78886a19c93163d930ae4268518360a0&units=metric";
     private $response;
   
     public function __construct()

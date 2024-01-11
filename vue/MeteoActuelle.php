@@ -9,13 +9,16 @@ $bgImageClass = '';
 switch ($data['weather']) {
     case 'Rain':
         $bgImageClass = 'rain-bg';
+        $color = 'text-white'; 
         break;
     case 'Clouds':
         $bgImageClass = 'clouds-bg';
+        $color = 'text-white'; 
 
         break;
     case 'Clear':
         $bgImageClass = 'clear-bg';
+        $color = 'text-blue-800'; 
         break;
     default:
         $bgImageClass = 'default-bg';
@@ -60,11 +63,11 @@ switch ($data['weather']) {
 
 
 <section class="w-full mt-10 <?= $bgImageClass ?> p-2 pb-4" id="meteo">
-    <h1 class="text-2xl lg:text-4xl w-3/4 m-auto text-white text-center text-slate-700 font-bold">Meteo</h1>
+    <h1 class="text-2xl lg:text-4xl w-3/4 m-auto <?= $color ?> text-center text-slate-700 font-bold">Meteo</h1>
 
     <div class="block w-full lg:w-1/2 m-auto">
         <div class="w-full mt-10 mb-2">
-            <h2 id="clock" class="w-full text-center text-sky-800 text-white font-bold text-2xl"><?= $date ?> - <?= $time ?></h2>
+            <h2 id="clock" class="w-full text-center text-sky-800 <?= $color ?> font-bold text-2xl"><?= $date ?> - <?= $time ?></h2>
         </div>
         <div class="w-1/4 m-auto">
             <?php if ($data['weather'] == 'Rain') { ?>

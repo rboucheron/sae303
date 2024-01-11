@@ -19,6 +19,7 @@ function home()
     require('./vue/AllMoniteur.php');
     require('./vue/MeteoActuelle.php');
     require('./vue/Galerie.php');
+    require('./vue/Event.php');
     require('./vue/Forfait.php');
   
     
