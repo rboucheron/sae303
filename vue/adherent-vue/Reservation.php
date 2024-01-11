@@ -37,7 +37,7 @@
             </div>
         </div>
     </section>
-    <div class="hidden fixed w-full h-full bg-cyan-700 bg-opacity-75 top-0 left-0 scroll-y" id="updateForm">
+    <div class="hidden z-50 fixed w-full h-full bg-cyan-700 bg-opacity-75 top-0 left-0 scroll-y" id="updateForm">
         <form action="" method="post">
             <div id="form">
             </div>
